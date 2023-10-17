@@ -4,6 +4,10 @@
 
 The VisionCraft API documentation is designed for users who wish to interact with the API for image generation. This documentation will provide you with a comprehensive overview of the functionality and usage guidelines of the API.
 
+## Functional testing
+
+If you want to try how well my API generates images, then go to the [official site](https://rohkife.domcloud.io). There you can try all the models available in the API.
+
 ## Obtaining an API Key
 
 To start using the VisionCraft API, you need to obtain an API key. This key is essential for every request to the API. You can obtain the key by following these steps:
@@ -72,4 +76,3 @@ It's important to note that your API key is linked to your subscription to the V
 ## Contact Information
 
 If you have any questions or requests, feel free to reach out to us. We are always ready to assist you. For communication, use my [Telegram](https://t.me/metimol).
-
