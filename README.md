@@ -79,4 +79,4 @@ If you have any questions or requests, feel free to reach out to us. We are alwa
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Metim0l/VisionCraft&type=Date)](https://star-history.com/#Metim0l/VisionCraft&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Metim0l/VisionCraft&type=Timeline)](https://star-history.com/#Metim0l/VisionCraft&Timeline)
