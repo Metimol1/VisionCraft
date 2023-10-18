@@ -76,3 +76,7 @@ It's important to note that your API key is linked to your subscription to the V
 ## Contact Information
 
 If you have any questions or requests, feel free to reach out to us. We are always ready to assist you. For communication, use my [Telegram](https://t.me/metimol).
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Metim0l/VisionCraft&type=Date)](https://star-history.com/#Metim0l/VisionCraft&Date)
