@@ -1,5 +1,16 @@
 # VisionCraft API Documentation
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Functional Testing](#functional-testing)
+- [Obtaining an API Key](#obtaining-an-api-key)
+- [Interacting with the API](#interacting-with-the-api)
+  - [Available Models](#available-models)
+  - [Image Generation](#image-generation)
+- [Key Limitations](#key-limitations)
+- [Contact Information](#contact-information)
+- [Star History](#star-history)
+
 ## Introduction
 
 The VisionCraft API documentation is designed for users who wish to interact with the API for image generation. This documentation will provide you with a comprehensive overview of the functionality and usage guidelines of the API.
