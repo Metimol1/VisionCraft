@@ -108,7 +108,7 @@ data = {
     "token": api_key
 }
 
-response = requests.post(f"{api_url}/generate", json=data)
+response = requests.post(f"{api_url}/generate", json=data, verify=False)
 images = response.json()
 for i, image in enumerate(images):
     with open(f"generated_image_{i}.png", "wb") as f:
@@ -123,6 +123,9 @@ const fetch = require('node-fetch');
 
 // Define the API endpoint
 const apiUrl = "https://rohkife.domcloud.io";
+const agent = new https.Agent({
+  rejectUnauthorized: false
+});
 
 // Obtain your API key
 const apiKey = "your_api_key";
@@ -149,7 +152,8 @@ fetch(`${apiUrl}/generate`, {
   body: JSON.stringify(data),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  agent
 })
   .then(response => response.json())
   .then(images => {
