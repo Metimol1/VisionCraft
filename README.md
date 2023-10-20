@@ -39,7 +39,7 @@ To start using the VisionCraft API, you need to obtain an API key. This key is e
 
 Once you have obtained your API key, you are ready to interact with the VisionCraft API. Below are the primary capabilities of the API.
 
-⚠️ **SSL Certificate Warning:** Please note that the VisionCraft API uses a free SSL certificate. If you encounter SSL-related errors, you may need to disable SSL verification when making requests. Be cautious when doing this, as it can compromise security.
+⚠️ **SSL Certificate Warning:** Please note that the VisionCraft API uses a free SSL certificate. If you encounter SSL-related errors, you may need to disable SSL verification when making requests.
 
 ### Available Models
 
