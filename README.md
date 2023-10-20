@@ -69,6 +69,85 @@ POST https://rohkife.domcloud.io/generate
 
 The response to this request will contain a list of generated images in base64 format.
 
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://rohkife.domcloud.io"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Get a list of available models
+models = requests.get(f"{api_url}/models")
+print(models.json())
+
+# Generate images using a specific model
+model = "absolutereality"
+prompt = "Beautiful landscape"
+image_count = 3
+
+data = {
+    "model": model,
+    "prompt": prompt,
+    "image_count": image_count,
+    "token": api_key
+}
+
+response = requests.post(f"{api_url}/generate", json=data)
+images = response.json()
+for i, image in enumerate(images):
+    with open(f"generated_image_{i}.png", "wb") as f:
+        f.write(base64.b64decode(image))
+```
+
+**JavaScript Example:**
+
+```
+// JavaScript code for interacting with VisionCraft API
+const fetch = require('node-fetch');
+
+// Define the API endpoint
+const apiUrl = "https://rohkife.domcloud.io";
+
+// Obtain your API key
+const apiKey = "your_api_key";
+
+// Get a list of available models
+fetch(`${apiUrl}/models`)
+  .then(response => response.json())
+  .then(models => console.log(models));
+
+// Generate images using a specific model
+const model = "absolutereality";
+const prompt = "Beautiful landscape";
+const imageCount = 3;
+
+const data = {
+  model: model,
+  prompt: prompt,
+  image_count: imageCount,
+  token: apiKey
+};
+
+fetch(`${apiUrl}/generate`, {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+  .then(response => response.json())
+  .then(images => {
+    images.forEach((image, i) => {
+      // Save the base64 image data to a file or use it as needed
+    });
+  });
+```
+
 ## Key Limitations
 
 It's important to note that your API key is linked to your subscription to the VisionCraft Telegram channel. If you unsubscribe from the channel, your key will cease to function. However, when you resubscribe to the channel, the key automatically renews its functionality.
