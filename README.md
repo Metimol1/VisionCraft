@@ -95,7 +95,7 @@ api_url = "https://rohkife.domcloud.io"
 api_key = "your_api_key"
 
 # Get a list of available models
-models = requests.get(f"{api_url}/models")
+models = requests.get(f"{api_url}/models", verify=False)
 print(models.json())
 
 # Generate images using a specific model
@@ -115,55 +115,6 @@ images = response.json()
 for i, image in enumerate(images):
     with open(f"generated_image_{i}.png", "wb") as f:
         f.write(base64.b64decode(image))
-```
-
-**JavaScript Example:**
-
-```
-// JavaScript code for interacting with VisionCraft API
-const fetch = require('node-fetch');
-const https = require('https');
-
-// Define the API endpoint
-const apiUrl = "https://rohkife.domcloud.io";
-const agent = new https.Agent({
-  rejectUnauthorized: false
-});
-
-// Obtain your API key
-const apiKey = "your_api_key";
-
-// Get a list of available models
-fetch(`${apiUrl}/models`)
-  .then(response => response.json())
-  .then(models => console.log(models));
-
-// Generate images using a specific model
-const model = "absolutereality";
-const prompt = "Beautiful landscape";
-const imageCount = 3;
-
-const data = {
-  model: model,
-  prompt: prompt,
-  image_count: imageCount,
-  token: apiKey
-};
-
-fetch(`${apiUrl}/generate`, {
-  method: 'POST',
-  body: JSON.stringify(data),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  agent
-})
-  .then(response => response.json())
-  .then(images => {
-    images.forEach((image, i) => {
-      // Save the base64 image data to a file or use it as needed
-    });
-  });
 ```
 
 ## Key Limitations
