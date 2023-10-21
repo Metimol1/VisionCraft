@@ -122,6 +122,7 @@ for i, image in enumerate(images):
 ```
 // JavaScript code for interacting with VisionCraft API
 const fetch = require('node-fetch');
+const https = require('https');
 
 // Define the API endpoint
 const apiUrl = "https://rohkife.domcloud.io";
