@@ -89,6 +89,7 @@ POST https://rohkife.domcloud.io/generate
 ```
 {
   "model": "absolutereality",
+  "sampler": "Euler",
   "prompt": "Beautiful landscape",
   "image_count": 3,
   "token": "your_api_key"
@@ -115,11 +116,13 @@ print(models.json())
 
 # Generate images using a specific model
 model = "absolutereality"
+sampler = "Euler"
 prompt = "Beautiful landscape"
 image_count = 3
 
 data = {
     "model": model,
+    "sampler": sampler,
     "prompt": prompt,
     "image_count": image_count,
     "token": api_key
