@@ -80,6 +80,7 @@ POST https://rohkife.domcloud.io/generate
 
 #### Request Parameters:
 - `model` (string) - the name of the chosen model
+- `sampler` (string) - the name of the chosen sampler
 - `prompt` (string) - a text prompt for generation
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
