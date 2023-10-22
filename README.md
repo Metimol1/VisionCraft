@@ -7,6 +7,7 @@
 - [Interacting with the API](#interacting-with-the-api)
   - [Available Models](#available-models)
   - [Image Generation](#image-generation)
+  - [Available Samplers] (#available-samplers)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
 - [Star History](#star-history)
