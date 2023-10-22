@@ -55,6 +55,20 @@ GET https://rohkife.domcloud.io/models
 ["3Guofeng3", "absolutereality", "absolutereality_v181", "amIReal", "analog-diffusion-1.0", ...]
 ```
 
+### Available Samplers
+
+You can retrieve a list of available samplers for image generation.
+
+#### Request:
+```
+GET https://rohkife.domcloud.io/samplers
+```
+
+#### Response:
+```
+["euler", "euler a", ...]
+```
+
 ### Image Generation
 
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
