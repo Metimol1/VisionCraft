@@ -66,7 +66,7 @@ GET https://rohkife.domcloud.io/samplers
 
 #### Response:
 ```
-["euler", "euler a", ...]
+["Euler", "Euler a", "LMS", "Heun", "DPM2", "DPM2 a", ...]
 ```
 
 ### Image Generation
