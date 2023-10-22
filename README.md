@@ -53,7 +53,7 @@ GET https://rohkife.domcloud.io/models
 
 #### Response:
 ```
-["3Guofeng3", "absolutereality", "absolutereality_v181", "amIReal", "analog-diffusion-1.0", ...]
+["3guofeng3_v3.4", "absolutereality_v1.6", "absolutereality_v1.8.1", "amIReal_v4.1", "analog_diffusion_v1", "anything_v3.0", "anything_v4.5", "anything_V5", ...]
 ```
 
 ### Available Samplers
@@ -89,7 +89,7 @@ POST https://rohkife.domcloud.io/generate
 #### Request Example:
 ```
 {
-  "model": "absolutereality",
+  "model": "anything_V5",
   "sampler": "Euler",
   "prompt": "Beautiful landscape",
   "image_count": 3,
@@ -116,7 +116,7 @@ models = requests.get(f"{api_url}/models", verify=False)
 print(models.json())
 
 # Generate images using a specific model
-model = "absolutereality"
+model = "anything_V5"
 sampler = "Euler"
 prompt = "Beautiful landscape"
 image_count = 3
