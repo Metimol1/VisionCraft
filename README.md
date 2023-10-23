@@ -90,7 +90,7 @@ POST https://rohkife.domcloud.io/generate
 - `cfg_scale` (integer, optional) - the CFG Scale (0-20, defaults to 10)
 - `steps` (integer, optional) - the number of steps (1-30, defaults to 30)
 
-*About parameters*
+**About parameters**
 
 **CFG_Scale**: How strongly the image should conform to the text - lower values produce more creative results.
 
@@ -103,7 +103,9 @@ POST https://rohkife.domcloud.io/generate
   "sampler": "Euler",
   "prompt": "Beautiful landscape",
   "image_count": 3,
-  "token": "your_api_key"
+  "token": "your_api_key",
+  "cfg_scale": 8,
+  "steps": 30
 }
 ```
 
@@ -125,18 +127,26 @@ api_key = "your_api_key"
 models = requests.get(f"{api_url}/models", verify=False)
 print(models.json())
 
+# Get a list of available samplers
+samplers = requests.get(f"{api_url}/samplers", verify=False)
+print(samplers.json())
+
 # Generate images using a specific model
 model = "anything_V5"
 sampler = "Euler"
 prompt = "Beautiful landscape"
 image_count = 3
+cfg_scale = 8
+steps = 30
 
 data = {
     "model": model,
     "sampler": sampler,
     "prompt": prompt,
     "image_count": image_count,
-    "token": api_key
+    "token": api_key,
+    "cfg_scale": cfg_scale,
+    "steps": steps
 }
 
 response = requests.post(f"{api_url}/generate", json=data, verify=False)
