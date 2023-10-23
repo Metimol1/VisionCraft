@@ -87,6 +87,14 @@ POST https://rohkife.domcloud.io/generate
 - `prompt` (string) - a text prompt for generation
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
+- `cfg_scale` (integer, optional) - the CFG Scale (0-20, defaults to 10)
+- `steps` (integer, optional) - the number of steps (1-30, defaults to 30)
+
+*About parameters*
+
+**CFG_Scale**: How strongly the image should conform to the text - lower values produce more creative results.
+
+**Steps**: How many times to improve the generated image iteratively; higher values take longer; very low values can produce bad results.
 
 #### Request Example:
 ```
