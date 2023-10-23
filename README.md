@@ -60,6 +60,8 @@ GET https://rohkife.domcloud.io/models
 
 You can retrieve a list of available samplers for image generation.
 
+If you do not know which sampler to choose, I recommend reading [this article](https://stable-diffusion-art.com/samplers/).
+
 #### Request:
 ```
 GET https://rohkife.domcloud.io/samplers
