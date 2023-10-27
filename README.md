@@ -18,7 +18,7 @@ The VisionCraft API documentation is designed for users who wish to interact wit
 
 ## Functional testing
 
-If you want to try how well my API generates images, then go to the [official site](https://rohkife.domcloud.io). There you can try all the models available in the API.
+If you want to try how well my API generates images, then go to the [official site](http://loplequ.domcloud.io). There you can try all the models available in the API.
 
 ## Obtaining an API Key
 
@@ -48,7 +48,7 @@ You can retrieve a list of available models for image generation. Each model has
 
 #### Request:
 ```
-GET https://rohkife.domcloud.io/models
+GET http://loplequ.domcloud.io/models
 ```
 
 #### Response:
@@ -64,7 +64,7 @@ If you do not know which sampler to choose, I recommend reading [this article](h
 
 #### Request:
 ```
-GET https://rohkife.domcloud.io/samplers
+GET http://loplequ.domcloud.io/samplers
 ```
 
 #### Response:
@@ -78,7 +78,7 @@ After selecting a specific model, you can generate images using the API. To do t
 
 #### Request:
 ```
-POST https://rohkife.domcloud.io/generate
+POST http://loplequ.domcloud.io/generate
 ```
 
 #### Request Parameters:
@@ -118,7 +118,7 @@ The response to this request will contain a list of generated images in base64 f
 import requests
 
 # Define the API endpoint
-api_url = "https://rohkife.domcloud.io"
+api_url = "http://loplequ.domcloud.io"
 
 # Obtain your API key
 api_key = "your_api_key"
