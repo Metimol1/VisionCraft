@@ -87,8 +87,8 @@ POST http://loplequ.domcloud.io/generate
 - `prompt` (string) - a text prompt for generation
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
-- `cfg_scale` (integer, optional) - the CFG Scale (0-20, defaults to 10)
-- `steps` (integer, optional) - the number of steps (1-30, defaults to 30)
+- `cfg_scale` (integer) - the CFG Scale (0-20, defaults to 10)
+- `steps` (integer) - the number of steps (1-30, defaults to 30)
 
 **About parameters**
 
@@ -150,7 +150,7 @@ data = {
 }
 
 response = requests.post(f"{api_url}/generate", json=data, verify=False)
-images = response.json()
+images = response.json()["images"]
 for i, image in enumerate(images):
     with open(f"generated_image_{i}.png", "wb") as f:
         f.write(base64.b64decode(image))
