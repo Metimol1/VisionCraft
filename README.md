@@ -123,37 +123,38 @@ api_url = "http://loplequ.domcloud.io"
 # Obtain your API key
 api_key = "your_api_key"
 
-# Get a list of available models
-models = requests.get(f"{api_url}/models", verify=False)
-print(models.json())
-
-# Get a list of available samplers
-samplers = requests.get(f"{api_url}/samplers", verify=False)
-print(samplers.json())
-
 # Generate images using a specific model
 model = "anything_V5"
 sampler = "Euler"
-prompt = "Beautiful landscape"
 image_count = 3
 cfg_scale = 8
 steps = 30
+image_urls = []
 
+# Set up the data to send in the request
 data = {
     "model": model,
     "sampler": sampler,
-    "prompt": prompt,
+    "prompt": "Beautiful landscape",
     "image_count": image_count,
     "token": api_key,
     "cfg_scale": cfg_scale,
     "steps": steps
 }
 
+# Send the request to generate images
 response = requests.post(f"{api_url}/generate", json=data, verify=False)
-images = response.json()["images"]
-for i, image in enumerate(images):
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
     with open(f"generated_image_{i}.png", "wb") as f:
-        f.write(base64.b64decode(image))
+        f.write(response.content)
 ```
 
 ## Key Limitations
