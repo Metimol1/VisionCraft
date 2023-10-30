@@ -129,7 +129,6 @@ sampler = "Euler"
 image_count = 3
 cfg_scale = 8
 steps = 30
-image_urls = []
 
 # Set up the data to send in the request
 data = {
