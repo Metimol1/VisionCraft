@@ -109,7 +109,7 @@ POST http://loplequ.domcloud.io/generate
 }
 ```
 
-The response to this request will contain a list of generated images in base64 format.
+The response to this request will contain a list of links to the generated images.
 
 **Python Example:**
 
