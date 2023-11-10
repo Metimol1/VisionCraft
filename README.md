@@ -85,10 +85,11 @@ POST http://loplequ.domcloud.io/generate
 - `model` (string) - the name of the chosen model
 - `sampler` (string) - the name of the chosen sampler
 - `prompt` (string) - a text prompt for generation
+- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
-- `cfg_scale` (integer) - the CFG Scale (0-20, defaults to 10)
-- `steps` (integer) - the number of steps (1-30, defaults to 30)
+- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20, defaults to 10)
+- `steps` (integer) (optional: default is 30)- the number of steps (1-30, defaults to 30)
 
 **About parameters**
 
@@ -135,6 +136,7 @@ data = {
     "model": model,
     "sampler": sampler,
     "prompt": "Beautiful landscape",
+    "negative_prompt": "canvas frame, cartoon, 3d, ((disfigured)), ((bad art)), ((deformed)),((extra limbs)),((close up)),((b&w)), weird colors, blurry, (((duplicate))), ((morbid)), ((mutilated)), [out of frame], extra fingers, mutated hands, ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), (((deformed))), ((ugly)), blurry, ((bad anatomy)), (((bad proportions))), ((extra limbs)), cloned face, (((disfigured))), out of frame, ugly, extra limbs, (bad anatomy), gross proportions, (malformed limbs), ((missing arms)), ((missing legs)), (((extra arms))), (((extra legs))), mutated hands, (fused fingers), (too many fingers), (((long neck))), Photoshop, video game, ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, mutation, mutated, extra limbs, extra legs, extra arms, disfigured, deformed, cross-eye, body out of frame, blurry, bad art, bad anatomy, 3d render",
     "image_count": image_count,
     "token": api_key,
     "cfg_scale": cfg_scale,
