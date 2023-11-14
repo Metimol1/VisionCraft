@@ -227,7 +227,7 @@ url = "http://loplequ.domcloud.io/img2img/"
 
 payload = json.dumps(
     {
-        "prompt": "remove hair",
+        "prompt": "change hair colour to blue",
         "init_images": ["https://images.prodia.xyz/1c2458ef-0d81-4273-b427-561e1922aaeb.png?download=1"],
         "token": token,
     }
