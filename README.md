@@ -8,7 +8,7 @@
   - [Available Models](#available-models)
   - [Available Samplers](#available-samplers)
   - [Image Generation](#image-generation)
-  - [Image-to-Image Generation] (#image-to-image-generation)
+  - [Image-to-Image Generation](#image-to-image-generation)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
 - [Star History](#star-history)
