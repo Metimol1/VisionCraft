@@ -159,6 +159,63 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
+## Image-to-Image Generation
+
+#### Request:
+```
+POST http://loplequ.domcloud.io/img2img
+```
+
+To perform image-to-image generation, use the following request parameters:
+
+#### Request Body POST
+
+
+```
+{
+  "prompt": "string",
+  "token": "string",
+  "init_images": [
+    "string"
+  ],
+  "negative_prompt": "",
+  "steps": 50,
+  "cfg_scale": 7,
+  "width": 512,
+  "height": 512
+}
+```
+
+#### Request Parameters:
+
+- `prompt` (string) - text prompt for generation
+- `token` (string) - your API key
+- `init_images` (list with one url) - initial images for generation
+- `negative_prompt` (string) (optional) - text prompt that the model should avoid in the image.
+- `steps` (integer) (optional) - number of steps for iterative improvement (default is 50)
+- `cfg_scale` (float) (optional) - CFG Scale (default is 7.0)
+- `width` (integer) (optional) - width of the generated image (default is 512)
+- `height` (integer) (optional) - height of the generated image (default is 512)
+
+#### Request Example:
+
+```
+{
+  "prompt": "Cityscape transformation",
+  "token": "your_api_key",
+  "init_images": [
+    "https://example.com/image1.jpg"
+  ],
+  "negative_prompt": "night, cartoon style",
+  "steps": 50,
+  "cfg_scale": 7,
+  "width": 512,
+  "height": 512
+}
+```
+
+The response will contain the generated images.
+
 ## Key Limitations
 
 It's important to note that your API key is linked to your subscription to the VisionCraft Telegram channel. If you unsubscribe from the channel, your key will cease to function. However, when you resubscribe to the channel, the key automatically renews its functionality.
