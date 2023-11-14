@@ -159,7 +159,8 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
-## Image-to-Image Generation
+
+### Image-to-Image Generation
 
 #### Request:
 ```
@@ -208,13 +209,42 @@ To perform image-to-image generation, use the following request parameters:
   ],
   "negative_prompt": "night, cartoon style",
   "steps": 50,
-  "cfg_scale": 7,
+  "cfg_scale": 7.0,
   "width": 512,
   "height": 512
 }
 ```
 
 The response will contain the generated images.
+
+**Python Example:**
+```
+import requests, json
+
+token = "Your API token"
+url = "http://loplequ.domcloud.io/img2img/"
+
+payload = json.dumps(
+    {
+        "prompt": "remove hair",
+        "init_images": ["https://images.prodia.xyz/1c2458ef-0d81-4273-b427-561e1922aaeb.png?download=1"],
+        "token": token,
+    }
+)
+
+response = requests.request("POST", url, data=payload)
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
+    with open(f"generated_image_{i}.png", "wb") as f:
+        f.write(response.content)
+```
 
 ## Key Limitations
 
