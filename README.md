@@ -89,7 +89,7 @@ POST http://loplequ.domcloud.io/generate
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
-- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20, defaults to 10)
+- `cfg_scale` (integer) (optional: default is 10) - a parameter that controls how much the image generation process follows the text prompt (0-20, defaults to 10)
 - `steps` (integer) (optional: default is 30)- the number of iterations that Stable Diffusion runs to go from random noise to a recognizable image based on the text prompt. As an extremely general rule of thumb, the higher the sampling steps, the more detail you will add to your image at the cost of longer processing time. (1-30, defaults to 30)
 
 **About parameters**
@@ -171,7 +171,7 @@ POST http://loplequ.domcloud.io/img2img
 To perform image-to-image generation, use the following request parameters:
 
 #### Request Body POST
-```json
+```
 {
   "prompt": "string",
   "token": "string",
