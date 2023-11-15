@@ -171,9 +171,7 @@ POST http://loplequ.domcloud.io/img2img
 To perform image-to-image generation, use the following request parameters:
 
 #### Request Body POST
-
-
-```
+```json
 {
   "prompt": "string",
   "token": "string",
@@ -184,7 +182,10 @@ To perform image-to-image generation, use the following request parameters:
   "steps": 50,
   "cfg_scale": 7,
   "width": 512,
-  "height": 512
+  "height": 512,
+  "denoising_strength": 0.45,
+  "image_cfg_scale": 10.0,
+  "restore_faces": false
 }
 ```
 
@@ -192,12 +193,15 @@ To perform image-to-image generation, use the following request parameters:
 
 - `prompt` (string) - text prompt for generation
 - `token` (string) - your API key
-- `init_images` (list with one url) - initial images for generation
+- `init_images` (list with one url) - initial image for generation
 - `negative_prompt` (string) (optional) - text prompt that the model should avoid in the image.
-- `steps` (integer) (optional) - number of steps for iterative improvement (default is 50)
-- `cfg_scale` (float) (optional) - CFG Scale (default is 7.0)
+- `steps` (integer) (optional) - the number of iterations that Stable Diffusion runs to go from random noise to a recognizable image based on the text prompt. As an extremely general rule of thumb, the higher the sampling steps, the more detail you will add to your image at the cost of longer processing time. (default is 50)
+- `cfg_scale` (float) (optional) - a parameter that controls how much the image generation process follows the text prompt (default is 7.0)
 - `width` (integer) (optional) - width of the generated image (default is 512)
 - `height` (integer) (optional) - height of the generated image (default is 512)
+- `denoising_strength` (float) (optional) - how similar the generated image will be to the original (default is 0.45)
+- `image_cfg_scale` (float) (optional) - CFG scale for initial image(default is 10.0)
+- `restore_faces` (boolean) (optional) - restore faces in the generated image (default is false)
 
 #### Request Example:
 
@@ -210,9 +214,12 @@ To perform image-to-image generation, use the following request parameters:
   ],
   "negative_prompt": "night, cartoon style",
   "steps": 50,
-  "cfg_scale": 7.0,
+  "cfg_scale": 10.0,
   "width": 512,
-  "height": 512
+  "height": 512,
+  "denoising_strength": 0.45,
+  "image_cfg_scale": 10.0,
+  "restore_faces": false
 }
 ```
 
