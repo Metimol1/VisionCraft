@@ -90,7 +90,7 @@ POST http://loplequ.domcloud.io/generate
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
 - `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20, defaults to 10)
-- `steps` (integer) (optional: default is 30)- the number of steps (1-30, defaults to 30)
+- `steps` (integer) (optional: default is 30)- the number of iterations that Stable Diffusion runs to go from random noise to a recognizable image based on the text prompt. As an extremely general rule of thumb, the higher the sampling steps, the more detail you will add to your image at the cost of longer processing time. (1-30, defaults to 30)
 
 **About parameters**
 
@@ -195,12 +195,12 @@ To perform image-to-image generation, use the following request parameters:
 - `token` (string) - your API key
 - `init_images` (list with one url) - initial image for generation
 - `negative_prompt` (string) (optional) - text prompt that the model should avoid in the image.
-- `steps` (integer) (optional) - the number of iterations that Stable Diffusion runs to go from random noise to a recognizable image based on the text prompt. As an extremely general rule of thumb, the higher the sampling steps, the more detail you will add to your image at the cost of longer processing time. (default is 50)
-- `cfg_scale` (float) (optional) - a parameter that controls how much the image generation process follows the text prompt (default is 7.0)
-- `width` (integer) (optional) - width of the generated image (default is 512)
-- `height` (integer) (optional) - height of the generated image (default is 512)
-- `denoising_strength` (float) (optional) - how similar the generated image will be to the original (default is 0.45)
-- `image_cfg_scale` (float) (optional) - CFG scale for initial image(default is 10.0)
+- `steps` (integer) (optional) - the number of iterations that Stable Diffusion runs to go from random noise to a recognizable image based on the text prompt. As an extremely general rule of thumb, the higher the sampling steps, the more detail you will add to your image at the cost of longer processing time. (1-100, default is 50)
+- `cfg_scale` (float) (optional) - a parameter that controls how much the image generation process follows the text prompt (0-20, default is 7.0)
+- `width` (integer) (optional) - width of the generated image (64-1024, default is 512)
+- `height` (integer) (optional) - height of the generated image (64-1024, default is 512)
+- `denoising_strength` (float) (optional) - how similar the generated image will be to the original (0-1, default is 0.45)
+- `image_cfg_scale` (float) (optional) - CFG scale for initial image(0-20, default is 10.0)
 - `restore_faces` (boolean) (optional) - restore faces in the generated image (default is false)
 
 #### Request Example:
