@@ -199,7 +199,7 @@ To perform image-to-image generation, use the following request parameters:
 - `cfg_scale` (float) (optional) - a parameter that controls how much the image generation process follows the text prompt (0-20, default is 7.0)
 - `width` (integer) (optional) - width of the generated image (64-1024, default is 512)
 - `height` (integer) (optional) - height of the generated image (64-1024, default is 512)
-- `denoising_strength` (float) (optional) - how similar the generated image will be to the original (0-1, default is 0.45)
+- `denoising_strength` (float) (optional) - how similar the generated image will be to the original. The closer the number is to zero, the more similar the generated image will be to the original. (0-1, default is 0.45)
 - `image_cfg_scale` (float) (optional) - CFG scale for initial image(0-20, default is 10.0)
 - `restore_faces` (boolean) (optional) - restore faces in the generated image (default is false)
 
