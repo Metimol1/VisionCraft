@@ -179,7 +179,7 @@ To perform image-to-image generation, use the following request parameters:
     "string"
   ],
   "negative_prompt": "",
-  "steps": 50,
+  "steps": 30,
   "cfg_scale": 7,
   "width": 512,
   "height": 512,
@@ -195,7 +195,7 @@ To perform image-to-image generation, use the following request parameters:
 - `token` (string) - your API key
 - `init_images` (list with one url) - initial image for generation
 - `negative_prompt` (string) (optional) - text prompt that the model should avoid in the image.
-- `steps` (integer) (optional) - the number of iterations that Stable Diffusion runs to go from random noise to a recognizable image based on the text prompt. As an extremely general rule of thumb, the higher the sampling steps, the more detail you will add to your image at the cost of longer processing time. (1-100, default is 50)
+- `steps` (integer) (optional) - the number of iterations that Stable Diffusion runs to go from random noise to a recognizable image based on the text prompt. As an extremely general rule of thumb, the higher the sampling steps, the more detail you will add to your image at the cost of longer processing time. (1-30, default is 30)
 - `cfg_scale` (float) (optional) - a parameter that controls how much the image generation process follows the text prompt (0-20, default is 7.0)
 - `width` (integer) (optional) - width of the generated image (64-1024, default is 512)
 - `height` (integer) (optional) - height of the generated image (64-1024, default is 512)
@@ -213,7 +213,7 @@ To perform image-to-image generation, use the following request parameters:
     "https://example.com/image1.jpg"
   ],
   "negative_prompt": "night, cartoon style",
-  "steps": 50,
+  "steps": 30,
   "cfg_scale": 10.0,
   "width": 512,
   "height": 512,
