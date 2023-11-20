@@ -165,7 +165,7 @@ for i, image_url in enumerate(image_urls):
 
 #### Request:
 ```
-POST http://loplequ.domcloud.io/img2img
+POST http://loplequ.domcloud.io/beta/img2img
 ```
 
 To perform image-to-image generation, use the following request parameters:
@@ -230,7 +230,7 @@ The response will contain the generated images.
 import requests, json
 
 token = "Your API token"
-url = "http://loplequ.domcloud.io/img2img/"
+url = "http://loplequ.domcloud.io/beta/img2img/"
 
 payload = json.dumps(
     {
