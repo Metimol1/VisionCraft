@@ -9,7 +9,7 @@
   - [Available Samplers](#available-samplers)
   - [Image Generation](#image-generation)
   - [Beta features](#beta-features)
-    -[Stable diffusion XL](#stable-diffusion-xl)
+    - [Stable diffusion XL](#stable-diffusion-xl)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
 - [Star History](#star-history)
