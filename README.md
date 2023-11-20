@@ -8,6 +8,8 @@
   - [Available Models](#available-models)
   - [Available Samplers](#available-samplers)
   - [Image Generation](#image-generation)
+  - [Beta features](#beta-features)
+    -[Stable diffusion XL](#stable-diffusion-xl)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
 - [Star History](#star-history)
@@ -158,6 +160,80 @@ for i, image_url in enumerate(image_urls):
     with open(f"generated_image_{i}.png", "wb") as f:
         f.write(response.content)
 ```
+
+## Beta features
+The features written below are in open testing, may occasionally stop working and may be removed or changed.
+
+### Stable diffusion XL
+You can generate images using the Stable Diffusion XL. To do this, you need to make a POST request and provide the necessary parameters.
+#### Request:
+```
+POST http://loplequ.domcloud.io/beta/sdxl
+```
+
+#### Request Parameters:
+- `sampler` (string) - the name of the chosen sampler
+- `prompt` (string) - a text prompt for generation
+- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
+- `token` (string) - your API key
+- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20, defaults to 10)
+- `steps` (integer) (optional: default is 30)- the number of steps (1-30, defaults to 30)
+
+#### Request Example:
+```
+{
+  "sampler": "Euler",
+  "prompt": "Beautiful landscape",
+  "negative_prompt": "Bad quality",
+  "token": "your_api_key",
+  "cfg_scale": 8,
+  "steps": 30
+}
+```
+
+The response to this request will contain a list of links to the generated images.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "http://loplequ.domcloud.io"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+sampler = "Euler"
+cfg_scale = 8
+steps = 30
+
+# Set up the data to send in the request
+data = {
+    "sampler": sampler,
+    "prompt": "Beautiful landscape",
+    "negative_prompt": "Bad quality",
+    "token": api_key,
+    "cfg_scale": cfg_scale,
+    "steps": steps
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/beta/sdxl", json=data, verify=False)
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
+    with open(f"generated_image_{i}.png", "wb") as f:
+        f.write(response.content)
+```
+
 
 ## Key Limitations
 
