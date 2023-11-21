@@ -20,7 +20,7 @@ The VisionCraft API documentation is designed for users who wish to interact wit
 
 ## Functional testing
 
-If you want to try how well my API generates images, then go to the [official site](http://loplequ.domcloud.io). There you can try all the models available in the API.
+If you want to try how well my API generates images, then go to the [official site](https://visioncraftapi--vladalek05.repl.co). There you can try all the models available in the API.
 
 ## Obtaining an API Key
 
@@ -40,17 +40,13 @@ To start using the VisionCraft API, you need to obtain an API key. This key is e
 
 ## Interacting with the API
 
-Once you have obtained your API key, you are ready to interact with the VisionCraft API. Below are the primary capabilities of the API.
-
-⚠️ **SSL Certificate Warning:** Please note that the VisionCraft API uses a free SSL certificate. If you encounter SSL-related errors, you may need to disable SSL verification when making requests.
-
 ### Available Models
 
 You can retrieve a list of available models for image generation. Each model has its unique characteristics and generation style.
 
 #### Request:
 ```
-GET http://loplequ.domcloud.io/models
+GET https://visioncraftapi--vladalek05.repl.co/models
 ```
 
 #### Response:
@@ -66,7 +62,7 @@ If you do not know which sampler to choose, I recommend reading [this article](h
 
 #### Request:
 ```
-GET http://loplequ.domcloud.io/samplers
+GET https://visioncraftapi--vladalek05.repl.co/samplers
 ```
 
 #### Response:
@@ -80,7 +76,7 @@ After selecting a specific model, you can generate images using the API. To do t
 
 #### Request:
 ```
-POST http://loplequ.domcloud.io/generate
+POST https://visioncraftapi--vladalek05.repl.co/generate
 ```
 
 #### Request Parameters:
@@ -122,7 +118,7 @@ The response to this request will contain a list of links to the generated image
 import requests
 
 # Define the API endpoint
-api_url = "http://loplequ.domcloud.io"
+api_url = "https://visioncraftapi--vladalek05.repl.co"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -168,7 +164,7 @@ The features written below are in open testing, may occasionally stop working an
 You can generate images using the Stable Diffusion XL. To do this, you need to make a POST request and provide the necessary parameters.
 #### Request:
 ```
-POST http://loplequ.domcloud.io/beta/sdxl
+POST https://visioncraftapi--vladalek05.repl.co/beta/sdxl
 ```
 
 #### Request Parameters:
@@ -200,7 +196,7 @@ The response to this request will contain a list of links to the generated image
 import requests
 
 # Define the API endpoint
-api_url = "http://loplequ.domcloud.io"
+api_url = "https://visioncraftapi--vladalek05.repl.co"
 
 # Obtain your API key
 api_key = "your_api_key"
