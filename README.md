@@ -22,6 +22,8 @@ The VisionCraft API documentation is designed for users who wish to interact wit
 
 If you want to try how well my API generates images, then go to the [official site](https://visioncraftapi--vladalek05.repl.co). There you can try all the models available in the API.
 
+P.S. Currently Functional testing website is not available.
+
 ## Obtaining an API Key
 
 To start using the VisionCraft API, you need to obtain an API key. This key is essential for every request to the API. You can obtain the key by following these steps:
