@@ -20,7 +20,7 @@ The VisionCraft API documentation is designed for users who wish to interact wit
 
 ## Functional testing
 
-If you want to try how well my API generates images, then go to the [official site](https://visioncraftapi--vladalek05.repl.co). There you can try all the models available in the API.
+If you want to try how well my API generates images, then go to the [official site](https://visioncraft.vercel.app). There you can try all the models available in the API.
 
 ## Obtaining an API Key
 
