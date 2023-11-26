@@ -8,7 +8,7 @@
   - [Available Models](#available-models)
   - [Available Samplers](#available-samplers)
   - [Image Generation](#image-generation)
-    - [Stable Diffusion 1.x](#stable-diffusion)
+    - [Stable Diffusion 1.x](#stable-diffusion-1.x)
     - [DALLE-mini](#dalle-mini)
   - [Beta features](#beta-features)
     - [Stable diffusion XL](#stable-diffusion-xl)
