@@ -72,11 +72,11 @@ GET https://visioncraftapi--vladalek05.repl.co/samplers
 ["Euler", "Euler a", "LMS", "Heun", "DPM2", "DPM2 a", ...]
 ```
 
-### Image Generation
+## Image Generation
 
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
-#### Stable Diffusion 1.x
+### Stable Diffusion 1.x
 
 #### Request:
 ```
