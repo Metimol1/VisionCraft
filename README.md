@@ -8,7 +8,7 @@
   - [Available Models](#available-models)
   - [Available Samplers](#available-samplers)
   - [Image Generation](#image-generation)
-    - [Stable Diffusion 1.x](#stable-diffusion-1_x)
+    - [Stable Diffusion 1.x](#stable-diffusion)
     - [DALLE-mini](#dalle-mini)
   - [Beta features](#beta-features)
     - [Stable diffusion XL](#stable-diffusion-xl)
@@ -76,7 +76,7 @@ GET https://visioncraftapi--vladalek05.repl.co/samplers
 
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
-### Stable Diffusion 1.x
+### Stable Diffusion
 
 #### Request:
 ```
