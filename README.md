@@ -162,6 +162,9 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
+## Beta features
+The features written below are in open testing, may occasionally stop working and may be removed or changed.
+
 ### DALLE-mini
 
 #### Request:
@@ -225,8 +228,6 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
-## Beta features
-The features written below are in open testing, may occasionally stop working and may be removed or changed.
 
 ### Stable diffusion XL
 You can generate images using the Stable Diffusion XL. To do this, you need to make a POST request and provide the necessary parameters.
