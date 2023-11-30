@@ -13,6 +13,7 @@
   - [Beta features](#beta-features)
     - [Stable diffusion XL](#stable-diffusion-xl)
 - [Key Limitations](#key-limitations)
+- [Libraries](#libraries)
 - [Contact Information](#contact-information)
 - [Star History](#star-history)
 
@@ -301,6 +302,10 @@ for i, image_url in enumerate(image_urls):
 ## Key Limitations
 
 It's important to note that your API key is linked to your subscription to the VisionCraft Telegram channel. If you unsubscribe from the channel, your key will cease to function. However, when you resubscribe to the channel, the key automatically renews its functionality.
+
+## Libraries
+
+#### [Flutter](https://pub.dev/packages/flutter_vision_craft)
 
 ## Contact Information
 
