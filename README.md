@@ -305,7 +305,7 @@ It's important to note that your API key is linked to your subscription to the V
 
 ## Libraries
 
-#### [Flutter package](https://pub.dev/packages/flutter_vision_craft)
+#### [Flutter package for using VisionCraft API](https://pub.dev/packages/flutter_vision_craft)
 
 ## Contact Information
 
