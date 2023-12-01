@@ -168,7 +168,7 @@ The features written below are in open testing, may occasionally stop working an
 
 #### Request:
 ```
-POST https://visioncraftapi--vladalek05.repl.co/dalle-mega
+POST https://visioncraftapi--vladalek05.repl.co/beta/dalle-mega
 ```
 
 #### Request Parameters:
