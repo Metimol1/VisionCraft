@@ -11,6 +11,7 @@
     - [Stable Diffusion 1.x](#stable-diffusion)
   - [Beta features](#beta-features)
     - [Stable Diffusion XL Turbo](#sdxl-turbo)
+    - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
 - [Libraries](#libraries)
 - [Contact Information](#contact-information)
