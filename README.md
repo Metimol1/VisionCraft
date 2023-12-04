@@ -252,7 +252,7 @@ The response to this request will contain a list of links to the generated image
 **Python Example:**
 
 ```
-import requests, base64, os
+import requests, base64
 
 def upscale_request(image):
     b = base64.b64encode(image).decode('utf-8')
@@ -266,11 +266,10 @@ def upscale_request(image):
     resp = requests.post(url, json=payload, headers=headers)
     return resp.content
 
-if __name__ == "__main__":
-    image = open('my_image.png', 'rb').read()
-    upscaled_image = upscale_request(image)
-    with open('upscaled_image.png', 'wb') as f:
-        f.write(upscaled_image)
+image = open('my_image.png', 'rb').read()
+upscaled_image = upscale_request(image)
+with open('upscaled_image.png', 'wb') as f:
+    f.write(upscaled_image)
 ```
 
 
