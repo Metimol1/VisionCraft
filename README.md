@@ -10,7 +10,7 @@
   - [Image Generation](#image-generation)
     - [Stable Diffusion 1.x](#stable-diffusion)
   - [Beta features](#beta-features)
-    - [DALLE-mega](#dalle-mega)
+    - [Stable Diffusion XL Turbo](#sdxl-turbo)
 - [Key Limitations](#key-limitations)
 - [Libraries](#libraries)
 - [Contact Information](#contact-information)
@@ -164,11 +164,11 @@ for i, image_url in enumerate(image_urls):
 ## Beta features
 The features written below are in open testing, may occasionally stop working and may be removed or changed.
 
-### DALLE-mega
+### SDXL-Turbo
 
 #### Request:
 ```
-POST https://visioncraftapi--vladalek05.repl.co/beta/dalle-mega
+POST https://visioncraftapi--vladalek05.repl.co/beta/sdxl-turbo
 ```
 
 #### Request Parameters:
@@ -213,7 +213,7 @@ data = {
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/beta/dalle-mega", json=data, verify=False)
+response = requests.post(f"{api_url}/beta/sdxl-turbo", json=data, verify=False)
 
 # Extract the image URLs from the response
 image_urls = response.json()["images"]
