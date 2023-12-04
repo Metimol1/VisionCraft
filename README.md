@@ -228,6 +228,52 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
+### Upscale Image
+
+#### Request:
+```
+POST https://visioncraftapi--vladalek05.repl.co/beta/upscale
+```
+
+#### Request Parameters:
+- `token` (string) - your API key
+- `image` (bytes-like object) - your image for upscaling
+
+#### Request Example:
+```
+{
+  "token": "your_api_key",
+  "image": "your image in bytes"
+}
+```
+
+The response to this request will contain a list of links to the generated images.
+
+**Python Example:**
+
+```
+import requests, base64, os
+
+def upscale_request(image):
+    b = base64.b64encode(image).decode('utf-8')
+    payload = {
+        "token": "your_token",
+        "image": b
+    }
+    url = 'https://visioncraftapi.vladalek05.repl.co/beta/upscale'
+    headers = {"content-type": "application/json"}
+
+    resp = requests.post(url, json=payload, headers=headers)
+    return resp.content
+
+if __name__ == "__main__":
+    image = open('my_image.png', 'rb').read()
+    upscaled_image = upscale_request(image)
+    with open('upscaled_image.png', 'wb') as f:
+        f.write(upscaled_image)
+```
+
+
 ## Key Limitations
 
 It's important to note that your API key is linked to your subscription to the VisionCraft Telegram channel. If you unsubscribe from the channel, your key will cease to function. However, when you resubscribe to the channel, the key automatically renews its functionality.
