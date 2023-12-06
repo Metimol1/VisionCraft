@@ -11,6 +11,7 @@
     - [Stable Diffusion 1.x](#stable-diffusion)
   - [Beta features](#beta-features)
     - [Stable Diffusion XL Turbo](#sdxl-turbo)
+    - [Pixart](#pixart)
     - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
 - [Libraries](#libraries)
@@ -227,6 +228,70 @@ for i, image_url in enumerate(image_urls):
     with open(f"generated_image_{i}.png", "wb") as f:
         f.write(response.content)
 ```
+
+### Pixart
+
+#### Request:
+```
+POST https://visioncraftapi--vladalek05.repl.co/beta/pixart
+```
+
+#### Request Parameters:
+- `prompt` (string) - a text prompt for generation
+- `image_count` (integer) - the number of images to generate (up to 5 in a single request)
+- `token` (string) - your API key
+- `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
+- `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
+
+#### Request Example:
+```
+{
+  "prompt": "Beautiful landscape",
+  "image_count": 1,
+  "token": "your_api_key",
+  "height: 768,
+  "width": 1024
+}
+```
+
+The response to this request will contain a list of links to the generated images.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://visioncraftapi--vladalek05.repl.co"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Set up the data to send in the request
+data = {
+    "prompt": "Beautiful landscape",
+    "image_count": 2,
+    "token": api_key,
+    "width": 1024,
+    "height": 768
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/beta/pixart", json=data, verify=False)
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
+    with open(f"generated_image_{i}.png", "wb") as f:
+        f.write(response.content)
+```
+
 
 ### Upscale Image
 
