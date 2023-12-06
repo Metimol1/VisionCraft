@@ -11,7 +11,7 @@
     - [Stable Diffusion 1.x](#stable-diffusion)
   - [Beta features](#beta-features)
     - [Stable Diffusion XL Turbo](#sdxl-turbo)
-    - [Pixart](#pixart)
+    - [Pixart-alpha](#pixart-alpha)
     - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
 - [Libraries](#libraries)
@@ -229,7 +229,7 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
-### Pixart
+### Pixart-alpha
 
 #### Request:
 ```
