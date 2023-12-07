@@ -164,7 +164,8 @@ for i, image_url in enumerate(image_urls):
 ```
 
 ## Beta features
-The features written below are in open testing, may occasionally stop working and may be removed or changed.
+> [!IMPORTANT]
+> The features written below are in open testing, may occasionally stop working and may be removed or changed.
 
 ### SDXL-Turbo
 
