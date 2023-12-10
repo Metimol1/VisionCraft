@@ -7,6 +7,7 @@
 - [Interacting with the API](#interacting-with-the-api)
   - [Available Models](#available-models)
   - [Available Samplers](#available-samplers)
+  - [Available Loras](#available-loras)
   - [Image Generation](#image-generation)
     - [Stable Diffusion 1.x](#stable-diffusion)
   - [Beta features](#beta-features)
@@ -73,6 +74,21 @@ GET https://visioncraftapi--vladalek05.repl.co/samplers
 ```
 ["Euler", "Euler a", "LMS", "Heun", "DPM2", "DPM2 a", ...]
 ```
+
+### Available Loras
+
+You can retrieve a list of available Loras for image generation.
+
+#### Request:
+```
+GET https://visioncraftapi--vladalek05.repl.co/loras
+```
+
+#### Response:
+```
+["0mib3_v10", "3DMM_V12", "age_slider_v20", "arcane_offset", "AstralMecha", "epi_noiseoffset2", "eye_size_slider_v1", ...]
+```
+
 
 ## Image Generation
 
