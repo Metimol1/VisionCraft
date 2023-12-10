@@ -110,12 +110,15 @@ POST https://visioncraftapi--vladalek05.repl.co/generate
 - `token` (string) - your API key
 - `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20, defaults to 10)
 - `steps` (integer) (optional: default is 30)- the number of steps (1-30, defaults to 30)
+- `loras` (dict) (optional) - a dictionary in which the key is the name Lora, and the meaning is its weight.
 
 **About parameters**
 
 **CFG_Scale**: How strongly the image should conform to the text - lower values produce more creative results.
 
 **Steps**: How many times to improve the generated image iteratively; higher values take longer; very low values can produce bad results.
+
+**Loras**: LoRA models are small trained models for Stable Diffusion that make additional changes to image generation and are used in conjunction with standard models.
 
 #### Request Example:
 ```
@@ -127,7 +130,8 @@ POST https://visioncraftapi--vladalek05.repl.co/generate
   "image_count": 3,
   "token": "your_api_key",
   "cfg_scale": 8,
-  "steps": 30
+  "steps": 30,
+  "loras": {"3DMM_V12": 1, "GrayClay_V1.5.5": 2}
 }
 ```
 
@@ -151,6 +155,7 @@ sampler = "Euler"
 image_count = 3
 cfg_scale = 8
 steps = 30
+loras = {"3DMM_V12": 1, "GrayClay_V1.5.5": 2}
 
 # Set up the data to send in the request
 data = {
@@ -161,7 +166,8 @@ data = {
     "image_count": image_count,
     "token": api_key,
     "cfg_scale": cfg_scale,
-    "steps": steps
+    "steps": steps,
+    "loras": loras
 }
 
 # Send the request to generate images
