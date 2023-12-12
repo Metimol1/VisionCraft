@@ -284,7 +284,7 @@ The response to this request will contain a list of links to the generated image
 
 ```
 # Python code for interacting with VisionCraft API
-import requests
+import requests, base64
 
 # Define the API endpoint
 api_url = "https://visioncraftapi--vladalek05.repl.co"
@@ -292,8 +292,8 @@ api_url = "https://visioncraftapi--vladalek05.repl.co"
 # Obtain your API key
 api_key = "your_api_key"
 
-with open("my_image.jpg", "rb") as image:
-  image_base64 = image.read()
+with open("my_image.png", "rb") as image:
+  image_base64 = base64.b64encode(image.read()).decode("utf-8")
 
 # Set up the data to send in the request
 data = {
@@ -308,15 +308,13 @@ data = {
 response = requests.post(f"{api_url}/beta/img2img", json=data, verify=False)
 
 # Extract the image URLs from the response
-image_urls = response.json()["images"]
+image_url = response.json()["images"]
 
-# Download and save the generated images
-for i, image_url in enumerate(image_urls):
-    # Get the image data from the URL
-    response = requests.get(image_url)
-    # Save the image locally
-    with open(f"generated_image_{i}.png", "wb") as f:
-        f.write(response.content)
+# Get the image data from the URL
+response = requests.get(image_url)
+# Save the image locally
+with open(f"generated_image.png", "wb") as f:
+    f.write(response.content)
 ```
 
 
