@@ -109,8 +109,8 @@ POST https://visioncraftapi--vladalek05.repl.co/generate
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
-- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20, defaults to 10)
-- `steps` (integer) (optional: default is 30)- the number of steps (1-30, defaults to 30)
+- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
+- `steps` (integer) (optional: default is 30)- the number of steps (1-30)
 - `loras` (dict) (optional) - a dictionary in which the key is the name Lora, and the meaning is its weight.
 
 **About parameters**
@@ -252,6 +252,73 @@ for i, image_url in enumerate(image_urls):
     with open(f"generated_image_{i}.png", "wb") as f:
         f.write(response.content)
 ```
+
+### Image to Image
+
+#### Request:
+```
+POST https://visioncraftapi--vladalek05.repl.co/beta/img2img
+```
+
+#### Request Parameters:
+- `prompt` (string) - a text prompt for generation
+- `token` (string) - your API key
+- `steps` (integer) (optional: default is 7) - the number of steps (1-10)
+- `image` (base64 string) - your image in base64 format
+- `strength` (float) (optional: default is 0.5) - how similar the generated image will be to the original. The lower the number, the more similar the generated image will be to the original. (0.0-1.0)
+
+#### Request Example:
+```
+{
+  "prompt": "Beautiful lady",
+  "token": "your_api_key",
+  "image": "your_image_in_base64_format",
+  "steps": 6,
+  "strength": 0.7
+}
+```
+
+The response to this request will contain a list of links to the generated images.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://visioncraftapi--vladalek05.repl.co"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+with open("my_image.jpg", "rb") as image:
+  image_base64 = image.read()
+
+# Set up the data to send in the request
+data = {
+    "prompt": "Beautiful girl",
+    "token": api_key,
+    "image": image_base64,
+    "steps": 6,
+    "strength": 0.7
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/beta/img2img", json=data, verify=False)
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
+    with open(f"generated_image_{i}.png", "wb") as f:
+        f.write(response.content)
+```
+
 
 ### Pixart-alpha
 
