@@ -12,6 +12,7 @@
     - [Stable Diffusion 1.x](#stable-diffusion)
   - [Beta features](#beta-features)
     - [Stable Diffusion XL Turbo](#sdxl-turbo)
+    - [Image to Image](#image-to-image)
     - [Pixart-alpha](#pixart-alpha)
     - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
