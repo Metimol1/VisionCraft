@@ -308,7 +308,7 @@ data = {
 response = requests.post(f"{api_url}/beta/img2img", json=data, verify=False)
 
 # Extract the image URLs from the response
-image_url = response.json()["images"]
+image_url = response.json()["images"][0]
 
 # Get the image data from the URL
 response = requests.get(image_url)
