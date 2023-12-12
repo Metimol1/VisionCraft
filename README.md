@@ -109,7 +109,7 @@ POST https://visioncraftapi--vladalek05.repl.co/generate
 - `image_count` (integer) - the number of images to generate (up to 5 in a single request)
 - `token` (string) - your API key
 - `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
-- `steps` (integer) (optional: default is 30)- the number of steps (1-30)
+- `steps` (integer) (optional: default is 30)- the number of steps (1-50)
 - `loras` (dict) (optional) - a dictionary in which the key is the name Lora, and the meaning is its weight.
 
 **About parameters**
@@ -126,7 +126,7 @@ POST https://visioncraftapi--vladalek05.repl.co/generate
   "model": "anything_V5",
   "sampler": "Euler",
   "prompt": "Beautiful landscape",
-  "negative_prompt": "canvas frame, cartoon, 3d, ((disfigured)), ((bad art)), ((deformed)),((extra limbs)),((close up)),((b&w)), weird colors, blurry, (((duplicate))), ((morbid)), ((mutilated)), [out of frame], extra fingers, mutated hands, ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), (((deformed))), ((ugly)), blurry, ((bad anatomy)), (((bad proportions))), ((extra limbs)), cloned face, (((disfigured))), out of frame, ugly, extra limbs, (bad anatomy), gross proportions, (malformed limbs), ((missing arms)), ((missing legs)), (((extra arms))), (((extra legs))), mutated hands, (fused fingers), (too many fingers), (((long neck))), Photoshop, video game, ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, mutation, mutated, extra limbs, extra legs, extra arms, disfigured, deformed, cross-eye, body out of frame, blurry, bad art, bad anatomy, 3d render",
+  "negative_prompt": "canvas frame, cartoon, 3d, ((disfigured)), ((bad art)), ((deformed)), ((extra limbs)), ((close up)), ((b&w)), weird colors, blurry, (((duplicate))), ((morbid)), ((mutilated)), [out of frame], extra fingers, mutated hands, ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), ((ugly)), (((bad proportions))), (malformed limbs), ((missing arms)), ((missing legs)), (((extra arms))), (((extra legs))), (fused fingers), (too many fingers), (((long neck))), Photoshop, video game, tiling, poorly drawn feet, body out of frame",
   "image_count": 3,
   "token": "your_api_key",
   "cfg_scale": 8,
