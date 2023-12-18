@@ -186,7 +186,8 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
-### Image to Image
+
+## Image to Image
 
 #### Request:
 ```
