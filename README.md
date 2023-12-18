@@ -256,7 +256,7 @@ data = {
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/beta/sdxl-turbo", json=data, verify=False)
+response = requests.post(f"{api_url}/generate-xl", json=data, verify=False)
 
 # Extract the image URLs from the response
 image_urls = response.json()["images"]
