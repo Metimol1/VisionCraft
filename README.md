@@ -95,7 +95,7 @@ GET https://visioncraftapi--vladalek05.repl.co/loras
 
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
-### Image Generation 1.x
+### Stable Diffusion 1.x
 
 #### Request:
 ```
@@ -186,6 +186,91 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
+## Image generation XL
+
+### Available Models
+
+You can retrieve a list of available models for image generation XL. Each model has its unique characteristics and generation style.
+
+#### Request:
+```
+GET https://visioncraftapi--vladalek05.repl.co/models-xl
+```
+
+#### Response:
+```
+["sdxl-turbo","pixart-alpha","playground-v2","deliberate-v3","dreamshaper-v8", ...]
+```
+
+After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
+
+### Stable Diffusion XL
+
+#### Request:
+```
+POST https://visioncraftapi--vladalek05.repl.co/generate-xl
+```
+
+#### Request Parameters:
+- `model` (string) - the name of the chosen XL model
+- `prompt` (string) - a text prompt for generation
+- `image_count` (integer) - the number of images to generate (up to 5 in a single request)
+- `token` (string) - your API key
+- `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
+- `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
+
+#### Request Example:
+```
+{
+  "model": "pixart-alpha",
+  "prompt": "Beautiful landscape",
+  "image_count": 1,
+  "token": "your_api_key",
+  "height: 768,
+  "width": 1024
+}
+```
+
+The response to this request will contain a list of links to the generated images.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://visioncraftapi--vladalek05.repl.co"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Set up the data to send in the request
+data = {
+    "model": "pixart-alpha",
+    "prompt": "Beautiful landscape",
+    "image_count": 1,
+    "token": api_key,
+    "width": 1024,
+    "height": 768
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/beta/sdxl-turbo", json=data, verify=False)
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
+    with open(f"generated_image_{i}.png", "wb") as f:
+        f.write(response.content)
+```
+
+
 
 ## Image to Image
 
@@ -199,7 +284,7 @@ POST https://visioncraftapi--vladalek05.repl.co/img2img
 - `token` (string) - your API key
 - `steps` (integer) (optional: default is 7) - the number of steps (1-10)
 - `image` (base64 string) - your image in base64 format
-- `strength` (float) (optional: default is 0.5) - how similar the generated image will be to the original. The lower the number, the more similar the generated image will be to the original. (0.0-1.0)
+- `strength` (float) (optional: default is 0.7) - how similar the generated image will be to the original. The lower the number, the more similar the generated image will be to the original. (0.0-1.0)
 
 #### Request Example:
 ```
@@ -207,7 +292,7 @@ POST https://visioncraftapi--vladalek05.repl.co/img2img
   "prompt": "Beautiful lady",
   "token": "your_api_key",
   "image": "your_image_in_base64_format",
-  "steps": 6,
+  "steps": 7,
   "strength": 0.7
 }
 ```
@@ -234,7 +319,7 @@ data = {
     "prompt": "Beautiful girl",
     "token": api_key,
     "image": image_base64,
-    "steps": 6,
+    "steps": 7,
     "strength": 0.7
 }
 
@@ -255,70 +340,6 @@ with open(f"generated_image.png", "wb") as f:
 ## Beta features
 > [!IMPORTANT]
 > The features written below are in open testing, may occasionally stop working and may be removed or changed.
-
-### SDXL-Turbo
-
-#### Request:
-```
-POST https://visioncraftapi--vladalek05.repl.co/beta/sdxl-turbo
-```
-
-#### Request Parameters:
-- `prompt` (string) - a text prompt for generation
-- `image_count` (integer) - the number of images to generate (up to 5 in a single request)
-- `token` (string) - your API key
-- `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
-- `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
-
-#### Request Example:
-```
-{
-  "prompt": "Beautiful landscape",
-  "image_count": 1,
-  "token": "your_api_key",
-  "height: 768,
-  "width": 1024
-}
-```
-
-The response to this request will contain a list of links to the generated images.
-
-**Python Example:**
-
-```
-# Python code for interacting with VisionCraft API
-import requests
-
-# Define the API endpoint
-api_url = "https://visioncraftapi--vladalek05.repl.co"
-
-# Obtain your API key
-api_key = "your_api_key"
-
-# Set up the data to send in the request
-data = {
-    "prompt": "Beautiful landscape",
-    "image_count": 2,
-    "token": api_key,
-    "width": 1024,
-    "height": 768
-}
-
-# Send the request to generate images
-response = requests.post(f"{api_url}/beta/sdxl-turbo", json=data, verify=False)
-
-# Extract the image URLs from the response
-image_urls = response.json()["images"]
-
-# Download and save the generated images
-for i, image_url in enumerate(image_urls):
-    # Get the image data from the URL
-    response = requests.get(image_url)
-    # Save the image locally
-    with open(f"generated_image_{i}.png", "wb") as f:
-        f.write(response.content)
-```
-
 
 ### Upscale Image
 
