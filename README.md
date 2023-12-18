@@ -44,7 +44,7 @@ To start using the VisionCraft API, you need to obtain an API key. This key is e
 
    It is essential to protect your API key. Do not share it with other users, and do not post it in public places. Otherwise, your key will be banned, and generating a new key is not possible. One Telegram account is associated with one key.
 
-## Interacting with the API
+# Interacting with the API
 
 ## Image Generation 1.x
 
