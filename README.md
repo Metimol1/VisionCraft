@@ -5,11 +5,11 @@
 - [Functional Testing](#functional-testing)
 - [Obtaining an API Key](#obtaining-an-api-key)
 - [Interacting with the API](#interacting-with-the-api)
-  - [Image Generation with Stable Diffusion 1.x](#image-generation-1.x)
-    - [Available 1.x Models](#available-1.x-models)
+  - [Image Generation with Stable Diffusion 1.x](#image-generation)
+    - [Available Models](#available-models)
     - [Available Samplers](#available-samplers)
     - [Available Loras](#available-loras)
-    - [Image generation](#image-generation-1.x)
+    - [Image generation](#image-generation)
   - [Image Generation with Stable Diffusion XL](#image-generation-xl)
     - [Available XL Models](#available-xl-models)
     - [Image generation](#stable-diffusion-xl)
@@ -46,9 +46,9 @@ To start using the VisionCraft API, you need to obtain an API key. This key is e
 
 # Interacting with the API
 
-## Image Generation 1.x
+## Image Generation
 
-### Available 1.x Models
+### Available Models
 
 You can retrieve a list of available models for image generation. Each model has its unique characteristics and generation style.
 
@@ -95,7 +95,7 @@ GET https://visioncraftapi--vladalek05.repl.co/loras
 
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
-### Stable Diffusion 1.x
+### Stable Diffusion
 
 #### Request:
 ```
