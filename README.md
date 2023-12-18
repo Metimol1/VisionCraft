@@ -48,7 +48,7 @@ To start using the VisionCraft API, you need to obtain an API key. This key is e
 
 ## Image Generation 1.x
 
-### Available Models
+### Available 1.x Models
 
 You can retrieve a list of available models for image generation. Each model has its unique characteristics and generation style.
 
@@ -188,7 +188,7 @@ for i, image_url in enumerate(image_urls):
 
 ## Image generation XL
 
-### Available Models
+### Available XL Models
 
 You can retrieve a list of available models for image generation XL. Each model has its unique characteristics and generation style.
 
