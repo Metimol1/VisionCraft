@@ -222,7 +222,7 @@ POST https://visioncraftapi--vladalek05.repl.co/generate-xl
 #### Request Example:
 ```
 {
-  "model": "pixart-alpha",
+  "model": "sdxl-turbo",
   "prompt": "Beautiful landscape",
   "image_count": 1,
   "token": "your_api_key",
@@ -247,7 +247,7 @@ api_key = "your_api_key"
 
 # Set up the data to send in the request
 data = {
-    "model": "pixart-alpha",
+    "model": "sdxl-turbo",
     "prompt": "Beautiful landscape",
     "image_count": 1,
     "token": api_key,
