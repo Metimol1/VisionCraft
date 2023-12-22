@@ -257,7 +257,8 @@ data = {
     "image_count": 1,
     "token": api_key,
     "width": 1024,
-    "height": 768
+    "height": 768,
+    "enhance": False
 }
 
 # Send the request to generate images
