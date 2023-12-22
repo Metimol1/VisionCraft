@@ -219,6 +219,7 @@ POST https://visioncraftapi--vladalek05.repl.co/generate-xl
 - `token` (string) - your API key
 - `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
+- `enhance` (bool) - whether to improve the quality of the generated image, default is `False`.
 
 #### Request Example:
 ```
@@ -229,7 +230,8 @@ POST https://visioncraftapi--vladalek05.repl.co/generate-xl
   "image_count": 1,
   "token": "your_api_key",
   "height: 768,
-  "width": 1024
+  "width": 1024,
+  "enhance": False
 }
 ```
 
