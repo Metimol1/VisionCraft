@@ -214,6 +214,7 @@ POST https://visioncraftapi--vladalek05.repl.co/generate-xl
 #### Request Parameters:
 - `model` (string) - the name of the chosen XL model
 - `prompt` (string) - a text prompt for generation
+- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `image_count` (integer) - the number of images to generate (up to 2 in a single request)
 - `token` (string) - your API key
 - `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
@@ -224,6 +225,7 @@ POST https://visioncraftapi--vladalek05.repl.co/generate-xl
 {
   "model": "sdxl-turbo",
   "prompt": "Beautiful landscape",
+  "negative_prompt": "bad quality",
   "image_count": 1,
   "token": "your_api_key",
   "height: 768,
@@ -249,6 +251,7 @@ api_key = "your_api_key"
 data = {
     "model": "sdxl-turbo",
     "prompt": "Beautiful landscape",
+    "negative_prompt": "bad quality",
     "image_count": 1,
     "token": api_key,
     "width": 1024,
