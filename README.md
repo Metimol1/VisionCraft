@@ -54,7 +54,7 @@ You can retrieve a list of available models for image generation. Each model has
 
 #### Request:
 ```
-GET https://visioncraftapi--vladalek05.repl.co/models
+GET https://visioncraftapi.vercel.app/models
 ```
 
 #### Response:
@@ -70,7 +70,7 @@ If you do not know which sampler to choose, I recommend reading [this article](h
 
 #### Request:
 ```
-GET https://visioncraftapi--vladalek05.repl.co/samplers
+GET https://visioncraftapi.vercel.app/samplers
 ```
 
 #### Response:
@@ -84,7 +84,7 @@ You can retrieve a list of available Loras for image generation.
 
 #### Request:
 ```
-GET https://visioncraftapi--vladalek05.repl.co/loras
+GET https://visioncraftapi.vercel.app/loras
 ```
 
 #### Response:
@@ -99,7 +99,7 @@ After selecting a specific model, you can generate images using the API. To do t
 
 #### Request:
 ```
-POST https://visioncraftapi--vladalek05.repl.co/generate
+POST https://visioncraftapi.vercel.app/generate
 ```
 
 #### Request Parameters:
@@ -145,7 +145,7 @@ The response to this request will contain a list of links to the generated image
 import requests
 
 # Define the API endpoint
-api_url = "https://visioncraftapi--vladalek05.repl.co"
+api_url = "https://visioncraftapi.vercel.app"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -194,7 +194,7 @@ You can retrieve a list of available models for image generation XL. Each model 
 
 #### Request:
 ```
-GET https://visioncraftapi--vladalek05.repl.co/models-xl
+GET https://visioncraftapi.vercel.app/models-xl
 ```
 
 #### Response:
@@ -208,7 +208,7 @@ After selecting a specific model, you can generate images using the API. To do t
 
 #### Request:
 ```
-POST https://visioncraftapi--vladalek05.repl.co/generate-xl
+POST https://visioncraftapi.vercel.app/generate-xl
 ```
 
 #### Request Parameters:
@@ -244,7 +244,7 @@ The response to this request will contain a list of links to the generated image
 import requests
 
 # Define the API endpoint
-api_url = "https://visioncraftapi--vladalek05.repl.co"
+api_url = "https://visioncraftapi.vercel.app"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -282,7 +282,7 @@ for i, image_url in enumerate(image_urls):
 
 #### Request:
 ```
-POST https://visioncraftapi--vladalek05.repl.co/img2img
+POST https://visioncraftapi.vercel.app/img2img
 ```
 
 #### Request Parameters:
@@ -312,7 +312,7 @@ The response to this request will contain a list of links to the generated image
 import requests, base64
 
 # Define the API endpoint
-api_url = "https://visioncraftapi--vladalek05.repl.co"
+api_url = "https://visioncraftapi.vercel.app"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -351,7 +351,7 @@ with open(f"generated_image.png", "wb") as f:
 
 #### Request:
 ```
-POST https://visioncraftapi--vladalek05.repl.co/beta/upscale
+POST https://visioncraftapi.vercel.app/beta/upscale
 ```
 
 #### Request Parameters:
@@ -379,7 +379,7 @@ def upscale_request(image):
         "token": "your_token",
         "image": b
     }
-    url = 'https://visioncraftapi.vladalek05.repl.co/beta/upscale'
+    url = 'https://visioncraftapi.vercel.app/beta/upscale'
     headers = {"content-type": "application/json"}
 
     resp = requests.post(url, json=payload, headers=headers)
