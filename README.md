@@ -2,7 +2,7 @@
 
 ## Official links:
 - [Official Telegram channel](https://t.me/visioncraft_channel)
-- [Official website](https://visioncraft.vercel.app)
+- [Official Website](https://visioncraft.vercel.app)
 - [Official Flutter package](https://pub.dev/packages/flutter_vision_craft)
 
 ## Table of Contents
