@@ -1,5 +1,10 @@
 # VisionCraft API Documentation
 
+## Official links:
+- [Official Telegram channel](https://t.me/visioncraft_channel)
+- [Official website](https://visioncraft.vercel.app)
+- [Official Flutter package](https://pub.dev/packages/flutter_vision_craft)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Functional Testing](#functional-testing)
@@ -395,10 +400,6 @@ with open('upscaled_image.png', 'wb') as f:
 ## Key Limitations
 
 It's important to note that your API key is linked to your subscription to the VisionCraft Telegram channel. If you unsubscribe from the channel, your key will cease to function. However, when you resubscribe to the channel, the key automatically renews its functionality.
-
-## Libraries
-
-#### [Flutter package for using VisionCraft API](https://pub.dev/packages/flutter_vision_craft)
 
 ## Contact Information
 
