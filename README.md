@@ -22,7 +22,6 @@
   - [Beta features](#beta-features)
     - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
-- [Libraries](#libraries)
 - [Contact Information](#contact-information)
 
 ## Introduction
