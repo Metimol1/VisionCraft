@@ -1,9 +1,10 @@
 # VisionCraft API Documentation
 
 ## Official links:
-- [Official Telegram channel](https://t.me/visioncraft_channel)
-- [Official Website](https://visioncraft.vercel.app)
-- [Official Flutter package](https://pub.dev/packages/flutter_vision_craft)
+- [Telegram channel](https://t.me/visioncraft_channel)
+- [Website](https://visioncraft.vercel.app)
+- [Android app](https://github.com/VisionCraft-org/vision-craft-mobile)
+- [Flutter package](https://pub.dev/packages/flutter_vision_craft)
 
 ## Table of Contents
 - [Introduction](#introduction)
