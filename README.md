@@ -392,6 +392,25 @@ POST https://visioncraft-rs24.koyeb.app/llm
 
 The response to this request will contain a response from LLM model.
 
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests, json
+
+response = requests.post(
+  url="https://visioncraft-rs24.koyeb.app/llm",
+  data=json.dumps({
+    "token": "your_token",
+    "model": "mistral-7b-instruct",
+    "messages": [
+      {"role": "user", "content": "What is the meaning of life?"}
+    ]
+  })
+)
+
+print(response)
+
 ## Beta features
 > [!IMPORTANT]
 > The features written below are in open testing, may occasionally stop working and may be removed or changed.
