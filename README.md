@@ -20,6 +20,9 @@
     - [Available XL Models](#available-xl-models)
     - [Image generation](#stable-diffusion-xl)
   - [Image to Image generation](#image-to-image)
+  - [LLM generation](#llm-generation)
+    - [Available LLM models](#llm-models)
+    - [Text generation](#text-generation)
   - [Beta features](#beta-features)
     - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
@@ -345,6 +348,22 @@ response = requests.get(image_url)
 # Save the image locally
 with open(f"generated_image.png", "wb") as f:
     f.write(response.content)
+```
+
+## Image Generation
+
+### Available Models
+
+You can retrieve a list of available models for text generation.
+
+#### Request:
+```
+GET https://visioncraft-rs24.koyeb.app/models-llm
+```
+
+#### Response:
+```
+["3guofeng3_v3.4", "absolutereality_v1.6", "absolutereality_v1.8.1", "amIReal_v4.1", "analog_diffusion_v1", "anything_v3.0", "anything_v4.5", "anything_V5", ...]
 ```
 
 
