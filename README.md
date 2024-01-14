@@ -410,6 +410,7 @@ response = requests.post(
 )
 
 print(response)
+```
 
 ## Beta features
 > [!IMPORTANT]
