@@ -366,6 +366,31 @@ GET https://visioncraft-rs24.koyeb.app/models-llm
 ["nous-capybara-7b", "mistral-7b-instruct", "zephyr-7b-beta", "openchat-7b", ...]
 ```
 
+### Text generation
+After selecting model, you can generate text.
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/llm
+```
+
+#### Request Parameters:
+- `model` (string) - the name of the chosen LLM model
+- `token` (string) - your API key
+- `messages` (list) - messages to the LLM
+
+#### Request Example:
+```
+{
+  "model": "mistral-7b-instruct",
+  "token": "your_api_key",
+  "messages": [
+    {"role": "user", "content": "What is the meaning of life?"}
+  ]
+}
+```
+
+The response to this request will contain a response from LLM model.
 
 ## Beta features
 > [!IMPORTANT]
