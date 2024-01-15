@@ -404,7 +404,12 @@ response = requests.post(
     "token": "your_token",
     "model": "mistral-7b-instruct",
     "messages": [
-      {"role": "user", "content": "What is the meaning of life?"}
+      {"role": "system", "content": "You are a helpful assistant."},
+      {"role": "user", "content": "Tell me a joke."},
+      {"role": "assistant", "content": "Sure, here's a joke: Why don't scientists trust atoms? Because they make up everything!"},
+      {"role": "user", "content": "That's a good one! Tell me another."},
+      {"role": "assistant", "content": "Why did the computer go to therapy? It had too many bytes of emotional baggage."},
+      {"role": "user", "content": "Haha, nice! What's the weather like today?"}
     ]
   })
 )
