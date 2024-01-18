@@ -207,7 +207,7 @@ GET https://visioncraft-rs24.koyeb.app/models-xl
 
 #### Response:
 ```
-["deliberate-v3","dreamshaper-v8", "swizz8", ...]
+["sdxl-base","sdxl-turbo", "deliberate-v3","dreamshaper-v8", "swizz8", ...]
 ```
 
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
@@ -232,7 +232,7 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 #### Request Example:
 ```
 {
-  "model": "sdxl-turbo",
+  "model": "sdxl-base",
   "prompt": "Beautiful landscape",
   "negative_prompt": "bad quality",
   "image_count": 1,
@@ -259,7 +259,7 @@ api_key = "your_api_key"
 
 # Set up the data to send in the request
 data = {
-    "model": "sdxl-turbo",
+    "model": "sdxl-base",
     "prompt": "Beautiful landscape",
     "negative_prompt": "bad quality",
     "image_count": 1,
