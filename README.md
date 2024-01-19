@@ -422,6 +422,77 @@ print(response.json())
 > [!IMPORTANT]
 > The features written below are in open testing, may occasionally stop working and may be removed or changed.
 
+### Text to GIF
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/beta/generate-gif
+```
+
+#### Request Parameters:
+- `token` (string) - your API key
+- `sampler` (string) - the name of the chosen sampler
+- `prompt` (string) - a text prompt for generation
+- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
+- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
+- `steps` (integer) (optional: default is 30)- the number of steps (1-50)
+
+#### Request Example:
+```
+{
+  "sampler": "Euler",
+  "prompt": "Beautiful landscape",
+  "negative_prompt": "canvas frame, cartoon, 3d, ((disfigured)), ((bad art)), ((deformed)), ((extra limbs)), ((close up)), ((b&w)), weird colors, blurry, (((duplicate))), ((morbid)), ((mutilated)), [out of frame], extra fingers, mutated hands, ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), ((ugly)), (((bad proportions))), (malformed limbs), ((missing arms)), ((missing legs)), (((extra arms))), (((extra legs))), (fused fingers), (too many fingers), (((long neck))), Photoshop, video game, tiling, poorly drawn feet, body out of frame",
+  "token": "your_api_key",
+  "cfg_scale": 8,
+  "steps": 30
+}
+```
+
+The response to this request will contain a list of link to the generated GIF.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://visioncraft-rs24.koyeb.app"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Generate images using a specific model
+sampler = "Euler"
+cfg_scale = 8
+steps = 30
+
+# Set up the data to send in the request
+data = {
+    "sampler": sampler,
+    "prompt": "Beautiful landscape",
+    "negative_prompt": "canvas frame, cartoon, 3d, ((disfigured)), ((bad art)), ((deformed)),((extra limbs)),((close up)),((b&w)), weird colors, blurry, (((duplicate))), ((morbid)), ((mutilated)), [out of frame], extra fingers, mutated hands, ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), (((deformed))), ((ugly)), blurry, ((bad anatomy)), (((bad proportions))), ((extra limbs)), cloned face, (((disfigured))), out of frame, ugly, extra limbs, (bad anatomy), gross proportions, (malformed limbs), ((missing arms)), ((missing legs)), (((extra arms))), (((extra legs))), mutated hands, (fused fingers), (too many fingers), (((long neck))), Photoshop, video game, ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, mutation, mutated, extra limbs, extra legs, extra arms, disfigured, deformed, cross-eye, body out of frame, blurry, bad art, bad anatomy, 3d render",
+    "token": api_key,
+    "cfg_scale": cfg_scale,
+    "steps": steps
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/beta/generate-gif", json=data, verify=False)
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
+    with open(f"generated_image_{i}.gif", "wb") as f:
+        f.write(response.content)
+```
+
 ### Upscale Image
 
 #### Request:
