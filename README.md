@@ -24,6 +24,7 @@
     - [Available LLM models](#available-llm-models)
     - [Text generation](#text-generation)
   - [Beta features](#beta-features)
+    - [Text to GIF generation](#text-to-gif)
     - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
