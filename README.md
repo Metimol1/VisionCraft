@@ -23,9 +23,8 @@
   - [LLM generation](#llm-generation)
     - [Available LLM models](#available-llm-models)
     - [Text generation](#text-generation)
-  - [Beta features](#beta-features)
-    - [Text to GIF generation](#text-to-gif)
-    - [Upscale Image](#upscale-image)
+  - [Text to GIF generation](#text-to-gif)
+  - [Upscale Image](#upscale-image)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
 
@@ -418,15 +417,12 @@ response = requests.post(
 print(response.json())
 ```
 
-## Beta features
-> [!IMPORTANT]
-> The features written below are in open testing, may occasionally stop working and may be removed or changed.
 
 ### Text to GIF
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/beta/generate-gif
+POST https://visioncraft-rs24.koyeb.app/generate-gif
 ```
 
 #### Request Parameters:
@@ -479,7 +475,7 @@ data = {
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/beta/generate-gif", json=data, verify=False)
+response = requests.post(f"{api_url}/generate-gif", json=data, verify=False)
 
 # Extract the image URLs from the response
 image_urls = response.json()["images"]
@@ -497,7 +493,7 @@ for i, image_url in enumerate(image_urls):
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/beta/upscale
+POST https://visioncraft-rs24.koyeb.app/upscale
 ```
 
 #### Request Parameters:
@@ -525,7 +521,7 @@ def upscale_request(image):
         "token": "your_token",
         "image": b
     }
-    url = 'https://visioncraft-rs24.koyeb.app/beta/upscale'
+    url = 'https://visioncraft-rs24.koyeb.app/upscale'
     headers = {"content-type": "application/json"}
 
     resp = requests.post(url, json=payload, headers=headers)
