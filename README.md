@@ -237,7 +237,7 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
   "negative_prompt": "bad quality",
   "image_count": 1,
   "token": "your_api_key",
-  "height: 768,
+  "height": 768,
   "width": 1024,
   "enhance": False
 }
