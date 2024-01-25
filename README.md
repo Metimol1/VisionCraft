@@ -180,7 +180,7 @@ data = {
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/generate", json=data, verify=False)
+response = requests.post(f"{api_url}/generate", json=data, verify=True)
 
 # Extract the image URLs from the response
 image_urls = response.json()["images"]
@@ -270,7 +270,7 @@ data = {
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/generate-xl", json=data, verify=False)
+response = requests.post(f"{api_url}/generate-xl", json=data, verify=True)
 
 # Extract the image URLs from the response
 image_urls = response.json()["images"]
@@ -338,7 +338,7 @@ data = {
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/img2img", json=data, verify=False)
+response = requests.post(f"{api_url}/img2img", json=data, verify=True)
 
 # Extract the image URLs from the response
 image_url = response.json()["images"][0]
@@ -475,7 +475,7 @@ data = {
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/generate-gif", json=data, verify=False)
+response = requests.post(f"{api_url}/generate-gif", json=data, verify=True)
 
 # Extract the image URLs from the response
 image_urls = response.json()["images"]
