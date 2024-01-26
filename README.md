@@ -25,6 +25,8 @@
     - [Text generation](#text-generation)
   - [Text to GIF generation](#text-to-gif)
   - [Upscale Image](#upscale-image)
+  - [Beta features](#beta-features)
+    - [DALLE 3](#dalle-3)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
 
