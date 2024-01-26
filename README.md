@@ -564,7 +564,7 @@ POST https://visioncraft-rs24.koyeb.app/beta/dalle-generate
 }
 ```
 
-The response to this request will contain a list of link to the generated GIF.
+The response to this request will contain a list of link to the generated image.
 
 **Python Example:**
 
