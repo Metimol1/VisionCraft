@@ -120,6 +120,7 @@ POST https://visioncraft-rs24.koyeb.app/generate
 - `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
 - `steps` (integer) (optional: default is 30)- the number of steps (1-50)
 - `loras` (dict) (optional) - a dictionary in which the key is the name Lora, and the meaning is its weight.
+- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 **About parameters**
 
@@ -140,7 +141,8 @@ POST https://visioncraft-rs24.koyeb.app/generate
   "token": "your_api_key",
   "cfg_scale": 8,
   "steps": 30,
-  "loras": {"3DMM_V12": 1, "GrayClay_V1.5.5": 2}
+  "loras": {"3DMM_V12": 1, "GrayClay_V1.5.5": 2},
+  "nsfw_filter": false
 }
 ```
 
@@ -176,7 +178,8 @@ data = {
     "token": api_key,
     "cfg_scale": cfg_scale,
     "steps": steps,
-    "loras": loras
+    "loras": loras,
+    "nsfw_filter": False
 }
 
 # Send the request to generate images
@@ -228,6 +231,7 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
 - `enhance` (bool) - whether to improve the quality of the generated image, default is `False`.
+- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 #### Request Example:
 ```
@@ -239,7 +243,8 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
   "token": "your_api_key",
   "height": 768,
   "width": 1024,
-  "enhance": False
+  "enhance": False,
+  "nsfw_filter": False
 }
 ```
 
@@ -266,7 +271,8 @@ data = {
     "token": api_key,
     "width": 1024,
     "height": 768,
-    "enhance": False
+    "enhance": False,
+    "nsfw_filter": False
 }
 
 # Send the request to generate images
