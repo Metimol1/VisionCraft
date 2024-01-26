@@ -541,6 +541,64 @@ with open('upscaled_image.png', 'wb') as f:
     f.write(upscaled_image)
 ```
 
+## Beta features
+> [!IMPORTANT]
+> The features written below are in open testing, may occasionally stop working and may be removed or changed.
+
+### DALLE 3
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/beta/dalle-generate
+```
+
+#### Request Parameters:
+- `token` (string) - your API key
+- `prompt` (string) - a text prompt for generation
+
+#### Request Example:
+```
+{
+  "prompt": "Beautiful landscape",
+  "token": "your_api_key"
+}
+```
+
+The response to this request will contain a list of link to the generated GIF.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://visioncraft-rs24.koyeb.app"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Set up the data to send in the request
+data = {
+    "prompt": "Beautiful landscape",
+    "token": api_key
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/beta/dalle-generate", json=data)
+
+# Extract the image URLs from the response
+image_urls = response.json()["images"]
+
+# Download and save the generated images
+for i, image_url in enumerate(image_urls):
+    # Get the image data from the URL
+    response = requests.get(image_url)
+    # Save the image locally
+    with open(f"generated_image_{i}.gif", "wb") as f:
+        f.write(response.content)
+```
+
 
 ## Key Limitations
 
