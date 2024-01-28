@@ -19,6 +19,7 @@
   - [Image Generation with Stable Diffusion XL](#image-generation-xl)
     - [Available XL Models](#available-xl-models)
     - [Image generation](#stable-diffusion-xl)
+    - [Check result](#check-result)
   - [Image to Image generation](#image-to-image)
   - [LLM generation](#llm-generation)
     - [Available LLM models](#available-llm-models)
@@ -248,7 +249,32 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 }
 ```
 
-The response to this request will contain a list of links to the generated images.
+The response to this request will contain a request id of the generated image.
+
+### Check Result
+
+After receiving the request id, you can check if your image has been generated.
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/job-status
+```
+
+#### Request Parameters:
+- `request_id` (string) - ID that you received when requesting to generate an image.
+- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
+- `watermark` (bool) (optional: default is true) - 
+whether to add a API watermark to the generated image.
+
+
+#### Request Example:
+```
+{
+  "job_id": "your_job_id",
+  "nsfw_filter": false,
+  "watermark": true
+}
+```
 
 **Python Example:**
 
@@ -278,16 +304,21 @@ data = {
 # Send the request to generate images
 response = requests.post(f"{api_url}/generate-xl", json=data, verify=True)
 
-# Extract the image URLs from the response
-image_urls = response.json()["images"]
+# Extract the request id from the response
+request_id = response.json()["request_id"]
 
-# Download and save the generated images
-for i, image_url in enumerate(image_urls):
-    # Get the image data from the URL
-    response = requests.get(image_url)
-    # Save the image locally
-    with open(f"generated_image_{i}.png", "wb") as f:
-        f.write(response.content)
+# Check the generation process
+while True:
+    response = requests.post("https://visioncraft-rs24.koyeb.app/job-status", json={"job_id": request_id})
+    if response.json()["image"]:
+        image_url = response.json()["image"]
+        break
+
+# Get the image data from the URL
+response = requests.get(image_url)
+# Save the image locally
+with open(f"generated_image_{i}.png", "wb") as f:
+    f.write(response.content)
 ```
 
 
