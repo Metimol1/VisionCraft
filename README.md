@@ -388,6 +388,108 @@ with open(f"generated_image.png", "wb") as f:
     f.write(response.content)
 ```
 
+## Image to Video Generation
+
+### Video Generation
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/img2video
+```
+
+#### Request Parameters:
+- `token` (string) - your API key
+- `image` (base64 string) - your input image in base64 format
+- `height` (integer) - generated video height (minimum 64, maximum 512), default is 512
+- `width` (integer) - generated video width (minimum 64, maximum 512), default is 512
+- `cfg_scale` (integer) (optional: default is 3) - the CFG Scale (0-20)
+- `steps` (integer) (optional: default is 25)- the number of steps (1-30)
+
+
+#### Request Example:
+```
+{
+  "image": "your_image_in_base64_format",
+  "token": "your_api_key",
+  "height": 512,
+  "width": 512,
+  "cfg_scale": 3,
+  "steps": 25
+}
+```
+
+The response to this request will contain a `request id` of the generated image.
+
+### Check Result
+
+After receiving the request id, you can check if your image has been generated.
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/job-status
+```
+
+#### Request Parameters:
+- `request_id` (string) - ID that you received when requesting to generate an image.
+- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
+- `watermark` (bool) (optional: default is true) - 
+whether to add a API watermark to the generated image.
+
+
+#### Request Example:
+```
+{
+  "job_id": "your_job_id",
+  "nsfw_filter": false,
+  "watermark": true
+}
+```
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests, base64
+
+# Define the API endpoint
+api_url = "https://visioncraft-rs24.koyeb.app"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+with open("my_image.png", "rb") as image:
+  image_base64 = base64.b64encode(image.read()).decode("utf-8")
+
+# Set up the data to send in the request
+data = {
+    "image": image_base64,
+    "token": api_key,
+    "width": 512,
+    "height": 512,
+    "cfg_scale": 3,
+    "steps": 25
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/img2video", json=data)
+
+# Extract the request id from the response
+job_id = response.json()["job_id"]
+
+# Check the generation process
+while True:
+    response = requests.post("https://visioncraft-rs24.koyeb.app/job-status", json={"job_id": job_id})
+    if response.json()["image"]:
+        video_url = response.json()["image"]
+        break
+
+# Get the image data from the URL
+response = requests.get(video_url)
+# Save the image locally
+with open(f"generated_video.gif", "wb") as f:
+    f.write(response.content)
+```
+
 ## LLM Generation
 
 ### Available LLM Models
