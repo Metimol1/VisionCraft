@@ -227,12 +227,12 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `model` (string) - the name of the chosen XL model
 - `prompt` (string) - a text prompt for generation
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
-- `image_count` (integer) - the number of images to generate (up to 2 in a single request)
 - `token` (string) - your API key
 - `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
-- `enhance` (bool) - whether to improve the quality of the generated image, default is `False`.
-- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
+- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
+- `steps` (integer) (optional: default is 30)- the number of steps (1-30)
+
 
 #### Request Example:
 ```
@@ -240,16 +240,15 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
   "model": "sdxl-base",
   "prompt": "Beautiful landscape",
   "negative_prompt": "bad quality",
-  "image_count": 1,
   "token": "your_api_key",
   "height": 768,
   "width": 1024,
-  "enhance": False,
-  "nsfw_filter": False
+  "cfg_scale": 8,
+  "steps": 30
 }
 ```
 
-The response to this request will contain a request id of the generated image.
+The response to this request will contain a `request id` of the generated image.
 
 ### Check Result
 
@@ -293,23 +292,22 @@ data = {
     "model": "sdxl-base",
     "prompt": "Beautiful landscape",
     "negative_prompt": "bad quality",
-    "image_count": 1,
     "token": api_key,
     "width": 1024,
     "height": 768,
-    "enhance": False,
-    "nsfw_filter": False
+    "cfg_scale": 8,
+    "steps": 30
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/generate-xl", json=data, verify=True)
+response = requests.post(f"{api_url}/generate-xl", json=data)
 
 # Extract the request id from the response
-request_id = response.json()["request_id"]
+job_id = response.json()["job_id"]
 
 # Check the generation process
 while True:
-    response = requests.post("https://visioncraft-rs24.koyeb.app/job-status", json={"job_id": request_id})
+    response = requests.post("https://visioncraft-rs24.koyeb.app/job-status", json={"job_id": job_id})
     if response.json()["image"]:
         image_url = response.json()["image"]
         break
