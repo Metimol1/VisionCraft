@@ -318,7 +318,7 @@ while True:
 # Get the image data from the URL
 response = requests.get(image_url)
 # Save the image locally
-with open(f"generated_image_{i}.png", "wb") as f:
+with open(f"generated_image.png", "wb") as f:
     f.write(response.content)
 ```
 
