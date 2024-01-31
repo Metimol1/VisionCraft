@@ -2,7 +2,6 @@
 
 ## Official links:
 - [Telegram channel](https://t.me/visioncraft_channel)
-- [Website](https://visioncraft.vercel.app)
 - [Android app](https://github.com/VisionCraft-org/vision-craft-mobile)
 - [Flutter package](https://pub.dev/packages/flutter_vision_craft)
 
@@ -32,10 +31,6 @@
 ## Introduction
 
 The VisionCraft API documentation is designed for users who wish to interact with the API for image generation. This documentation will provide you with a comprehensive overview of the functionality and usage guidelines of the API.
-
-## Functional testing
-
-If you want to try how well my API generates images, then go to the [official site](https://visioncraft.vercel.app). There you can try all the models available in the API.
 
 ## Obtaining an API Key
 
