@@ -15,6 +15,7 @@
     - [Available Samplers](#available-samplers)
     - [Available Loras](#available-loras)
     - [Image generation](#image-generation)
+  - [Image generation with Stable Diffusion XL](#stable-diffusion-xl)
   - [Image to Image generation](#image-to-image)
   - [LLM generation](#llm-generation)
     - [Available LLM models](#available-llm-models)
