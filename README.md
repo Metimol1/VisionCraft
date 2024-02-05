@@ -274,19 +274,17 @@ POST https://visioncraft-rs24.koyeb.app/img2img
 
 #### Request Parameters:
 - `prompt` (string) - a text prompt for generation
+- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `token` (string) - your API key
-- `steps` (integer) (optional: default is 7) - the number of steps (1-10)
 - `image` (base64 string) - your image in base64 format
-- `strength` (float) (optional: default is 0.7) - how similar the generated image will be to the original. The lower the number, the more similar the generated image will be to the original. (0.0-1.0)
 
 #### Request Example:
 ```
 {
   "prompt": "Beautiful lady",
+  "negative_prompt": "bad quality",
   "token": "your_api_key",
-  "image": "your_image_in_base64_format",
-  "steps": 7,
-  "strength": 0.7
+  "image": "your_image_in_base64_format"
 }
 ```
 
@@ -310,14 +308,13 @@ with open("my_image.png", "rb") as image:
 # Set up the data to send in the request
 data = {
     "prompt": "Beautiful girl",
+    "negative_prompt": "bad quality",
     "token": api_key,
     "image": image_base64,
-    "steps": 7,
-    "strength": 0.7
 }
 
 # Send the request to generate images
-response = requests.post(f"{api_url}/img2img", json=data, verify=True)
+response = requests.post(f"{api_url}/img2img", json=data)
 
 # Extract the image URLs from the response
 image_url = response.json()["images"][0]
