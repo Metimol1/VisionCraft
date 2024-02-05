@@ -505,7 +505,9 @@ def upscale_request(image):
     headers = {"content-type": "application/json"}
 
     resp = requests.post(url, json=payload, headers=headers)
-    return resp.content
+    image_url = resp.json()["images"][0]
+    content = requests.get(image_url)
+    return content.content
 
 image = open('my_image.png', 'rb').read()
 upscaled_image = upscale_request(image)
