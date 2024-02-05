@@ -193,6 +193,24 @@ for i, image_url in enumerate(image_urls):
 
 ## Stable Diffusion XL
 
+### Available XL Models
+
+You can retrieve a list of available models for image generation XL. Each model has its unique characteristics and generation style.
+
+#### Request:
+```
+GET https://visioncraft-rs24.koyeb.app/models-xl
+```
+
+#### Response:
+```
+["sdxl-base","sdxl-turbo", ...]
+```
+
+After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
+
+### Generate image
+
 #### Request:
 ```
 POST https://visioncraft-rs24.koyeb.app/generate-xl
@@ -200,26 +218,26 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 
 #### Request Parameters:
 - `prompt` (string) - a text prompt for generation
+- `model` (string) - one of the available SDXL models.
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `token` (string) - your API key
 - `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
 - `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
 - `steps` (integer) (optional: default is 30)- the number of steps (1-30)
-- `restore_faces` (bool) (optional: default is false) - whether to enable restoring faces on generated images.
 - `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 #### Request Example:
 ```
 {
   "prompt": "Beautiful landscape",
+  "model": "sdxl-turbo",
   "negative_prompt": "bad quality",
   "token": "your_api_key",
   "height": 768,
   "width": 1024,
   "steps": 30,
   "cfg_scale": 8,
-  "restore_faces": False,
   "nsfw_filter": False
 }
 ```
@@ -241,13 +259,13 @@ api_key = "your_api_key"
 # Set up the data to send in the request
 data = {
     "prompt": "Beautiful landscape",
+    "model": "sdxl-turbo",
     "negative_prompt": "bad quality",
     "token": api_key,
     "width": 1024,
     "height": 768,
     "steps": 30,
     "cfg_scale": 8,
-    "restore_faces": False,
     "nsfw_filter": False
 }
 
