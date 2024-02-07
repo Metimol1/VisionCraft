@@ -209,6 +209,9 @@ GET https://visioncraft-rs24.koyeb.app/models-xl
 
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
+> [!IMPORTANT]
+> The free SDXL model is only `sdxl-turbo`. To use other models, you need to buy a subscription, which costs $5 per month.
+
 ### Generate image
 
 #### Request:
@@ -271,6 +274,66 @@ data = {
 
 # Send the request to generate images
 response = requests.post(f"{api_url}/generate-xl", json=data)
+
+# Extract the image URLs from the response
+image_url = response.json()["images"][0]
+
+# Get the image data from the URL
+response = requests.get(image_url)
+# Save the image locally
+with open(f"generated_image.png", "wb") as f:
+    f.write(response.content)
+```
+
+### SDXL model of the Midjourney level
+
+This model works with the help of two Stable Difusion XL models, which help each other during image generation. Which is why you get a very good image.
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/premium/generate-xl
+```
+
+#### Request Parameters:
+- `prompt` (string) - a text prompt for generation
+- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
+- `token` (string) - your API key
+- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
+
+#### Request Example:
+```
+{
+  "prompt": "Beautiful landscape",
+  "negative_prompt": "bad quality",
+  "token": "your_api_key",
+  "nsfw_filter": False
+}
+```
+
+The response to this request will contain a list of links to the generated images.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://visioncraft-rs24.koyeb.app"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Set up the data to send in the request
+data = {
+    "prompt": "Beautiful landscape",
+    "negative_prompt": "bad quality",
+    "token": api_key,
+    "nsfw_filter": False
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/premium/generate-xl", json=data)
 
 # Extract the image URLs from the response
 image_url = response.json()["images"][0]
