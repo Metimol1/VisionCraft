@@ -16,6 +16,9 @@
     - [Available Loras](#available-loras)
     - [Image generation](#image-generation)
   - [Image generation with Stable Diffusion XL](#stable-diffusion-xl)
+    - [Available Models](#available-xl-models)
+    - [Image generation](#generate-image-xl)
+    - [Midjourney SDXL](#sdxl-model-of-the-midjourney-level)
   - [Image to Image generation](#image-to-image)
   - [LLM generation](#llm-generation)
     - [Available LLM models](#available-llm-models)
@@ -212,7 +215,7 @@ After selecting a specific model, you can generate images using the API. To do t
 > [!IMPORTANT]
 > The free SDXL model is only `sdxl-turbo`. To use other models, you need to buy a subscription, which costs $5 per month.
 
-### Generate image
+### Generate image XL
 
 #### Request:
 ```
@@ -288,6 +291,9 @@ with open(f"generated_image.png", "wb") as f:
 ### SDXL model of the Midjourney level
 
 This model works with the help of two Stable Difusion XL models, which help each other during image generation. Which is why you get a very good image.
+
+> [!IMPORTANT]
+> You can use this model, if you buy a subscription, which costs $5 per month.
 
 #### Request:
 ```
