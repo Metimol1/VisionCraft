@@ -243,7 +243,7 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 }
 ```
 
-The response to this request will contain a list of links to the generated images.
+The response to this request will contain a your image.
 
 **Python Example:**
 
