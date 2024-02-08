@@ -18,7 +18,6 @@
   - [Image generation with Stable Diffusion XL](#stable-diffusion-xl)
     - [Available Models](#available-xl-models)
     - [Image generation](#generate-image-xl)
-    - [Midjourney SDXL](#sdxl-model-of-the-midjourney-level)
   - [Image to Image generation](#image-to-image)
   - [LLM generation](#llm-generation)
     - [Available LLM models](#available-llm-models)
@@ -229,8 +228,6 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `token` (string) - your API key
 - `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
-- `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
-- `steps` (integer) (optional: default is 30)- the number of steps (1-30)
 - `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 #### Request Example:
@@ -240,10 +237,8 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
   "model": "sdxl-turbo",
   "negative_prompt": "bad quality",
   "token": "your_api_key",
-  "height": 768,
+  "height": 1024,
   "width": 1024,
-  "steps": 30,
-  "cfg_scale": 8,
   "nsfw_filter": False
 }
 ```
@@ -269,86 +264,19 @@ data = {
     "negative_prompt": "bad quality",
     "token": api_key,
     "width": 1024,
-    "height": 768,
-    "steps": 30,
-    "cfg_scale": 8,
+    "height": 1024,
     "nsfw_filter": False
 }
 
 # Send the request to generate images
 response = requests.post(f"{api_url}/generate-xl", json=data)
 
-# Extract the image URLs from the response
-image_url = response.json()["images"][0]
+# Get the image from the response
+image = response.content
 
-# Get the image data from the URL
-response = requests.get(image_url)
 # Save the image locally
 with open(f"generated_image.png", "wb") as f:
-    f.write(response.content)
-```
-
-### SDXL model of the Midjourney level
-
-This model works with the help of two Stable Difusion XL models, which help each other during image generation. Which is why you get a very good image.
-
-> [!IMPORTANT]
-> You can use this model, if you buy a subscription, which costs $5 per month.
-
-#### Request:
-```
-POST https://visioncraft-rs24.koyeb.app/premium/generate-xl
-```
-
-#### Request Parameters:
-- `prompt` (string) - a text prompt for generation
-- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
-- `token` (string) - your API key
-- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
-
-#### Request Example:
-```
-{
-  "prompt": "Beautiful landscape",
-  "negative_prompt": "bad quality",
-  "token": "your_api_key",
-  "nsfw_filter": False
-}
-```
-
-The response to this request will contain a list of links to the generated images.
-
-**Python Example:**
-
-```
-# Python code for interacting with VisionCraft API
-import requests
-
-# Define the API endpoint
-api_url = "https://visioncraft-rs24.koyeb.app"
-
-# Obtain your API key
-api_key = "your_api_key"
-
-# Set up the data to send in the request
-data = {
-    "prompt": "Beautiful landscape",
-    "negative_prompt": "bad quality",
-    "token": api_key,
-    "nsfw_filter": False
-}
-
-# Send the request to generate images
-response = requests.post(f"{api_url}/premium/generate-xl", json=data)
-
-# Extract the image URLs from the response
-image_url = response.json()["images"][0]
-
-# Get the image data from the URL
-response = requests.get(image_url)
-# Save the image locally
-with open(f"generated_image.png", "wb") as f:
-    f.write(response.content)
+    f.write(image)
 ```
 
 
