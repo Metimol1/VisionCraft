@@ -230,19 +230,6 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
 - `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
-#### NOTE: For SDXL, it is recommended to use trained values for width and height listed below:
-```
- - 1024 x 1024
- - 1152 x 896
- - 896  x 1152
- - 1216 x 832
- - 832  x 1216
- - 1344 x 768
- - 768  x 1344
- - 1536 x 640
- - 640  x 1536
-```
-
 #### Request Example:
 ```
 {
