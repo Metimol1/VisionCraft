@@ -211,6 +211,22 @@ GET https://visioncraft-rs24.koyeb.app/models-xl
 ["sdxl-base","sdxl-turbo", ...]
 ```
 
+### Available XL Samplers
+
+You can retrieve a list of available samplers for image generation.
+
+If you do not know which sampler to choose, I recommend reading [this article](https://stable-diffusion-art.com/samplers/).
+
+#### Request:
+```
+GET https://visioncraft-rs24.koyeb.app/samplers
+```
+
+#### Response:
+```
+["euler","euler_ancestral","heun","heunpp2","dpm_2","dpm_2_ancestral","Ims", ...]
+```
+
 After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
 > [!IMPORTANT]
