@@ -217,7 +217,7 @@ You can retrieve a list of available samplers for image generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/xl-samplers
+GET https://visioncraft-rs24.koyeb.app/samplers-xl
 ```
 
 #### Response:
@@ -260,6 +260,7 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
 - `sampler` (string) - one of the available SDXL samplers.
 - `scheduler` (string) - one of the available SDXL schedulers.
+- `refiner` (bool) (optional: default is false) - whether using another neural network improves the quality of the generated image.
 - `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 #### Request Example:
@@ -271,6 +272,9 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
   "token": "your_api_key",
   "height": 1024,
   "width": 1024,
+  "sampler": "euler",
+  "scheduler": "normal",
+  "refiner": False,
   "nsfw_filter": False
 }
 ```
@@ -297,6 +301,9 @@ data = {
     "token": api_key,
     "width": 1024,
     "height": 1024,
+    "sampler": "euler",
+    "scheduler": "normal",
+    "refiner": False,
     "nsfw_filter": False
 }
 
