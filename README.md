@@ -17,6 +17,8 @@
     - [Image generation](#image-generation)
   - [Image generation with Stable Diffusion XL](#stable-diffusion-xl)
     - [Available Models](#available-xl-models)
+    - [Available Samplers](#available-xl-samplers)
+    - [Available Schedulers](#available-xl-schedulers)
     - [Image generation](#generate-image-xl)
   - [Image to Image generation](#image-to-image)
   - [LLM generation](#llm-generation)
