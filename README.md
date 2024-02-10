@@ -215,11 +215,9 @@ GET https://visioncraft-rs24.koyeb.app/models-xl
 
 You can retrieve a list of available samplers for image generation.
 
-If you do not know which sampler to choose, I recommend reading [this article](https://stable-diffusion-art.com/samplers/).
-
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/samplers
+GET https://visioncraft-rs24.koyeb.app/xl-samplers
 ```
 
 #### Response:
@@ -227,7 +225,21 @@ GET https://visioncraft-rs24.koyeb.app/samplers
 ["euler","euler_ancestral","heun","heunpp2","dpm_2","dpm_2_ancestral","Ims", ...]
 ```
 
-After selecting a specific model, you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
+### Available XL Schedulers
+
+You can retrieve a list of available schedulers for image generation.
+
+#### Request:
+```
+GET https://visioncraft-rs24.koyeb.app/schedulers-xl
+```
+
+#### Response:
+```
+["normal","karras","exponential","sgm_uniform", ...]
+```
+
+After selecting a specific model, sampler and scheduler you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
 > [!IMPORTANT]
 > The free SDXL model is only `sdxl-turbo`. To use other models, you need to buy a subscription, which costs $5 per month.
@@ -246,6 +258,8 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `token` (string) - your API key
 - `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
+- `sampler` (string) - one of the available SDXL samplers.
+- `scheduler` (string) - one of the available SDXL schedulers.
 - `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 #### Request Example:
