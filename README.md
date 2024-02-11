@@ -468,7 +468,7 @@ GET https://visioncraft-rs24.koyeb.app/models-llm-premium
 ["gpt-3-5", "gpt-3-5-turbo", "gpt-3-5-turbo-instruct", "claude-instant", "google-palm", "llama-2-7b", "llama-2-13b", "llama-2-70b", ...]
 ```
 
-### Text generation
+### Premium Text generation
 After selecting model, you can generate text.
 
 #### Request:
