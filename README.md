@@ -246,7 +246,7 @@ GET https://visioncraft-rs24.koyeb.app/schedulers-xl
 After selecting a specific model, sampler and scheduler you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
 > [!IMPORTANT]
-> The free SDXL model is only `sdxl-turbo`. To use other models, you need to buy a subscription, which costs $5 per month.
+> The free SDXL model is only `sdxl-turbo` and `playground-V2`. To use other models, you need to buy a subscription, which costs $5 per month.
 
 ### Generate image XL
 
@@ -582,6 +582,63 @@ for i, image_url in enumerate(image_urls):
     with open(f"generated_image_{i}.gif", "wb") as f:
         f.write(response.content)
 ```
+
+## Image to Video
+
+> [!IMPORTANT]
+> The Image to Video model is only for Premium users. To use this model, you need to buy a subscription, which costs $5 per month.
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/img2video
+```
+
+#### Request Parameters:
+- `token` (string) - your API key
+- `image` (base64 string) - your image in base64 format
+
+#### Request Example:
+```
+{
+  "token": "your_api_key",
+  "image": "your_image_in_base64_format"
+}
+```
+
+The response to this request will contain a generated image.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests, base64
+
+# Define the API endpoint
+api_url = "https://visioncraft-rs24.koyeb.app"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+with open("my_image.png", "rb") as image:
+  image_base64 = base64.b64encode(image.read()).decode("utf-8")
+
+# Set up the data to send in the request
+data = {
+    "token": api_key,
+    "image": image_base64,
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/img2video", json=data)
+
+# Get the result
+result = response.content
+
+# Save the video locally
+with open(f"generated_video.mp4", "wb") as f:
+    f.write(result)
+```
+
 
 ### Upscale Image
 
