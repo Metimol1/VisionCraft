@@ -454,6 +454,9 @@ print(response.json())
 
 ## Premium LLM Generation
 
+> [!IMPORTANT]
+> The Premium LLM models is only for Premium users. To use this models, you need to buy a subscription, which costs $5 per month.
+
 ### Available Premium LLM Models
 
 You can retrieve a list of available premium models for text generation.
@@ -512,7 +515,7 @@ print(response.json())
 ```
 
 
-### Text to GIF
+## Text to GIF
 
 #### Request:
 ```
@@ -640,7 +643,7 @@ with open(f"generated_video.mp4", "wb") as f:
 ```
 
 
-### Upscale Image
+## Upscale Image
 
 #### Request:
 ```
