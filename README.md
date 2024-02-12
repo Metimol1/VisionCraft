@@ -7,7 +7,6 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Functional Testing](#functional-testing)
 - [Obtaining an API Key](#obtaining-an-api-key)
 - [Interacting with the API](#interacting-with-the-api)
   - [Image Generation with Stable Diffusion 1.x](#image-generation)
