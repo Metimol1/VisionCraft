@@ -120,7 +120,6 @@ POST https://visioncraft-rs24.koyeb.app/generate
 - `cfg_scale` (integer) (optional: default is 10) - the CFG Scale (0-20)
 - `steps` (integer) (optional: default is 30)- the number of steps (1-50)
 - `loras` (dict) (optional) - a dictionary in which the key is the name Lora, and the meaning is its weight.
-- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 **About parameters**
 
@@ -141,8 +140,7 @@ POST https://visioncraft-rs24.koyeb.app/generate
   "token": "your_api_key",
   "cfg_scale": 8,
   "steps": 30,
-  "loras": {"3DMM_V12": 1, "GrayClay_V1.5.5": 2},
-  "nsfw_filter": false
+  "loras": {"3DMM_V12": 1, "GrayClay_V1.5.5": 2}
 }
 ```
 
@@ -178,8 +176,7 @@ data = {
     "token": api_key,
     "cfg_scale": cfg_scale,
     "steps": steps,
-    "loras": loras,
-    "nsfw_filter": False
+    "loras": loras
 }
 
 # Send the request to generate images
@@ -264,7 +261,6 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `sampler` (string) - one of the available SDXL samplers.
 - `scheduler` (string) - one of the available SDXL schedulers.
 - `refiner` (bool) (optional: default is false) - whether using another neural network improves the quality of the generated image.
-- `nsfw_filter` (bool) (optional: default is false) - whether to enable checking of generated images for 18+ content.
 
 #### Request Example:
 ```
@@ -277,8 +273,7 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
   "width": 1024,
   "sampler": "euler",
   "scheduler": "normal",
-  "refiner": False,
-  "nsfw_filter": False
+  "refiner": False
 }
 ```
 
@@ -306,8 +301,7 @@ data = {
     "height": 1024,
     "sampler": "euler",
     "scheduler": "normal",
-    "refiner": False,
-    "nsfw_filter": False
+    "refiner": False
 }
 
 # Send the request to generate images
