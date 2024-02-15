@@ -20,6 +20,9 @@
     - [Available Schedulers](#available-xl-schedulers)
     - [Image generation](#generate-image-xl)
   - [Image to Image generation](#image-to-image)
+    - [Available Models](#available-img2img-models)
+    - [Available Schedulers](#available-img2img-schedulers)
+    - [Available Refiners](#available-img2img-refiners)
   - [LLM generation](#llm-generation)
     - [Available LLM models](#available-llm-models)
     - [Text generation](#text-generation)
@@ -318,16 +321,66 @@ with open(f"generated_image.png", "wb") as f:
 
 ## Image to Image
 
+### Available Img2img Models
+
+You can retrieve a list of available Models for image to image generation.
+
+#### Request:
+```
+GET https://visioncraft-rs24.koyeb.app/img2img/models
+```
+
+#### Response:
+```
+["sdxl-base", "sd-1.5", ...]
+```
+
+### Available Img2img Schedulers
+
+You can retrieve a list of available Schedulers for image to image generation.
+
+#### Request:
+```
+GET https://visioncraft-rs24.koyeb.app/img2img/schedulers
+```
+
+#### Response:
+```
+["DDIM", "DPMSolverMultistep", "HeunDiscrete", "KarrasDPM", ...]
+```
+
+### Available Img2img Refiners
+
+You can retrieve a list of available Refiners for image to image generation.
+
+#### Request:
+```
+GET https://visioncraft-rs24.koyeb.app/img2img/refiners
+```
+
+#### Response:
+```
+["no_refiner", "expert_ensemble_refiner", "base_image_refiner", ...]
+```
+
+After selecting specific models, schedulers and refiners you can generate images.
+
+
 #### Request:
 ```
 POST https://visioncraft-rs24.koyeb.app/img2img
 ```
 
 #### Request Parameters:
+- `model` (string) - one of the available img2img models
 - `prompt` (string) - a text prompt for generation
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `token` (string) - your API key
 - `image` (base64 string) - your image in base64 format
+- `scheduler` (string) (optional: default is `DDIM`) - one of the available img2img schedulers
+- `steps` (integer) (optional: default is 50) - the number of steps (1-50)
+- `strength` (float) (optional: default is 0.8) - Prompt strength. 1.0 corresponds to full destruction of information in image.
+- `refiner` (string) (optional: default is `no_refiner`) - one of the available img2img refiners
 
 #### Request Example:
 ```
@@ -335,7 +388,12 @@ POST https://visioncraft-rs24.koyeb.app/img2img
   "prompt": "Beautiful lady",
   "negative_prompt": "bad quality",
   "token": "your_api_key",
-  "image": "your_image_in_base64_format"
+  "image": "your_image_in_base64_format",
+  "model": "sdxl-base",
+  "steps": 50,
+  "strength": 0.8,
+  "refiner": "no_refiner",
+  "scheduler": "DDIM"
 }
 ```
 
@@ -362,19 +420,22 @@ data = {
     "negative_prompt": "bad quality",
     "token": api_key,
     "image": image_base64,
+    "model": "sdxl-base",
+    "steps": 50,
+    "strength": 0.8,
+    "refiner": "no_refiner",
+    "scheduler": "DDIM"
 }
 
 # Send the request to generate images
 response = requests.post(f"{api_url}/img2img", json=data)
 
-# Extract the image URLs from the response
-image_url = response.json()["images"][0]
+# Extract the image from the response
+image = response.content
 
-# Get the image data from the URL
-response = requests.get(image_url)
 # Save the image locally
 with open(f"generated_image.png", "wb") as f:
-    f.write(response.content)
+    f.write(image)
 ```
 
 
