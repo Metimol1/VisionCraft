@@ -380,7 +380,7 @@ POST https://visioncraft-rs24.koyeb.app/img2img
 }
 ```
 
-The response to this request will contain a list of links to the generated images.
+The response to this request will contain a bytecode to the generated images.
 
 **Python Example:**
 
