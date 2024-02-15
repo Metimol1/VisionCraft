@@ -360,7 +360,7 @@ POST https://visioncraft-rs24.koyeb.app/img2img
 - `prompt` (string) - a text prompt for generation
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `token` (string) - your API key
-- `image` (base64 string) - your image in base64 format
+- `image` (string) - your image in base64 format, or URL to your image.
 - `scheduler` (string) (optional: default is `DDIM`) - one of the available img2img schedulers
 - `steps` (integer) (optional: default is 50) - the number of steps (1-50)
 - `strength` (float) (optional: default is 0.8) - Prompt strength. 1.0 corresponds to full destruction of information in image.
@@ -372,7 +372,7 @@ POST https://visioncraft-rs24.koyeb.app/img2img
   "prompt": "Beautiful lady",
   "negative_prompt": "bad quality",
   "token": "your_api_key",
-  "image": "your_image_in_base64_format",
+  "image": "your_image_in_base64_format or url_to_your_image",
   "steps": 50,
   "strength": 0.8,
   "refiner": "no_refiner",
@@ -624,9 +624,6 @@ for i, image_url in enumerate(image_urls):
 
 ## Image to Video
 
-> [!IMPORTANT]
-> The Image to Video model is only for Premium users. To use this model, you need to buy a subscription, which costs $5 per month.
-
 #### Request:
 ```
 POST https://visioncraft-rs24.koyeb.app/img2video
@@ -634,13 +631,13 @@ POST https://visioncraft-rs24.koyeb.app/img2video
 
 #### Request Parameters:
 - `token` (string) - your API key
-- `image` (base64 string) - your image in base64 format
+- `image` (string) - your image in base64 format or URL to your image
 
 #### Request Example:
 ```
 {
   "token": "your_api_key",
-  "image": "your_image_in_base64_format"
+  "image": "your_image_in_base64_format or url_to_your_image"
 }
 ```
 
@@ -688,13 +685,13 @@ POST https://visioncraft-rs24.koyeb.app/upscale
 
 #### Request Parameters:
 - `token` (string) - your API key
-- `image` (bytes-like object) - your image for upscaling
+- `image` (string) - your image in base64 format or URL to your image.
 
 #### Request Example:
 ```
 {
   "token": "your_api_key",
-  "image": "your image in bytes"
+  "image": "your_image_in_base64 or url_to_your_image"
 }
 ```
 
