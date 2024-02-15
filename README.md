@@ -20,7 +20,6 @@
     - [Available Schedulers](#available-xl-schedulers)
     - [Image generation](#generate-image-xl)
   - [Image to Image generation](#image-to-image)
-    - [Available Models](#available-img2img-models)
     - [Available Schedulers](#available-img2img-schedulers)
     - [Available Refiners](#available-img2img-refiners)
   - [LLM generation](#llm-generation)
@@ -321,20 +320,6 @@ with open(f"generated_image.png", "wb") as f:
 
 ## Image to Image
 
-### Available Img2img Models
-
-You can retrieve a list of available Models for image to image generation.
-
-#### Request:
-```
-GET https://visioncraft-rs24.koyeb.app/img2img/models
-```
-
-#### Response:
-```
-["sdxl-base", "sd-1.5", ...]
-```
-
 ### Available Img2img Schedulers
 
 You can retrieve a list of available Schedulers for image to image generation.
@@ -372,7 +357,6 @@ POST https://visioncraft-rs24.koyeb.app/img2img
 ```
 
 #### Request Parameters:
-- `model` (string) - one of the available img2img models
 - `prompt` (string) - a text prompt for generation
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `token` (string) - your API key
@@ -389,7 +373,6 @@ POST https://visioncraft-rs24.koyeb.app/img2img
   "negative_prompt": "bad quality",
   "token": "your_api_key",
   "image": "your_image_in_base64_format",
-  "model": "sdxl-base",
   "steps": 50,
   "strength": 0.8,
   "refiner": "no_refiner",
@@ -420,7 +403,6 @@ data = {
     "negative_prompt": "bad quality",
     "token": api_key,
     "image": image_base64,
-    "model": "sdxl-base",
     "steps": 50,
     "strength": 0.8,
     "refiner": "no_refiner",
