@@ -31,6 +31,7 @@
   - [Text to GIF generation](#text-to-gif)
   - [Image to Video generation](#image-to-video)
   - [Upscale Image](#upscale-image)
+  - [Whisper](#whisper)
 - [Key Limitations](#key-limitations)
 - [Contact Information](#contact-information)
 
@@ -722,6 +723,57 @@ with open('upscaled_image.png', 'wb') as f:
     f.write(upscaled_image)
 ```
 
+## Whisper
+
+#### Request:
+```
+POST https://visioncraft-rs24.koyeb.app/whisper
+```
+
+#### Request Parameters:
+- `token` (string) - your API key
+- `audio` (string) - your audio in base64 format or URL to your audio
+
+#### Request Example:
+```
+{
+  "token": "your_api_key",
+  "audio": "your_audio_in_base64_format or url_to_your_audio"
+}
+```
+
+The response to this request will contain a JSON with transcribed text from your audio.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests, base64
+
+# Define the API endpoint
+api_url = "https://visioncraft-rs24.koyeb.app"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+with open("my_audio.mp3", "rb") as audio:
+  audio_base64 = base64.b64encode(audio.read()).decode("utf-8")
+
+# Set up the data to send in the request
+data = {
+    "token": api_key,
+    "audio": audio_base64,
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/whisper", json=data)
+
+# Get the result
+result = response.json()
+
+# Print the result
+print(result)
+```
 
 ## Key Limitations
 
