@@ -244,8 +244,6 @@ GET https://visioncraft-rs24.koyeb.app/schedulers-xl
 
 After selecting a specific model, sampler and scheduler you can generate images using the API. To do this, you need to make a POST request and provide the necessary parameters.
 
-> [!IMPORTANT]
-> The free SDXL model is only `sdxl-turbo` and `playground-V2`. To use other models, you need to buy a subscription, which costs $5 per month.
 
 ### Generate image XL
 
@@ -263,7 +261,6 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
 - `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
 - `sampler` (string) - one of the available SDXL samplers.
 - `scheduler` (string) - one of the available SDXL schedulers.
-- `refiner` (bool) (optional: default is false) - whether using another neural network improves the quality of the generated image.
 
 #### Request Example:
 ```
@@ -275,8 +272,7 @@ POST https://visioncraft-rs24.koyeb.app/generate-xl
   "height": 1024,
   "width": 1024,
   "sampler": "euler",
-  "scheduler": "normal",
-  "refiner": False
+  "scheduler": "normal"
 }
 ```
 
@@ -303,8 +299,7 @@ data = {
     "width": 1024,
     "height": 1024,
     "sampler": "euler",
-    "scheduler": "normal",
-    "refiner": False
+    "scheduler": "normal"
 }
 
 # Send the request to generate images
