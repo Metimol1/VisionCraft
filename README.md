@@ -65,7 +65,7 @@ You can retrieve a list of available models for image generation. Each model has
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/models
+GET https://api.visioncraft.top/models
 ```
 
 #### Response:
@@ -77,11 +77,9 @@ GET https://visioncraft-rs24.koyeb.app/models
 
 You can retrieve a list of available samplers for image generation.
 
-If you do not know which sampler to choose, I recommend reading [this article](https://stable-diffusion-art.com/samplers/).
-
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/samplers
+GET https://api.visioncraft.top/samplers
 ```
 
 #### Response:
@@ -95,7 +93,7 @@ You can retrieve a list of available Loras for image generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/loras
+GET https://api.visioncraft.top/loras
 ```
 
 #### Response:
@@ -110,7 +108,7 @@ After selecting a specific model, you can generate images using the API. To do t
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/generate
+POST https://api.visioncraft.top/generate
 ```
 
 #### Request Parameters:
@@ -156,7 +154,7 @@ The response to this request will contain a list of links to the generated image
 import requests
 
 # Define the API endpoint
-api_url = "https://visioncraft-rs24.koyeb.app"
+api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -206,7 +204,7 @@ You can retrieve a list of available models for image generation XL. Each model 
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/models-xl
+GET https://api.visioncraft.top/models-xl
 ```
 
 #### Response:
@@ -220,7 +218,7 @@ You can retrieve a list of available samplers for image generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/samplers-xl
+GET https://api.visioncraft.top/samplers-xl
 ```
 
 #### Response:
@@ -234,7 +232,7 @@ You can retrieve a list of available schedulers for image generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/schedulers-xl
+GET https://api.visioncraft.top/schedulers-xl
 ```
 
 #### Response:
@@ -249,7 +247,7 @@ After selecting a specific model, sampler and scheduler you can generate images 
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/generate-xl
+POST https://api.visioncraft.top/generate-xl
 ```
 
 #### Request Parameters:
@@ -285,7 +283,7 @@ The response to this request will contain a your image.
 import requests
 
 # Define the API endpoint
-api_url = "https://visioncraft-rs24.koyeb.app"
+api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -322,7 +320,7 @@ You can retrieve a list of available Schedulers for image to image generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/img2img/schedulers
+GET https://api.visioncraft.top/img2img/schedulers
 ```
 
 #### Response:
@@ -336,7 +334,7 @@ You can retrieve a list of available Refiners for image to image generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/img2img/refiners
+GET https://api.visioncraft.top/img2img/refiners
 ```
 
 #### Response:
@@ -349,7 +347,7 @@ After selecting specific models, schedulers and refiners you can generate images
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/img2img
+POST https://api.visioncraft.top/img2img
 ```
 
 #### Request Parameters:
@@ -385,7 +383,7 @@ The response to this request will contain a bytecode of the generated image.
 import requests, base64
 
 # Define the API endpoint
-api_url = "https://visioncraft-rs24.koyeb.app"
+api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -425,7 +423,7 @@ You can retrieve a list of available models for text generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/models-llm
+GET https://api.visioncraft.top/models-llm
 ```
 
 #### Response:
@@ -438,7 +436,7 @@ After selecting model, you can generate text.
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/llm
+POST https://api.visioncraft.top/llm
 ```
 
 #### Request Parameters:
@@ -466,7 +464,7 @@ The response to this request will contain a response from LLM model.
 import requests, json
 
 response = requests.post(
-  url="https://visioncraft-rs24.koyeb.app/llm",
+  url="https://api.visioncraft.top/llm",
   data=json.dumps({
     "token": "your_token",
     "model": "mistral-7b-instruct",
@@ -495,7 +493,7 @@ You can retrieve a list of available premium models for text generation.
 
 #### Request:
 ```
-GET https://visioncraft-rs24.koyeb.app/models-llm-premium
+GET https://api.visioncraft.top/models-llm-premium
 ```
 
 #### Response:
@@ -508,7 +506,7 @@ After selecting model, you can generate text.
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/premium/llm
+POST https://api.visioncraft.top/premium/llm
 ```
 
 #### Request Parameters:
@@ -535,7 +533,7 @@ The response to this request will contain a response from LLM model.
 import requests, json
 
 response = requests.post(
-  url="https://visioncraft-rs24.koyeb.app/premium/llm",
+  url="https://api.visioncraft.top/premium/llm",
   data=json.dumps({
     "token": "your_token",
     "model": "gpt-3-5-turbo",
@@ -551,7 +549,7 @@ print(response.json())
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/generate-gif
+POST https://api.visioncraft.top/generate-gif
 ```
 
 #### Request Parameters:
@@ -583,7 +581,7 @@ The response to this request will contain a list of link to the generated GIF.
 import requests
 
 # Define the API endpoint
-api_url = "https://visioncraft-rs24.koyeb.app"
+api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -622,7 +620,7 @@ for i, image_url in enumerate(image_urls):
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/img2video
+POST https://api.visioncraft.top/img2video
 ```
 
 #### Request Parameters:
@@ -646,7 +644,7 @@ The response to this request will contain a generated image.
 import requests, base64
 
 # Define the API endpoint
-api_url = "https://visioncraft-rs24.koyeb.app"
+api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -676,7 +674,7 @@ with open(f"generated_video.mp4", "wb") as f:
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/upscale
+POST https://api.visioncraft.top/upscale
 ```
 
 #### Request Parameters:
@@ -704,7 +702,7 @@ def upscale_request(image):
         "token": "your_token",
         "image": b
     }
-    url = 'https://visioncraft-rs24.koyeb.app/upscale'
+    url = 'https://api.visioncraft.top/upscale'
     headers = {"content-type": "application/json"}
 
     resp = requests.post(url, json=payload, headers=headers)
@@ -722,7 +720,7 @@ with open('upscaled_image.png', 'wb') as f:
 
 #### Request:
 ```
-POST https://visioncraft-rs24.koyeb.app/whisper
+POST https://api.visioncraft.top/whisper
 ```
 
 #### Request Parameters:
@@ -746,7 +744,7 @@ The response to this request will contain a JSON with transcribed text from your
 import requests, base64
 
 # Define the API endpoint
-api_url = "https://visioncraft-rs24.koyeb.app"
+api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
