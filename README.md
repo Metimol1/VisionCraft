@@ -19,7 +19,6 @@
     - [Available Samplers](#available-xl-samplers)
     - [Available Schedulers](#available-xl-schedulers)
     - [Image generation](#generate-image-xl)
-  - [DALLE 3](#dalle-3)
   - [Image to Image generation](#image-to-image)
     - [Available Schedulers](#available-img2img-schedulers)
     - [Available Refiners](#available-img2img-refiners)
@@ -312,61 +311,6 @@ with open(f"generated_image.png", "wb") as f:
     f.write(image)
 ```
 
-## DALLE 3
-
-#### Request:
-```
-POST https://api.visioncraft.top/dalle
-```
-
-#### Request Parameters:
-- `token` (string) - your API key
-- `prompt` (string) - your prompt
-
-#### Request Example:
-```
-{
-  "token": "your_api_key",
-  "prompt": "Harry Potter"
-}
-```
-
-The response to this request will contain a list of links to your images.
-
-**Python Example:**
-
-```
-# Python code for interacting with VisionCraft API
-import requests
-
-# Define the API endpoint
-api_url = "https://api.visioncraft.top"
-
-# Obtain your API key
-api_key = "your_api_key"
-
-# Set up the data to send in the request
-data = {
-    "token": api_key,
-    "prompt": "Cool girl",
-}
-
-# Send the request to generate images
-response = requests.post(f"{api_url}/dalle", json=data)
-
-# Get the result
-image_urls = response.json()["images"]
-
-# Save the images locally
-for i, image_url in enumerate(image_urls):
-    # Get the image data from the URL
-    response = requests.get(image_url)
-    # Save the image locally
-    with open(f"generated_image_{i}.png", "wb") as f:
-        f.write(response.content)
-```
-
-
 ## Image to Image
 
 ### Available Img2img Schedulers
@@ -538,9 +482,6 @@ print(response.json())
 ```
 
 ## Premium LLM Generation
-
-> [!IMPORTANT]
-> The Premium LLM models is only for Premium users. To use this models, you need to buy a subscription, which costs $5 per month.
 
 ### Available Premium LLM Models
 
@@ -761,9 +702,8 @@ def upscale_request(image):
     headers = {"content-type": "application/json"}
 
     resp = requests.post(url, json=payload, headers=headers)
-    image_url = resp.json()["images"][0]
-    content = requests.get(image_url)
-    return content.content
+    content = resp.content
+    return content
 
 image = open('my_image.png', 'rb').read()
 upscaled_image = upscale_request(image)
