@@ -407,20 +407,27 @@ data = {
 # Send the request to generate images
 response = requests.post(f"{api_url}/midjourney", json=data)
 
-print(response.json())
-
-image_id = response.json()["data"]
-
-while True:
-    response = requests.post(f"{api_url}/midjourney/result")
-    if "URL" in response.json():
-        image = response.json()["URL"]
-        break
-
-image_data = requests.get(image)
-
-with open(f"generated_image.png", "wb") as f:
-    f.write(image_data.content)
+if "data" in response.json():
+    image_id = response.json()["data"]
+    
+    while True:
+        data = {
+            "task_id": image_id,
+            "token": api_key
+        }
+        response = requests.post(f"{api_url}/midjourney/result", json=data)
+        print(response.json())
+        if "URL" in response.json():
+            image = response.json()["URL"]
+            break
+    
+    image_data = requests.get(image)
+    
+    # Save generated image
+    with open(f"generated_image.png", "wb") as f:
+        f.write(image_data.content)
+else:
+    print(response.json())
 ```
 
 
