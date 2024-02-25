@@ -314,6 +314,114 @@ with open(f"generated_image.png", "wb") as f:
     f.write(image)
 ```
 
+## Midjourney
+
+### Midjourney generate image
+
+> [!IMPORTANT]
+> Only Premium users can use Midjourney. Premium  subscription costs $10 per month.
+
+#### Request:
+```
+POST https://api.visioncraft.top/midjourney
+```
+
+#### Request Parameters:
+- `prompt` (string) - a text prompt for generation
+- `token` (string) - your API key from VisionCraft API.
+
+#### Request Example:
+```
+{
+  "prompt": "Paper cut of a seascape, with serene colors, delicate waves, Alex Garant, Edison bulb, calming blue background --ar 9:16 --v 5.2",
+  "token": "your_api_key"
+}
+```
+
+#### Response:
+```
+{
+  "statusCode": 200,
+  "message": "Success",
+  "data": "your_request_id"
+}
+```
+
+### Midjourney get image
+#### Request:
+```
+POST https://api.visioncraft.top/midjourney/result
+```
+
+#### Request Parameters:
+- `task_id` (string) - parameter `data` from your image generation request.
+- `token` (string) - your API key from VisionCraft API.
+
+#### Request Example:
+```
+{
+  "task_id": "75435",
+  "token": "your_api_key"
+}
+```
+
+#### Response:
+If your image is still being generated, you will receive a response like this:
+```
+{
+  "ImageID": 75435,
+  "Status": "generating"
+}
+```
+
+If your image is already ready, you will receive this response:
+```
+{
+  "ImageID": 75435,
+  "Status": "success",
+  "StartTime": "2024-02-25T09:15:02.000Z",
+  "RequestTime": "2024-02-25T09:13:48.000Z",
+  "FinishTime": "2024-02-25T09:20:54.000Z",
+  "URL": "Your image URL"
+}
+```
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://api.visioncraft.top"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Set up the data to send in the request
+data = {
+    "prompt": "Paper cut of a seascape, with serene colors, delicate waves, Alex Garant, Edison bulb, calming blue background --ar 9:16 --v 5.2",
+    "token": api_key
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/midjourney", json=data)
+
+image_id = response.json()["data"]
+
+while True:
+    response = requests.post(f"{api_url}/midjourney/result")
+    if response.json()["URL"]:
+        image = response.json()["URL"]
+
+image_data = requests.get(image)
+
+with open(f"generated_image.png", "wb") as f:
+    f.write(image_data.content)
+```
+
+
+
 ## Image to Image
 
 ### Available Img2img Schedulers
