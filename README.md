@@ -416,7 +416,6 @@ if "data" in response.json():
     
     while True:
         response = requests.post(f"{api_url}/midjourney/result", json=data_image)
-        print(response.json())
         if "URL" in response.json():
             image = response.json()["URL"]
             break
