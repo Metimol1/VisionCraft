@@ -396,7 +396,7 @@ import requests
 api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
-api_key = "your_api_key"
+api_key = "55b185fd-4289-4777-a38c-30740cccfead"
 
 # Set up the data to send in the request
 data = {
@@ -407,12 +407,15 @@ data = {
 # Send the request to generate images
 response = requests.post(f"{api_url}/midjourney", json=data)
 
+print(response.json())
+
 image_id = response.json()["data"]
 
 while True:
     response = requests.post(f"{api_url}/midjourney/result")
-    if response.json()["URL"]:
+    if "URL" in response.json():
         image = response.json()["URL"]
+        break
 
 image_data = requests.get(image)
 
