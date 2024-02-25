@@ -396,7 +396,7 @@ import requests
 api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
-api_key = "55b185fd-4289-4777-a38c-30740cccfead"
+api_key = "your_api_key"
 
 # Set up the data to send in the request
 data = {
