@@ -8,6 +8,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Obtaining an API Key](#obtaining-an-api-key)
+- [Limits](#limits)
 - [Interacting with the API](#interacting-with-the-api)
   - [Image Generation with Stable Diffusion 1.x](#image-generation)
     - [Available Models](#available-models)
@@ -58,6 +59,14 @@ To start using the VisionCraft API, you need to obtain an API key. This key is e
 3. **Secure your key.**
 
    It is essential to protect your API key. Do not share it with other users, and do not post it in public places. Otherwise, your key will be banned, and generating a new key is not possible. One Telegram account is associated with one key.
+
+## Limits
+
+API has FREE users and PREMIUM users. PREMIUM subscription cost $10, and with premium subscription users don't have any limits. But free users have limits with some models. You can look limits for free users here:
+
+https://api.visioncraft.top/limits
+
+If a model is not listed on this page, it means it is unlimited for free users.
 
 # Interacting with the API
 
@@ -484,7 +493,7 @@ api_key = "your_api_key"
 
 # Set up the data to send in the request
 data = {
-    "token": "your_token",
+    "token": api_key,
     "prompt": "Magical girl, mystical watercolor painting, stars, , flow, watercolor ultra resolution, Soft Lighting, Intricate, Pastel colors, Digital painting, Artstation, Dreamlike, Whimsical, art by loish and sakimichan and mandy jurgens",
     "negative_prompt": "Ugly, Disfigured, Deformed, Low quality, Pixelated, Blurry, Grains, Text, Watermark, Signature, Out of frame, Disproportioned, Bad proportions, Gross proportions, Bad anatomy, Duplicate, Cropped, Extra hands, Extra arms, Extra legs, Extra fingers, Extra limbs, Long neck, Mutation, Mutilated, Mutated hands, Poorly drawn face, Poorly drawn hands, Missing hands, Missing arms, Missing legs, Missing fingers, Low resolution, Morbid.",
     "steps": 50,
