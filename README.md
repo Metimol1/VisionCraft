@@ -2,7 +2,7 @@
 
 ## Official links:
 - [Telegram channel](https://t.me/visioncraft_channel)
-- [Android app](https://github.com/VisionCraft-org/vision-craft-mobile)
+- [Android app](https://play.google.com/store/apps/details?id=com.karlmathuthu.vision_craft_mobile)
 - [Flutter package](https://pub.dev/packages/flutter_vision_craft)
 
 ## Table of Contents
