@@ -396,7 +396,7 @@ import requests
 api_url = "https://api.visioncraft.top"
 
 # Obtain your API key
-api_key = "your_api_key"
+api_key = "5a3598a8-4d00-4637-a5f1-d893fd8df87c"
 
 # Set up the data to send in the request
 data = {
@@ -409,13 +409,13 @@ response = requests.post(f"{api_url}/midjourney", json=data)
 
 if "data" in response.json():
     image_id = response.json()["data"]
+    data_image = {
+        "task_id": str(image_id),
+        "token": api_key
+    }
     
     while True:
-        data = {
-            "task_id": image_id,
-            "token": api_key
-        }
-        response = requests.post(f"{api_url}/midjourney/result", json=data)
+        response = requests.post(f"{api_url}/midjourney/result", json=data_image)
         print(response.json())
         if "URL" in response.json():
             image = response.json()["URL"]
