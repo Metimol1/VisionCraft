@@ -22,6 +22,7 @@
   - [Midjourney](#midjourney)
     - [Generate image](#midjourney-generate-image)
     - [Get image](#midjourney-get-image)
+  - [Openjourney](#openjourney)
   - [Image to Image generation](#image-to-image)
     - [Available Schedulers](#available-img2img-schedulers)
     - [Available Refiners](#available-img2img-refiners)
@@ -429,6 +430,79 @@ else:
     print(response.json())
 ```
 
+## Openjourney
+
+Openjourney is an open source Stable Diffusion fine tuned model on Midjourney images, by PromptHero.
+
+Include `mdjrny-v4 style` in prompt. Here you'll find hundreds of [Openjourney prompts](https://prompthero.com/openjourney-prompts?utm_source=huggingface&utm_medium=referral)
+
+#### Request:
+```
+POST https://api.visioncraft.top/openjourney
+```
+
+#### Request Parameters:
+- `prompt` (string) - a text prompt for generation
+- `token` (string) - your API key from VisionCraft API.
+- `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
+- `cfg_scale` (float) (optional: default is 7.5) - the CFG Scale (1-20)
+- `steps` (integer) (optional: default is 50)- the number of steps (1-50)
+- `height` (integer) - generated image height (minimum 128, maximum 1024), default is 1024
+- `width` (integer) - generated image width (minimum 128, maximum 1024), default is 1024
+
+
+#### Request Example:
+```
+{
+  "token": "your_token",
+  "prompt": "Magical girl, mystical watercolor painting, stars, , flow, watercolor ultra resolution, Soft Lighting, Intricate, Pastel colors, Digital painting, Artstation, Dreamlike, Whimsical, art by loish and sakimichan and mandy jurgens",
+  "negative_prompt": "Ugly, Disfigured, Deformed, Low quality, Pixelated, Blurry, Grains, Text, Watermark, Signature, Out of frame, Disproportioned, Bad proportions, Gross proportions, Bad anatomy, Duplicate, Cropped, Extra hands, Extra arms, Extra legs, Extra fingers, Extra limbs, Long neck, Mutation, Mutilated, Mutated hands, Poorly drawn face, Poorly drawn hands, Missing hands, Missing arms, Missing legs, Missing fingers, Low resolution, Morbid.",
+  "steps": 50,
+  "cfg_scale": 7.5,
+  "height": 1024,
+  "width": 1024
+}
+```
+
+The response should be contain bytecode from your image.
+
+> [!IMPORTANT]
+> Height and Width must be one of [128, 256, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024]
+
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://api.visioncraft.top"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Set up the data to send in the request
+data = {
+    "token": "your_token",
+    "prompt": "Magical girl, mystical watercolor painting, stars, , flow, watercolor ultra resolution, Soft Lighting, Intricate, Pastel colors, Digital painting, Artstation, Dreamlike, Whimsical, art by loish and sakimichan and mandy jurgens",
+    "negative_prompt": "Ugly, Disfigured, Deformed, Low quality, Pixelated, Blurry, Grains, Text, Watermark, Signature, Out of frame, Disproportioned, Bad proportions, Gross proportions, Bad anatomy, Duplicate, Cropped, Extra hands, Extra arms, Extra legs, Extra fingers, Extra limbs, Long neck, Mutation, Mutilated, Mutated hands, Poorly drawn face, Poorly drawn hands, Missing hands, Missing arms, Missing legs, Missing fingers, Low resolution, Morbid.",
+    "steps": 50,
+    "cfg_scale": 7.5,
+    "height": 1024,
+    "width": 1024
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/openjourney", json=data)
+
+# Extract the image from the response
+image = response.content
+
+# Save the image locally
+with open(f"generated_image.png", "wb") as f:
+    f.write(image)
+```
 
 
 ## Image to Image
