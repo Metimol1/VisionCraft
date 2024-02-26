@@ -24,6 +24,7 @@
     - [Generate image](#midjourney-generate-image)
     - [Get image](#midjourney-get-image)
   - [Openjourney](#openjourney)
+  - [DALLE 2](#dalle-2)
   - [Image to Image generation](#image-to-image)
     - [Available Schedulers](#available-img2img-schedulers)
     - [Available Refiners](#available-img2img-refiners)
@@ -507,6 +508,60 @@ response = requests.post(f"{api_url}/openjourney", json=data)
 
 # Extract the image from the response
 image = response.content
+
+# Save the image locally
+with open(f"generated_image.png", "wb") as f:
+    f.write(image)
+```
+
+## DALLE 2
+
+> [!IMPORTANT]
+> Only Premium users can use DALLE 2
+
+#### Request:
+```
+POST https://api.visioncraft.top/dalle-2
+```
+
+#### Request Parameters:
+- `prompt` (string) - a text prompt for generation
+- `token` (string) - your API key from VisionCraft API.
+
+#### Request Example:
+```
+{
+  "token": "your_token",
+  "prompt": "Magical girl, mystical watercolor painting, stars, , flow, watercolor ultra resolution, Soft Lighting, Intricate, Pastel colors, Digital painting, Artstation, Dreamlike, Whimsical, art by loish and sakimichan and mandy jurgens"
+}
+```
+
+The response should be contain url of your image.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests
+
+# Define the API endpoint
+api_url = "https://api.visioncraft.top"
+
+# Obtain your API key
+api_key = "your_api_key"
+
+# Set up the data to send in the request
+data = {
+    "token": api_key,
+    "prompt": "Magical girl, mystical watercolor painting, stars, , flow, watercolor ultra resolution, Soft Lighting, Intricate, Pastel colors, Digital painting, Artstation, Dreamlike, Whimsical, art by loish and sakimichan and mandy jurgens"
+}
+
+# Send the request to generate images
+response = requests.post(f"{api_url}/dalle-2", json=data)
+
+# Get image
+image = requests.get(response.json()["image"])
+image = image.content
 
 # Save the image locally
 with open(f"generated_image.png", "wb") as f:
