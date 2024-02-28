@@ -513,9 +513,6 @@ with open(f"generated_image.png", "wb") as f:
 
 ## DALLE 2
 
-> [!IMPORTANT]
-> Only Premium users can use DALLE 2
-
 #### Request:
 ```
 POST https://api.visioncraft.top/dalle-2
