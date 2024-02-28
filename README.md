@@ -676,7 +676,7 @@ GET https://api.visioncraft.top/models-llm
 
 #### Response:
 ```
-["nous-capybara-7b", "mistral-7b-instruct", "zephyr-7b-beta", "openchat-7b", ...]
+["gpt-4", "gpt-3.5-turbo", "gemini-pro", "Mixtral-8x7B-Instruct-v0.1", "CodeLlama-70b-Instruct-hf", ...]
 ```
 
 ### Text generation
@@ -695,7 +695,7 @@ POST https://api.visioncraft.top/llm
 #### Request Example:
 ```
 {
-  "model": "mistral-7b-instruct",
+  "model": "gpt-3.5-turbo",
   "token": "your_api_key",
   "messages": [
     {"role": "user", "content": "What is the meaning of life?"}
@@ -715,7 +715,7 @@ response = requests.post(
   url="https://api.visioncraft.top/llm",
   data=json.dumps({
     "token": "your_token",
-    "model": "mistral-7b-instruct",
+    "model": "gpt-3.5-turbo",
     "messages": [
       {"role": "system", "content": "You are a helpful assistant."},
       {"role": "user", "content": "Tell me a joke."},
