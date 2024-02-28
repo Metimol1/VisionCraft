@@ -733,65 +733,6 @@ response = requests.post(
 print(response.json())
 ```
 
-## Premium LLM Generation
-
-### Available Premium LLM Models
-
-You can retrieve a list of available premium models for text generation.
-
-#### Request:
-```
-GET https://api.visioncraft.top/models-llm-premium
-```
-
-#### Response:
-```
-["gpt-3-5", "gpt-3-5-turbo", "gpt-3-5-turbo-instruct", "claude-instant", "google-palm", "llama-2-7b", "llama-2-13b", "llama-2-70b", ...]
-```
-
-### Premium Text generation
-After selecting model, you can generate text.
-
-#### Request:
-```
-POST https://api.visioncraft.top/premium/llm
-```
-
-#### Request Parameters:
-- `model` (string) - the name of the chosen LLM model
-- `token` (string) - your API key
-- `message` (list) - message to the LLM
-- `chat_id` (optional: str, default is None) - After the first generation of text in the response, you receive a chat_id, and if you put the resulting value in this field during the next generation, the model will remember the entire history of your conversation with it.
-
-#### Request Example:
-```
-{
-  "model": "gpt-3-5-turbo",
-  "token": "your_api_key",
-  "message": "Hello!"
-}
-```
-
-The response to this request will contain a response from LLM model.
-
-**Python Example:**
-
-```
-# Python code for interacting with VisionCraft API
-import requests, json
-
-response = requests.post(
-  url="https://api.visioncraft.top/premium/llm",
-  data=json.dumps({
-    "token": "your_token",
-    "model": "gpt-3-5-turbo",
-    "message": "Hello 👋"
-  })
-)
-
-print(response.json())
-```
-
 
 ## Text to GIF
 
