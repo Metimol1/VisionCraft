@@ -329,9 +329,6 @@ with open(f"generated_image.png", "wb") as f:
 
 ### Midjourney generate image
 
-> [!IMPORTANT]
-> Only Premium users can use Midjourney. Premium  subscription costs $10 per month.
-
 #### Request:
 ```
 POST https://api.visioncraft.top/midjourney
