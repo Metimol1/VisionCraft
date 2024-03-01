@@ -733,6 +733,64 @@ response = requests.post(
 print(response.json())
 ```
 
+## Text embedding
+
+### Available Embedding Models
+
+You can retrieve a list of available models for embedding generation.
+
+#### Request:
+```
+GET https://api.visioncraft.top/models-embeddings
+```
+
+#### Response:
+```
+["text-embedding-3-small", "text-embedding-3-large", "text-embedding-ada-002", ...]
+```
+
+### Embedding generation
+After selecting model, you can generate embeddings.
+
+#### Request:
+```
+POST https://api.visioncraft.top/embeddings
+```
+
+#### Request Parameters:
+- `model` (string) - the name of the chosen Embedding model
+- `token` (string) - your API key
+- `text` (string) - your text for embeddings
+
+#### Request Example:
+```
+{
+  "model": "text-embedding-ada-002",
+  "token": "your_api_key",
+  "text": "hello"
+}
+```
+
+The response to this request will contain a response from Embedding model.
+
+**Python Example:**
+
+```
+# Python code for interacting with VisionCraft API
+import requests, json
+
+response = requests.post(
+  url="https://api.visioncraft.top/embeddings",
+  data=json.dumps({
+    "token": "your_token",
+    "model": "text-embedding-ada-002",
+    "text": "Something text :)"
+  })
+)
+
+print(response.json())
+```
+
 
 ## Text to GIF
 
