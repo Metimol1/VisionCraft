@@ -24,16 +24,12 @@
     - [Generate image](#midjourney-generate-image)
     - [Get image](#midjourney-get-image)
   - [Openjourney](#openjourney)
-  - [DALLE 2](#dalle-2)
   - [Image to Image generation](#image-to-image)
     - [Available Schedulers](#available-img2img-schedulers)
     - [Available Refiners](#available-img2img-refiners)
   - [LLM](#llm-generation)
     - [Available LLM models](#available-llm-models)
     - [Text generation](#text-generation)
-  - [Text embedding](#text-embedding)
-    - [Available embedding models](#available-embedding-models)
-    - [Generate embedding](#generate-embedding)
   - [Text to GIF generation](#text-to-gif)
   - [Image to Video generation](#image-to-video)
   - [Upscale Image](#upscale-image)
@@ -511,57 +507,6 @@ with open(f"generated_image.png", "wb") as f:
     f.write(image)
 ```
 
-## DALLE 2
-
-#### Request:
-```
-POST https://api.visioncraft.top/dalle-2
-```
-
-#### Request Parameters:
-- `prompt` (string) - a text prompt for generation
-- `token` (string) - your API key from VisionCraft API.
-
-#### Request Example:
-```
-{
-  "token": "your_token",
-  "prompt": "Magical girl, mystical watercolor painting, stars, , flow, watercolor ultra resolution, Soft Lighting, Intricate, Pastel colors, Digital painting, Artstation, Dreamlike, Whimsical, art by loish and sakimichan and mandy jurgens"
-}
-```
-
-The response should be contain url of your image.
-
-**Python Example:**
-
-```
-# Python code for interacting with VisionCraft API
-import requests
-
-# Define the API endpoint
-api_url = "https://api.visioncraft.top"
-
-# Obtain your API key
-api_key = "your_api_key"
-
-# Set up the data to send in the request
-data = {
-    "token": api_key,
-    "prompt": "Magical girl, mystical watercolor painting, stars, , flow, watercolor ultra resolution, Soft Lighting, Intricate, Pastel colors, Digital painting, Artstation, Dreamlike, Whimsical, art by loish and sakimichan and mandy jurgens"
-}
-
-# Send the request to generate images
-response = requests.post(f"{api_url}/dalle-2", json=data)
-
-# Get image
-image = requests.get(response.json()["image"])
-image = image.content
-
-# Save the image locally
-with open(f"generated_image.png", "wb") as f:
-    f.write(image)
-```
-
 
 ## Image to Image
 
@@ -679,7 +624,7 @@ GET https://api.visioncraft.top/models-llm
 
 #### Response:
 ```
-["gpt-4", "gpt-3.5-turbo", "gemini-pro", "Mixtral-8x7B-Instruct-v0.1", "CodeLlama-70b-Instruct-hf", ...]
+["Mixtral-8x7B-Instruct-v0.1", "CodeLlama-70b-Instruct-hf", ...]
 ```
 
 ### Text generation
@@ -727,64 +672,6 @@ response = requests.post(
       {"role": "assistant", "content": "Why did the computer go to therapy? It had too many bytes of emotional baggage."},
       {"role": "user", "content": "Haha, nice! What's the weather like today?"}
     ]
-  })
-)
-
-print(response.json())
-```
-
-## Text embedding
-
-### Available Embedding Models
-
-You can retrieve a list of available models for embedding generation.
-
-#### Request:
-```
-GET https://api.visioncraft.top/models-embeddings
-```
-
-#### Response:
-```
-["text-embedding-3-small", "text-embedding-3-large", "text-embedding-ada-002", ...]
-```
-
-### Embedding generation
-After selecting model, you can generate embeddings.
-
-#### Request:
-```
-POST https://api.visioncraft.top/embeddings
-```
-
-#### Request Parameters:
-- `model` (string) - the name of the chosen Embedding model
-- `token` (string) - your API key
-- `text` (string) - your text for embeddings
-
-#### Request Example:
-```
-{
-  "model": "text-embedding-ada-002",
-  "token": "your_api_key",
-  "text": "hello"
-}
-```
-
-The response to this request will contain a response from Embedding model.
-
-**Python Example:**
-
-```
-# Python code for interacting with VisionCraft API
-import requests, json
-
-response = requests.post(
-  url="https://api.visioncraft.top/embeddings",
-  data=json.dumps({
-    "token": "your_token",
-    "model": "text-embedding-ada-002",
-    "text": "Something text :)"
   })
 )
 
