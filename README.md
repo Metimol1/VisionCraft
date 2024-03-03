@@ -30,6 +30,7 @@
   - [LLM](#llm-generation)
     - [Available LLM models](#available-llm-models)
     - [Text generation](#text-generation)
+    - [Image to Text](#image-to-text)
   - [Text to GIF generation](#text-to-gif)
   - [Image to Video generation](#image-to-video)
   - [Upscale Image](#upscale-image)
@@ -671,6 +672,50 @@ response = requests.post(
       {"role": "user", "content": "That's a good one! Tell me another."},
       {"role": "assistant", "content": "Why did the computer go to therapy? It had too many bytes of emotional baggage."},
       {"role": "user", "content": "Haha, nice! What's the weather like today?"}
+    ]
+  })
+)
+
+print(response.json())
+```
+
+### Text to Image
+You can use LLaVA model for interacting with your image.
+
+#### Request:
+```
+POST https://api.visioncraft.top/llm
+```
+
+#### Request Example:
+```
+{
+  "model": "llava-1.5-7b-hf",
+  "token": "your_api_key",
+  "messages": [
+    {"role": "user", "content": "What is on this image?", "image": "your_image_in_base64_or_url_format"}
+  ]
+}
+```
+
+The response to this request will contain a response from LLM model.
+
+**Python Example:**
+
+```
+import requests, json, base64
+
+with open("my_image.png", "rb") as i:
+    image = i.read()
+image = base64.b64encode(image).decode("utf-8")
+
+response = requests.post(
+  url="https://api.visioncraft.top/llm",
+  data=json.dumps({
+    "token": "your_api_key",
+    "model": "llava-1.5-7b-hf",
+    "messages": [
+      {"role": "user", "content": "What is it?", "image": image}
     ]
   })
 )
