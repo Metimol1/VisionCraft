@@ -679,7 +679,7 @@ response = requests.post(
 print(response.json())
 ```
 
-### Text to Image
+### Image to Text
 You can use LLaVA model for interacting with your image.
 
 #### Request:
