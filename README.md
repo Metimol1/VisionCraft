@@ -266,8 +266,8 @@ POST https://api.visioncraft.top/generate-xl
 - `model` (string) - one of the available SDXL models.
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `token` (string) - your API key
-- `height` (integer) - generated image height (minimum 64, maximum 1024), default is 1024
-- `width` (integer) - generated image width (minimum 64, maximum 1024), default is 1024
+- `height` (integer) - generated image height (minimum 512, maximum 1024), default is 1024
+- `width` (integer) - generated image width (minimum 512, maximum 1024), default is 1024
 - `sampler` (string) - one of the available SDXL samplers.
 - `scheduler` (string) - one of the available SDXL schedulers.
 
