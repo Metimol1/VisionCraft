@@ -1,5 +1,9 @@
 # VisionCraft API Documentation
 
+<p align="center">
+<img align="center" src="api.gif" width="100%" alt="API Gif"/>
+</p>
+
 ## Official links:
 - [Telegram channel](https://t.me/visioncraft_channel)
 - [Android app](https://play.google.com/store/apps/details?id=com.karlmathuthu.vision_craft_mobile)
