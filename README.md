@@ -8,6 +8,7 @@
 - [Telegram channel](https://t.me/visioncraft_channel)
 - [Android app](https://play.google.com/store/apps/details?id=com.karlmathuthu.vision_craft_mobile)
 - [Flutter package](https://pub.dev/packages/flutter_vision_craft)
+- [SDXL Inpaint](https://inpaint.visioncraft.top)
 
 ## Table of Contents
 - [Introduction](#introduction)
