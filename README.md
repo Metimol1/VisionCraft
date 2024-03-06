@@ -565,6 +565,7 @@ POST https://api.visioncraft.top/img2img
   "negative_prompt": "bad quality",
   "token": "your_api_key",
   "image": "your_image_in_base64_format or url_to_your_image",
+  "mask": "your_mask_in_base64_format or url_to_your_mask",
   "steps": 50,
   "strength": 0.8,
   "refiner": "no_refiner",
