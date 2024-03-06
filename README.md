@@ -563,6 +563,9 @@ POST https://api.visioncraft.top/img2img
 - `strength` (float) (optional: default is 0.8) - Prompt strength. 1.0 corresponds to full destruction of information in image.
 - `refiner` (string) (optional: default is `no_refiner`) - one of the available img2img refiners
 
+> [!IMPORTANT]
+> If you want to try img2img model with musk parameter online, you can try on the [official VisionCraft website](https://inpaint.visioncraft.top)
+
 #### Request Example:
 ```
 {
