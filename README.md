@@ -552,6 +552,7 @@ POST https://api.visioncraft.top/img2img
 - `negative_prompt` (string) (optional) - text prompt that the model should not be drawn on the picture.
 - `token` (string) - your API key
 - `image` (string) - your image in base64 format, or URL to your image.
+- `mask` (string) (optional: default is `None`) - If you want to change only a certain part of your image, and not all at once, then you can pass the base64 code of your mask to this parameter. Read [here](https://huggingface.co/docs/diffusers/main/en/using-diffusers/inpaint) what a mask should look like.
 - `scheduler` (string) (optional: default is `DDIM`) - one of the available img2img schedulers
 - `steps` (integer) (optional: default is 50) - the number of steps (1-50)
 - `strength` (float) (optional: default is 0.8) - Prompt strength. 1.0 corresponds to full destruction of information in image.
