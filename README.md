@@ -8,7 +8,6 @@
 - [Telegram channel](https://t.me/visioncraft_channel)
 - [Android app](https://play.google.com/store/apps/details?id=com.karlmathuthu.vision_craft_mobile)
 - [Flutter package](https://pub.dev/packages/flutter_vision_craft)
-- [SDXL Inpaint](https://inpaint.visioncraft.top)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -67,7 +66,7 @@ To start using the VisionCraft API, you need to obtain an API key. This key is e
 
 API has FREE users and PREMIUM users. PREMIUM subscription cost $10, and with premium subscription users don't have any limits. But free users have limits with some models. You can look limits for free users here:
 
-https://api.visioncraft.top/limits
+https://visioncraft.top/limits
 
 If a model is not listed on this page, it means it is unlimited for free users.
 
@@ -81,7 +80,7 @@ You can retrieve a list of available models for image generation. Each model has
 
 #### Request:
 ```
-GET https://api.visioncraft.top/models
+GET https://visioncraft.top/models
 ```
 
 #### Response:
@@ -95,7 +94,7 @@ You can retrieve a list of available samplers for image generation.
 
 #### Request:
 ```
-GET https://api.visioncraft.top/samplers
+GET https://visioncraft.top/samplers
 ```
 
 #### Response:
@@ -109,7 +108,7 @@ You can retrieve a list of available Loras for image generation.
 
 #### Request:
 ```
-GET https://api.visioncraft.top/loras
+GET https://visioncraft.top/loras
 ```
 
 #### Response:
@@ -124,7 +123,7 @@ After selecting a specific model, you can generate images using the API. To do t
 
 #### Request:
 ```
-POST https://api.visioncraft.top/generate
+POST https://visioncraft.top/generate
 ```
 
 #### Request Parameters:
@@ -170,7 +169,7 @@ The response to this request will contain a list of links to the generated image
 import requests
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -220,7 +219,7 @@ You can retrieve a list of available models for image generation XL. Each model 
 
 #### Request:
 ```
-GET https://api.visioncraft.top/models-xl
+GET https://visioncraft.top/models-xl
 ```
 
 #### Response:
@@ -234,7 +233,7 @@ You can retrieve a list of available samplers for image generation.
 
 #### Request:
 ```
-GET https://api.visioncraft.top/samplers-xl
+GET https://visioncraft.top/samplers-xl
 ```
 
 #### Response:
@@ -248,7 +247,7 @@ You can retrieve a list of available schedulers for image generation.
 
 #### Request:
 ```
-GET https://api.visioncraft.top/schedulers-xl
+GET https://visioncraft.top/schedulers-xl
 ```
 
 #### Response:
@@ -263,7 +262,7 @@ After selecting a specific model, sampler and scheduler you can generate images 
 
 #### Request:
 ```
-POST https://api.visioncraft.top/generate-xl
+POST https://visioncraft.top/generate-xl
 ```
 
 #### Request Parameters:
@@ -299,7 +298,7 @@ The response to this request will contain a your image.
 import requests
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -333,7 +332,7 @@ with open(f"generated_image.png", "wb") as f:
 
 #### Request:
 ```
-POST https://api.visioncraft.top/midjourney
+POST https://visioncraft.top/midjourney
 ```
 
 #### Request Parameters:
@@ -360,7 +359,7 @@ POST https://api.visioncraft.top/midjourney
 ### Midjourney get image
 #### Request:
 ```
-POST https://api.visioncraft.top/midjourney/result
+POST https://visioncraft.top/midjourney/result
 ```
 
 #### Request Parameters:
@@ -403,7 +402,7 @@ If your image is already ready, you will receive this response:
 import requests
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -447,7 +446,7 @@ Include `mdjrny-v4 style` in prompt. Here you'll find hundreds of [Openjourney p
 
 #### Request:
 ```
-POST https://api.visioncraft.top/openjourney
+POST https://visioncraft.top/openjourney
 ```
 
 #### Request Parameters:
@@ -486,7 +485,7 @@ The response should be contain bytecode from your image.
 import requests
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -522,7 +521,7 @@ You can retrieve a list of available Schedulers for image to image generation.
 
 #### Request:
 ```
-GET https://api.visioncraft.top/img2img/schedulers
+GET https://visioncraft.top/img2img/schedulers
 ```
 
 #### Response:
@@ -536,7 +535,7 @@ You can retrieve a list of available Refiners for image to image generation.
 
 #### Request:
 ```
-GET https://api.visioncraft.top/img2img/refiners
+GET https://visioncraft.top/img2img/refiners
 ```
 
 #### Response:
@@ -549,7 +548,7 @@ After selecting specific models, schedulers and refiners you can generate images
 
 #### Request:
 ```
-POST https://api.visioncraft.top/img2img
+POST https://visioncraft.top/img2img
 ```
 
 #### Request Parameters:
@@ -562,9 +561,6 @@ POST https://api.visioncraft.top/img2img
 - `steps` (integer) (optional: default is 50) - the number of steps (1-50)
 - `strength` (float) (optional: default is 0.8) - Prompt strength. 1.0 corresponds to full destruction of information in image.
 - `refiner` (string) (optional: default is `no_refiner`) - one of the available img2img refiners
-
-> [!IMPORTANT]
-> If you want to try img2img model with mask parameter online, you can try on the [official VisionCraft website](https://inpaint.visioncraft.top)
 
 #### Request Example:
 ```
@@ -590,7 +586,7 @@ The response to this request will contain a bytecode of the generated image.
 import requests, base64
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -630,7 +626,7 @@ You can retrieve a list of available models for text generation.
 
 #### Request:
 ```
-GET https://api.visioncraft.top/models-llm
+GET https://visioncraft.top/models-llm
 ```
 
 #### Response:
@@ -643,7 +639,7 @@ After selecting model, you can generate text.
 
 #### Request:
 ```
-POST https://api.visioncraft.top/llm
+POST https://visioncraft.top/llm
 ```
 
 #### Request Parameters:
@@ -654,7 +650,7 @@ POST https://api.visioncraft.top/llm
 #### Request Example:
 ```
 {
-  "model": "gpt-3.5-turbo",
+  "model": "Mixtral-8x7B-Instruct-v0.1",
   "token": "your_api_key",
   "messages": [
     {"role": "user", "content": "What is the meaning of life?"}
@@ -671,7 +667,7 @@ The response to this request will contain a response from LLM model.
 import requests, json
 
 response = requests.post(
-  url="https://api.visioncraft.top/llm",
+  url="https://visioncraft.top/llm",
   data=json.dumps({
     "token": "your_token",
     "model": "gpt-3.5-turbo",
@@ -694,7 +690,7 @@ You can use LLaVA model for interacting with your image.
 
 #### Request:
 ```
-POST https://api.visioncraft.top/llm
+POST https://visioncraft.top/llm
 ```
 
 #### Request Example:
@@ -720,7 +716,7 @@ with open("my_image.png", "rb") as i:
 image = base64.b64encode(image).decode("utf-8")
 
 response = requests.post(
-  url="https://api.visioncraft.top/llm",
+  url="https://visioncraft.top/llm",
   data=json.dumps({
     "token": "your_api_key",
     "model": "llava-1.5-7b-hf",
@@ -738,7 +734,7 @@ print(response.json())
 
 #### Request:
 ```
-POST https://api.visioncraft.top/generate-gif
+POST https://visioncraft.top/generate-gif
 ```
 
 #### Request Parameters:
@@ -770,7 +766,7 @@ The response to this request will contain a list of link to the generated GIF.
 import requests
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -809,7 +805,7 @@ for i, image_url in enumerate(image_urls):
 
 #### Request:
 ```
-POST https://api.visioncraft.top/img2video
+POST https://visioncraft.top/img2video
 ```
 
 #### Request Parameters:
@@ -833,7 +829,7 @@ The response to this request will contain a generated image.
 import requests, base64
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
@@ -863,7 +859,7 @@ with open(f"generated_video.mp4", "wb") as f:
 
 #### Request:
 ```
-POST https://api.visioncraft.top/upscale
+POST https://visioncraft.top/upscale
 ```
 
 #### Request Parameters:
@@ -891,7 +887,7 @@ def upscale_request(image):
         "token": "your_token",
         "image": b
     }
-    url = 'https://api.visioncraft.top/upscale'
+    url = 'https://visioncraft.top/upscale'
     headers = {"content-type": "application/json"}
 
     resp = requests.post(url, json=payload, headers=headers)
@@ -908,7 +904,7 @@ with open('upscaled_image.png', 'wb') as f:
 
 #### Request:
 ```
-POST https://api.visioncraft.top/whisper
+POST https://visioncraft.top/whisper
 ```
 
 #### Request Parameters:
@@ -932,7 +928,7 @@ The response to this request will contain a JSON with transcribed text from your
 import requests, base64
 
 # Define the API endpoint
-api_url = "https://api.visioncraft.top"
+api_url = "https://visioncraft.top"
 
 # Obtain your API key
 api_key = "your_api_key"
