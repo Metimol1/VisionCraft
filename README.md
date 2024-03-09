@@ -910,12 +910,14 @@ POST https://visioncraft.top/whisper
 #### Request Parameters:
 - `token` (string) - your API key
 - `audio` (string) - your audio in base64 format or URL to your audio
+- `language` (string: default is `auto`) - language of the audio in ISO 639-1 format
 
 #### Request Example:
 ```
 {
   "token": "your_api_key",
-  "audio": "your_audio_in_base64_format or url_to_your_audio"
+  "audio": "your_audio_in_base64_format or url_to_your_audio",
+  "language": "language of audio in ISO 639-1 format or auto"
 }
 ```
 
@@ -940,6 +942,8 @@ with open("my_audio.mp3", "rb") as audio:
 data = {
     "token": api_key,
     "audio": audio_base64,
+    "language": "auto",
+    "task": "transcribe"
 }
 
 # Send the request to generate images
