@@ -910,7 +910,8 @@ POST https://visioncraft.top/whisper
 #### Request Parameters:
 - `token` (string) - your API key
 - `audio` (string) - your audio in base64 format or URL to your audio
-- `language` (string: default is `auto`) - language of the audio in ISO 639-1 format
+- `language` (string) (optional: default is `auto`) - language of the audio in ISO 639-1 format
+- `task` (string) (optional: default is `transcribe`) - Available values: `transcribe` and `translate`
 
 #### Request Example:
 ```
@@ -918,6 +919,7 @@ POST https://visioncraft.top/whisper
   "token": "your_api_key",
   "audio": "your_audio_in_base64_format or url_to_your_audio",
   "language": "language of audio in ISO 639-1 format or auto"
+  "task": "trancribe or translate"
 }
 ```
 
