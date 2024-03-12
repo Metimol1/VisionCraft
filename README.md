@@ -36,7 +36,6 @@
     - [Text generation](#text-generation)
     - [Image to Text](#image-to-text)
   - [Text to GIF generation](#text-to-gif)
-  - [Image to Video generation](#image-to-video)
   - [Upscale Image](#upscale-image)
   - [Whisper](#whisper)
 - [Key Limitations](#key-limitations)
