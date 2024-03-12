@@ -801,60 +801,6 @@ for i, image_url in enumerate(image_urls):
         f.write(response.content)
 ```
 
-## Image to Video
-
-#### Request:
-```
-POST https://visioncraft.top/img2video
-```
-
-#### Request Parameters:
-- `token` (string) - your API key
-- `image` (string) - your image in base64 format or URL to your image
-
-#### Request Example:
-```
-{
-  "token": "your_api_key",
-  "image": "your_image_in_base64_format or url_to_your_image"
-}
-```
-
-The response to this request will contain a generated image.
-
-**Python Example:**
-
-```
-# Python code for interacting with VisionCraft API
-import requests, base64
-
-# Define the API endpoint
-api_url = "https://visioncraft.top"
-
-# Obtain your API key
-api_key = "your_api_key"
-
-with open("my_image.png", "rb") as image:
-  image_base64 = base64.b64encode(image.read()).decode("utf-8")
-
-# Set up the data to send in the request
-data = {
-    "token": api_key,
-    "image": image_base64,
-}
-
-# Send the request to generate images
-response = requests.post(f"{api_url}/img2video", json=data)
-
-# Get the result
-result = response.content
-
-# Save the video locally
-with open(f"generated_video.mp4", "wb") as f:
-    f.write(result)
-```
-
-
 ## Upscale Image
 
 #### Request:
