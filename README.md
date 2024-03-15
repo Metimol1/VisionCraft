@@ -630,7 +630,7 @@ GET https://visioncraft.top/models-llm
 
 #### Response:
 ```
-["Mixtral-8x7B-Instruct-v0.1", "CodeLlama-70b-Instruct-hf", ...]
+["lzlv_70b_fp16_hf", "CodeLlama-34b-Instruct-hf", "pygmalion-13b-4bit-128g", "airoboros-70b", "Mixtral-8x7B-Instruct-v0.1", "Mistral-7B-Instruct-v0.1", "dolphin-2.6-mixtral-8x7b", "Llama-2-7b-chat-hf", "CodeLlama-70b-Instruct-hf", "Llama-2-70b-chat-hf", "airoboros-l2-70b-gpt4-1.4.1", ...]
 ```
 
 ### Text generation
@@ -644,6 +644,13 @@ POST https://visioncraft.top/llm
 #### Request Parameters:
 - `model` (string) - the name of the chosen LLM model
 - `token` (string) - your API key
+- `max_new_tokens` (int: min `1` max `100000`) (optional: default is `512`) - maximum length of the newly generated generated text
+- `temperature` (float: min `0` max `100`) (optional: default is `0.7`) - temperature to use for sampling. 0 means the output is deterministic. Values greater than 1 encourage more diversity
+- `top_p` (float: min `0` max `1`) (optional: default is `0.9`) - Sample from the set of tokens with highest probability such that sum of probabilies is higher than p. Lower values focus on the most probable tokens. Higher values sample more low-probability tokens
+- `top_k` (int: min `0` max `99999`) (optional: default is `0`) - Sample from the best k (number of) tokens. 0 means off
+- `repetition_penalty` (float: min `0.01` max `5`) (optional: default is `1`) - repetition penalty. Value of 1 means no penalty, values greater than 1 discourage repetition, smaller than 1 encourage repetition.
+- `presence_penalty` (float: min `-2` max `2`) (optional: default is `0`) - Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
+- `frequency_penalty` (float: min `-2` max `2`) (optional: default is `0`) - Positive values penalize new tokens based on how many times they appear in the text so far, increasing the model's likelihood to talk about new topics.
 - `messages` (list) - messages to the LLM
 
 #### Request Example:
@@ -651,6 +658,13 @@ POST https://visioncraft.top/llm
 {
   "model": "Mixtral-8x7B-Instruct-v0.1",
   "token": "your_api_key",
+  "max_new_tokens": 1000,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "top_k": 0,
+  "repetition_penalty": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
   "messages": [
     {"role": "user", "content": "What is the meaning of life?"}
   ]
@@ -669,7 +683,14 @@ response = requests.post(
   url="https://visioncraft.top/llm",
   data=json.dumps({
     "token": "your_token",
-    "model": "gpt-3.5-turbo",
+    "model": "Llama-2-70b-chat-hf",
+    "max_new_tokens": 1000,
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 0,
+    "repetition_penalty": 1,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
     "messages": [
       {"role": "system", "content": "You are a helpful assistant."},
       {"role": "user", "content": "Tell me a joke."},
