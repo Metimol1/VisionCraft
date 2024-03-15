@@ -9,11 +9,6 @@
 - [Android app](https://play.google.com/store/apps/details?id=com.karlmathuthu.vision_craft_mobile)
 - [Flutter package](https://pub.dev/packages/flutter_vision_craft)
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Documentation](#documentation)
-- [Limits](#limits)
-- [Contact Information](#contact-information)
 
 ## Introduction
 
