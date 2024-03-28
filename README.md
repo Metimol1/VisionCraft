@@ -5,6 +5,7 @@
 ## Official links:
 - [Telegram channel](https://t.me/visioncraft_channel)
 - [Android app](https://play.google.com/store/apps/details?id=com.karlmathuthu.vision_craft_mobile)
+- [PyPi package](https://github.com/Belyashik2K/VisionCraftAPI)
 - [Flutter package](https://pub.dev/packages/flutter_vision_craft)
 
 
