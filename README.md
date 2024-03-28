@@ -1,5 +1,3 @@
-# VisionCraft API Documentation
-
 <p align="center">
 <img align="center" src="IMG_20240328_180854_432.png" width="100%" alt="API Logo"/>
 </p>
