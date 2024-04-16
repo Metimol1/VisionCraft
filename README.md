@@ -22,7 +22,7 @@ https://docs.visioncraft.top
 
 ## Limits
 
-API has FREE users and PREMIUM users. PREMIUM subscription cost $10, and with premium subscription users don't have any limits. But free users have limits with some models. You can look limits for free users here:
+API has FREE plan and Premium plans. You can look all prices and limits here:
 
 https://visioncraft.top/limits
 
