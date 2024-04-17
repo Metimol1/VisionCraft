@@ -26,8 +26,6 @@ API has FREE plan and Premium plans. You can look all prices and limits here:
 
 https://visioncraft.top/limits
 
-If a model is not listed on this page, it means it is unlimited for free users.
-
 
 ## Contact Information
 
