@@ -11,7 +11,7 @@
 
 ## Introduction
 
-The VisionCraft API is a **free** API for using over 100 different AI models. From images to sound.
+The VisionCraft API is a **free** API for using over 3000 different AI models.
 
 ## Documentation
 
