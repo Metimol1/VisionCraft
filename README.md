@@ -35,7 +35,7 @@ The VisionCraft API is a **free** API for using over 3000 different AI models.
 * Playground-v2.5
   * [Image Generation](playground/generate.md)
 * LLM
-  * [Available Models](interacting-with-the-api/llm-models/available-models.md)
+  * [Available Models](llm/available-models.md)
   * [Text Generation](interacting-with-the-api/llm-models/text-generation/README.md)
     * [Add image to request](interacting-with-the-api/llm-models/text-generation/add-image-to-request.md)
 * [Text2GIF](interacting-with-the-api/text2gif/README.md)
