@@ -2,9 +2,7 @@
 
 You can use **LLaVA model** for **interacting with** your **image**.
 
-{% hint style="info" %}
 Only **LLaVA model** support images!
-{% endhint %}
 
 ## Python example
 
