@@ -27,7 +27,7 @@ The VisionCraft API is a **free** API for using over 3000 different AI models.
     * [Available Models](sd/sdxl/models.md)
     * [Available Loras](sd/sdxl/loras.md)
   * [Available Samplers](sd/samplers.md)
-  * [Image Generation](interacting-with-the-api/stablediffusion-xl/image-generation.md)
+  * [Image Generation](sd/image-generation.md)
 * [DALL•E-3](interacting-with-the-api/dall-e-3/README.md)
   * [Image Generation](interacting-with-the-api/dall-e-3/image-generation.md)
 * [Kandinsky-v3](interacting-with-the-api/stablediffusion-xl-1/README.md)
