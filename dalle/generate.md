@@ -1,6 +1,6 @@
 # Image Generation
 
-Generating DALL • E 3 image
+Generating DALL•E-3 image
 
 ## Request method and URL
 
