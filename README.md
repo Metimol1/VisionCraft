@@ -22,7 +22,7 @@ The VisionCraft API is a **free** API for using over 3000 different AI models.
 * StableDiffusion
   * SD 1.X
     * [Available Models](sd/models.md)
-    * [Available Loras](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl/available-refiners-1.md)
+    * [Available Loras](sd/loras.md)
   * SDXL
     * [Available Models](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl-1/available-refiners.md)
     * [Available Loras](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl-1/available-refiners-1.md)
