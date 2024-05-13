@@ -14,8 +14,8 @@ The VisionCraft API is a **free** API for using over 3000 different AI models.
 
 ## ✨ Getting started
 
-* [Obtaining an API Key](getting-started /obtaining-an-api-key.md)
-* [Subscriptions and limits](getting-started /subscriptions-and-limits.md)
+* [Obtaining an API Key](getting-started/obtaining-an-api-key.md)
+* [Subscriptions and limits](getting-started/subscriptions-and-limits.md)
 
 ## ❤️‍🔥 Interacting with the API
 
