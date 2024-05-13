@@ -10,20 +10,40 @@
 
 The VisionCraft API is a **free** API for using over 3000 different AI models.
 
-## Documentation
+# Table of contents
 
-You can read official VisionCraft documentation here:
+## ✨ Getting started
 
-https://docs.visioncraft.top
+* [Obtaining an API Key](getting-started/obtaining-an-api-key.md)
+* [Subscriptions and limits](getting-started/subscriptions-and-limits.md)
 
+## ❤️‍🔥 Interacting with the API
 
-## Limits
+* [StableDiffusion](interacting-with-the-api/stablediffusion-xl/README.md)
+  * [StableDiffusion models](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl/README.md)
+    * [Available Models](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl/available-refiners.md)
+    * [Available Loras](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl/available-refiners-1.md)
+  * [StableDiffusionXL models](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl-1/README.md)
+    * [Available Models](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl-1/available-refiners.md)
+    * [Available Loras](interacting-with-the-api/stablediffusion-xl/stablediffusion-xl-1/available-refiners-1.md)
+  * [Available Samplers](interacting-with-the-api/stablediffusion-xl/available-schedulers.md)
+  * [Image Generation](interacting-with-the-api/stablediffusion-xl/image-generation.md)
+* [DALL • E 3](interacting-with-the-api/dall-e-3/README.md)
+  * [Image Generation](interacting-with-the-api/dall-e-3/image-generation.md)
+* [Kandinsky v3](interacting-with-the-api/stablediffusion-xl-1/README.md)
+  * [Image Generation](interacting-with-the-api/stablediffusion-xl-1/image-generation.md)
+* [Playground v2.5](interacting-with-the-api/stablediffusion-xl-2/README.md)
+  * [Image Generation](interacting-with-the-api/stablediffusion-xl-2/image-generation.md)
+* [Midjourney](interacting-with-the-api/midjourney/README.md)
+  * [Create task](interacting-with-the-api/midjourney/create-task.md)
+  * [Get image status by TaskID](interacting-with-the-api/midjourney/get-image-status-by-taskid.md)
+* [LLM models](interacting-with-the-api/llm-models/README.md)
+  * [Available Models](interacting-with-the-api/llm-models/available-models.md)
+  * [Text Generation](interacting-with-the-api/llm-models/text-generation/README.md)
+    * [Add image to request](interacting-with-the-api/llm-models/text-generation/add-image-to-request.md)
+* [Text2GIF](interacting-with-the-api/text2gif/README.md)
+  * [GIF Generation](interacting-with-the-api/text2gif/gif-generation.md)
 
-API has FREE plan and Premium plans. You can look all prices and limits here:
+## ℹ️ Contact Information
 
-https://visioncraft.top/limits
-
-
-## Contact Information
-
-If you have any questions or requests, feel free to reach out to us. We are always ready to assist you. For communication, use my [Telegram](https://t.me/metimol).
+* [Links](contact-information/links.md)
