@@ -43,4 +43,9 @@ The VisionCraft API is a **free** API for using over 3000 different AI models.
 
 ## ℹ️ Contact Information
 
-* [Links](contact-information/links.md)
+If you **have** any **questions** or requests, **feel free to reach out to us**. We are always **ready to assist** you.&#x20;
+
+* [VisionCraft API](https://api.visioncraft.top/docs#/)
+* [Telegram bot](https://t.me/VisionCraft\_bot)
+* [Telegram channel](https://t.me/visioncraft\_channel)
+* [Administrator](https://t.me/metimol)
