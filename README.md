@@ -30,10 +30,8 @@ The VisionCraft API is a **free** API for using over 3000 different AI models.
   * [Image Generation](sd/image-generation.md)
 * DALL•E-3
   * [Image Generation](dalle/generate.md)
-* Kandinsky-v3
-  * [Image Generation](kandinsky/generate.md)
-* Playground-v2.5
-  * [Image Generation](playground/generate.md)
+* Leonardo.ai
+  * [Image Generation](leonardo/generate.md)
 * LLM
   * [Available Models](llm/available-models.md)
   * [Text Generation](llm/text-generation.md)
