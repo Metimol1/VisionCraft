@@ -12,7 +12,7 @@ GET https://visioncraft.top/models-llm
 
 The response is a JSON array containing the names of the available models, as shown below:
 
-```json
+```
 ["lzlv_70b_fp16_hf", "CodeLlama-34b-Instruct-hf", ...]
 ```
 
