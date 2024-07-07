@@ -12,7 +12,7 @@ GET https://visioncraft.top/sd/models-sd
 
 The response is a JSON array containing the names of the available models, as shown below:
 
-```json
+```
 ["Dalcefo-v5", "AnythingV5NoVAE-Ink-noVAE", ...]
 ```
 
