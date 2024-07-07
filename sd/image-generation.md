@@ -46,7 +46,7 @@ POST https://visioncraft.top/sd
 
 ### Loras Usage
 
-```json
+```
 {
   "lora_name_1": priority,
   "lora_name_2": priority,
