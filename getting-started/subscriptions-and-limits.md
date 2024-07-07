@@ -14,6 +14,6 @@
    * Access to all models
    * **Unlimited** usage
 
-To **purchase** a premium subscription, simply use the command `/premium` in the VisionCraft Telegram bot.
+To **purchase** a premium subscription, simply use the command `/premium` in the [VisionCraft Telegram bot](https://t.me/VisionCraft_bot).
 
 [Check the limits for all Tiers](https://api.visioncraft.top/limits)
