@@ -2,24 +2,27 @@
 <img align="center" src="IMG_20240328_180854_432.png" width="100%" alt="API Logo"/>
 </p>
 
-## Official links:
-- [Telegram channel](https://t.me/visioncraft_channel)
+# Welcome to VisionCraft API
 
+## Official Links
+- [Telegram Channel](https://t.me/visioncraft_channel)
+- [VisionCraft API](https://api.visioncraft.top/docs#/)
+- [Telegram Bot](https://t.me/VisionCraft_bot)
 
 ## Introduction
 
-The VisionCraft API is a **free** API for using over 3000 different AI models.
+The VisionCraft API is a **free** API that provides access to over 3000 different AI models. Whether you are looking to generate images, text, or GIFs, VisionCraft has you covered.
 
-# Table of contents
+# Table of Contents
 
-## ✨ Getting started
+## ✨ Getting Started
 
 * [Obtaining an API Key](getting-started/obtaining-an-api-key.md)
-* [Subscriptions and limits](getting-started/subscriptions-and-limits.md)
+* [Subscriptions and Limits](getting-started/subscriptions-and-limits.md)
 
 ## ❤️‍🔥 Interacting with the API
 
-* StableDiffusion
+### StableDiffusion
   * SD 1.X
     * [Available Models](sd/sd/models.md)
     * [Available Loras](sd/sd/loras.md)
@@ -28,18 +31,19 @@ The VisionCraft API is a **free** API for using over 3000 different AI models.
     * [Available Loras](sd/sdxl/loras.md)
   * [Available Samplers](sd/samplers.md)
   * [Image Generation](sd/image-generation.md)
-* LLM
+
+### LLM
   * [Available Models](llm/available-models.md)
   * [Text Generation](llm/text-generation.md)
-    * [Add image to request](llm/add-image-to-request.md)
-* Text2GIF
+    * [Add Image to Request](llm/add-image-to-request.md)
+
+### Text2GIF
   * [GIF Generation](text2gif/gif-generation.md)
 
 ## ℹ️ Contact Information
 
-If you **have** any **questions** or requests, **feel free to reach out to us**. We are always **ready to assist** you.&#x20;
+If you have any questions or requests, feel free to reach out to us. We are always ready to assist you.
 
-* [VisionCraft API](https://api.visioncraft.top/docs#/)
-* [Telegram bot](https://t.me/VisionCraft\_bot)
-* [Telegram channel](https://t.me/visioncraft\_channel)
+* [Telegram Channel](https://t.me/visioncraft_channel)
+* [Telegram Bot](https://t.me/VisionCraft_bot)
 * [Administrator](https://t.me/metimol)
