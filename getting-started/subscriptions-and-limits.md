@@ -10,7 +10,7 @@
    * Access to all models
    * [Limit](https://api.visioncraft.top/limits) on the number of successful requests per second **(Tier 1)**
 
-3. **Tier 2 ($25 per month)**
+3. **Tier 2 ($20 per month)**
    * Access to all models
    * **Unlimited** usage
 
