@@ -1,24 +1,58 @@
 # Text Generation
 
-After **selecting model**, you can **generate text**.
+After **selecting a model**, you can **generate text** using the VisionCraft API.
 
-## Request method and URL
+## Request Method and URL
 
 ```
 POST https://visioncraft.top/v1/chat/completions
 ```
 
-## Parameters (<mark style="color:red;">\*</mark> required)
+## Parameters
 
-<table><thead><tr><th width="189">Parameter</th><th width="98">Type</th><th>Description</th></tr></thead><tbody><tr><td>model<mark style="color:red;">*</mark></td><td>string</td><td>The name of the chosen LLM model</td></tr><tr><td>token<mark style="color:red;">*</mark></td><td>string</td><td>Your API key</td></tr><tr><td>max_tokens</td><td>integer</td><td>Maximum length of the newly generated generated text <strong>(min: </strong><mark style="color:red;"><strong>128</strong></mark><strong>, max: </strong><mark style="color:red;"><strong>100000</strong></mark><strong>, default: </strong><mark style="color:red;"><strong>512</strong></mark><strong>)</strong></td></tr><tr><td>temperature</td><td>float</td><td>Temperature to use for sampling. 0 means the output is deterministic, values greater than 1 encourage more diversity <strong>(min: </strong><mark style="color:red;"><strong>0</strong></mark><strong>, max: </strong><mark style="color:red;"><strong>100</strong></mark><strong>, default: </strong><mark style="color:red;"><strong>0.7</strong></mark><strong>)</strong></td></tr><tr><td>top_p</td><td>float</td><td>Sample from the set of tokens with highest probability such that sum of probabilies is higher than p. Lower values focus on the most probable tokens. Higher values sample more low-probability tokens <strong>(min: </strong><mark style="color:red;"><strong>0</strong></mark><strong>, max: </strong><mark style="color:red;"><strong>1</strong></mark><strong>, default: </strong><mark style="color:red;"><strong>0.9</strong></mark><strong>)</strong></td></tr><tr><td>top_k</td><td>float</td><td>Sample from the best k (number of) tokens. 0 means off <strong>(min: </strong><mark style="color:red;"><strong>0</strong></mark><strong>, max: </strong><mark style="color:red;"><strong>99999</strong></mark><strong>, default: </strong><mark style="color:red;"><strong>0</strong></mark><strong>)</strong></td></tr><tr><td>repetition_penalty</td><td>float</td><td>Value of 1 means no penalty, values greater than 1 discourage repetition, smaller than 1 encourage repetition <strong>(min: </strong><mark style="color:red;"><strong>0.01</strong></mark><strong>, max: </strong><mark style="color:red;"><strong>5</strong></mark><strong>, default: </strong><mark style="color:red;"><strong>1</strong></mark><strong>)</strong></td></tr><tr><td>presence_penalty</td><td>float</td><td>Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics <strong>(min: </strong><mark style="color:red;"><strong>-2</strong></mark><strong>, max: </strong><mark style="color:red;"><strong>2</strong></mark><strong>, default: </strong><mark style="color:red;"><strong>0</strong></mark><strong>)</strong></td></tr><tr><td>frequency_penalty</td><td>float</td><td>Positive values penalize new tokens based on how many times they appear in the text so far, increasing the model's likelihood to talk about new topics <strong>(min: </strong><mark style="color:red;"><strong>-2</strong></mark><strong>, max: </strong><mark style="color:red;"><strong>2</strong></mark><strong>, default: </strong><mark style="color:red;"><strong>0</strong></mark><strong>)</strong></td></tr><tr><td>messages<mark style="color:red;">*</mark></td><td>list</td><td>Messages to the LLM</td></tr></tbody></table>
+| Parameter          | Type    | Description                                                                                               |
+|--------------------|---------|-----------------------------------------------------------------------------------------------------------|
+| `model`*           | string  | The name of the chosen LLM model                                                                          |
+| `token`*           | string  | Your API key                                                                                              |
+| `max_tokens`       | integer | Maximum length of the generated text (min: `128`, max: `100000`, default: `512`)                          |
+| `temperature`      | float   | Sampling temperature. 0 means deterministic output, values >1 encourage diversity (min: `0`, max: `100`, default: `0.7`)  |
+| `top_p`            | float   | Probability threshold for token sampling (min: `0`, max: `1`, default: `0.9`)                             |
+| `top_k`            | integer | Number of top tokens to sample from (min: `0`, max: `99999`, default: `0`)                                |
+| `repetition_penalty`| float   | Penalty for token repetition (min: `0.01`, max: `5`, default: `1`)                                        |
+| `presence_penalty` | float   | Positive values penalize new tokens based on their presence in the text so far (min: `-2`, max: `2`, default: `0`) |
+| `frequency_penalty`| float   | Positive values penalize new tokens based on their frequency in the text so far (min: `-2`, max: `2`, default: `0`) |
+| `messages`*        | list    | Messages to the LLM                                                                                       |
 
-## Python example
+<sup>* Required parameters</sup>
+
+## Request Example
+
+### Request Body
+
+```json
+{
+  "model": "Mixtral-8x7B-Instruct-v0.1",
+  "token": "your_api_key",
+  "messages": [
+    {
+      "role": "user",
+      "content": 'There are 50 books in a library. Sam decides to read 5 of the books. How many books are there now? If there are 45 books, say "1". Else, if there is the same amount of books, say "2".'
+    }
+  ]
+}
+```
+
+## Examples
+
+### Python
+
+Here is a Python example using the `openai` library to generate text:
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="your_key",
+    api_key="your_api_key",
     base_url="https://visioncraft.top/v1"
 )
 
@@ -33,4 +67,54 @@ chat_completion = client.chat.completions.create(
     ],
 )
 print(chat_completion)
+```
+
+### JavaScript (Node.js)
+
+Here is a JavaScript example using the `node-fetch` library to generate text:
+
+```javascript
+const fetch = require('node-fetch');
+
+async function generateText() {
+    const response = await fetch('https://visioncraft.top/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            model: "Mixtral-8x7B-Instruct-v0.1",
+            token: "your_api_key",
+            messages: [
+                {
+                    role: "user",
+                    content: 'There are 50 books in a library. Sam decides to read 5 of the books. How many books are there now? If there are 45 books, say "1". Else, if there is the same amount of books, say "2".'
+                }
+            ]
+        })
+    });
+    const data = await response.json();
+    console.log(data);
+}
+
+generateText();
+```
+
+### cURL
+
+Here is an example using cURL to generate text:
+
+```sh
+curl -X POST "https://visioncraft.top/v1/chat/completions" \
+     -H "Content-Type: application/json" \
+     -d '{
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "token": "your_api_key",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": "There are 50 books in a library. Sam decides to read 5 of the books. How many books are there now? If there are 45 books, say \"1\". Else, if there is the same amount of books, say \"2\"."
+                }
+            ]
+        }'
 ```
