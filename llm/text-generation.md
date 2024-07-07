@@ -29,7 +29,7 @@ POST https://visioncraft.top/v1/chat/completions
 
 ### Request Body
 
-```json
+```
 {
   "model": "Mixtral-8x7B-Instruct-v0.1",
   "token": "your_api_key",
