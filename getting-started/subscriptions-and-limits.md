@@ -1,6 +1,6 @@
 # Subscriptions and Limits
 
-**VisionCraft API** offers three subscription tiers: Free, $10, and $25.
+**VisionCraft API** offers three subscription tiers: Free, $10, and $20.
 
 1. **Free Tier**
    * Access to all models
