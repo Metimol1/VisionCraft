@@ -1,8 +1,8 @@
 # Available Models
 
-You can **retrieve** a **list of available models** for image generation.
+You can **retrieve** a **list of available models** for image generation using the VisionCraft API.
 
-## Request method and URL
+## Request Method and URL
 
 ```
 GET https://visioncraft.top/sd/models-sd
@@ -10,11 +10,17 @@ GET https://visioncraft.top/sd/models-sd
 
 ## Response
 
-```python
+The response is a JSON array containing the names of the available models, as shown below:
+
+```json
 ["Dalcefo-v5", "AnythingV5NoVAE-Ink-noVAE", ...]
 ```
 
-## Python example
+## Examples
+
+### Python
+
+Here is a Python example using the `aiohttp` library to fetch the list of available models for Stable Diffusion (SD):
 
 ```python
 import aiohttp
@@ -32,4 +38,28 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
+```
+
+### JavaScript (Node.js)
+
+Here is a JavaScript example using the `node-fetch` library to fetch the list of available models:
+
+```javascript
+const fetch = require('node-fetch');
+
+async function fetchSDModels() {
+    const response = await fetch('https://visioncraft.top/sd/models-sd');
+    const data = await response.json();
+    console.log(data);
+}
+
+fetchSDModels();
+```
+
+### cURL
+
+Here is an example using cURL to fetch the list of available models:
+
+```sh
+curl -X GET "https://visioncraft.top/sd/models-sd"
 ```
