@@ -13,7 +13,6 @@ POST https://visioncraft.top/v1/chat/completions
 | Parameter          | Type    | Description                                                                                               |
 |--------------------|---------|-----------------------------------------------------------------------------------------------------------|
 | `model`*           | string  | The name of the chosen LLM model                                                                          |
-| `token`*           | string  | Your API key                                                                                              |
 | `max_tokens`       | integer | Maximum length of the generated text (min: `128`, max: `100000`, default: `512`)                          |
 | `temperature`      | float   | Sampling temperature. 0 means deterministic output, values >1 encourage diversity (min: `0`, max: `100`, default: `0.7`)  |
 | `top_p`            | float   | Probability threshold for token sampling (min: `0`, max: `1`, default: `0.9`)                             |
@@ -27,12 +26,17 @@ POST https://visioncraft.top/v1/chat/completions
 
 ## Request Example
 
+### Request Headers
+
+```
+Authorization: Bearer your_api_key
+```
+
 ### Request Body
 
 ```
 {
   "model": "Mixtral-8x7B-Instruct-v0.1",
-  "token": "your_api_key",
   "messages": [
     {
       "role": "user",
@@ -80,11 +84,11 @@ async function generateText() {
     const response = await fetch('https://visioncraft.top/v1/chat/completions', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer your_api_key'
         },
         body: JSON.stringify({
             model: "Mixtral-8x7B-Instruct-v0.1",
-            token: "your_api_key",
             messages: [
                 {
                     role: "user",
@@ -107,9 +111,9 @@ Here is an example using cURL to generate text:
 ```sh
 curl -X POST "https://visioncraft.top/v1/chat/completions" \
      -H "Content-Type: application/json" \
+     -H "Authorization: Bearer your_api_key" \
      -d '{
             "model": "Mixtral-8x7B-Instruct-v0.1",
-            "token": "your_api_key",
             "messages": [
                 {
                     "role": "user",
