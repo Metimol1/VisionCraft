@@ -53,11 +53,11 @@ async function generateTextWithImage() {
     const response = await fetch('https://visioncraft.top/v1/chat/completions', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer your_api_key'
         },
         body: JSON.stringify({
             model: "llava-1.5-7b-hf",
-            token: "your_api_key",
             messages: [
                 {
                     role: "user",
@@ -88,9 +88,9 @@ base64_image=$(base64 -w 0 image.png)
 # Make the request
 curl -X POST "https://visioncraft.top/v1/chat/completions" \
      -H "Content-Type: application/json" \
+     -H "Authorization: Bearer your_api_key" \
      -d '{
             "model": "llava-1.5-7b-hf",
-            "token": "your_api_key",
             "messages": [
                 {
                     "role": "user",
