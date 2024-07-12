@@ -1,6 +1,6 @@
 # Subscriptions and Limits
 
-**VisionCraft API** offers three subscription tiers: Free, $10, and $20.
+**VisionCraft API** offers four subscription tiers: Free, $10, $20, and a special tier available once every 30 days.
 
 1. **Free Tier**
    * Access to all models
@@ -13,6 +13,9 @@
 3. **Tier 2 ($20 per month)**
    * Access to all models
    * **Unlimited** usage
+
+4. **Free Tier 1 for 24 hours**
+   * Available once every 30 days
 
 To **purchase** a premium subscription, simply use the command `/premium` in the [VisionCraft Telegram bot](https://t.me/VisionCraft_bot).
 
