@@ -15,7 +15,7 @@
    * **Unlimited** usage
 
 4. **Free Tier 1 for 24 hours**
-   * Available once every 30 days
+   * Available once every 7 days
 
 To **purchase** a premium subscription, simply use the command `/premium` in the [VisionCraft Telegram bot](https://t.me/VisionCraft_bot).
 
