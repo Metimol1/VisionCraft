@@ -65,7 +65,8 @@ import aiohttp
 import asyncio
 
 async def generate_image(api_url, data) -> bytes:
-    async with aiohttp.ClientSession() as session:
+    timeout = aiohttp.ClientTimeout(total=None)  # Disable timeout
+    async with aiohttp.ClientSession(timeout=timeout) as session:
         async with session.post(f"{api_url}/sd", json=data) as response:
             image = await response.read()
             return image
@@ -117,7 +118,8 @@ async function generateImage(apiUrl, data) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        timeout: 0  // Disable timeout
     });
     const buffer = await response.buffer();
     return buffer;
@@ -155,6 +157,7 @@ Here is an example using cURL to generate an image:
 ```sh
 curl -X POST "https://visioncraft.top/sd" \
      -H "Content-Type: application/json" \
+     --max-time 0 \
      -d '{
             "model": "sdxl-base",
             "prompt": "Beautiful landscape",
