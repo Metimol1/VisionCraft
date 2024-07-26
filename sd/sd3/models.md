@@ -1,6 +1,6 @@
 # Available Models
 
-You can **retrieve** a **list of available models** for image generation using the VisionCraft API.
+You can **retrieve** a **list of available SD3 models** for image generation using the VisionCraft API.
 
 ## Request Method and URL
 
