@@ -29,6 +29,8 @@ The VisionCraft API is a **free** API that provides access to over 3000 differen
   * SDXL
     * [Available Models](sd/sdxl/models.md)
     * [Available Loras](sd/sdxl/loras.md)
+  * SD3
+    * [Available Models](sd/sd3/models.md)
   * [Available Samplers](sd/samplers.md)
   * [Image Generation](sd/image-generation.md)
 
