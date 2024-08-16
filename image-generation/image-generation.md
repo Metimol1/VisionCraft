@@ -5,7 +5,7 @@ After **selecting** a specific **model and sampler**, you can **generate images*
 ## Request Method and URL
 
 ```
-POST https://visioncraft.top/image/generation
+POST https://visioncraft.top/image/generate
 ```
 
 ## Parameters
@@ -67,7 +67,7 @@ import asyncio
 async def generate_image(api_url, data) -> bytes:
     timeout = aiohttp.ClientTimeout(total=None)  # Disable timeout
     async with aiohttp.ClientSession(timeout=timeout) as session:
-        async with session.post(f"{api_url}/image/generation", json=data) as response:
+        async with session.post(f"{api_url}/image/generate", json=data) as response:
             image = await response.read()
             return image
 
@@ -113,7 +113,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 
 async function generateImage(apiUrl, data) {
-    const response = await fetch(`${apiUrl}/image/generation`, {
+    const response = await fetch(`${apiUrl}/image/generate`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ main();
 Here is an example using cURL to generate an image:
 
 ```sh
-curl -X POST "https://visioncraft.top/image/generation" \
+curl -X POST "https://visioncraft.top/image/generate" \
      -H "Content-Type: application/json" \
      --max-time 0 \
      -d '{
