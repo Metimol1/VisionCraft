@@ -5,7 +5,7 @@ You can **retrieve** a **list of available samplers** for image generation using
 ## Request Method and URL
 
 ```
-GET https://visioncraft.top/sd/samplers
+GET https://visioncraft.top/image/samplers
 ```
 
 ## Response
@@ -29,7 +29,7 @@ import asyncio
 async def fetch_sd_samplers():
     """Get all available samplers for SD models"""
     async with aiohttp.ClientSession() as session:
-        async with session.get('https://visioncraft.top/sd/samplers') as response:
+        async with session.get('https://visioncraft.top/image/samplers') as response:
             return await response.json()
 
 async def main():
@@ -48,7 +48,7 @@ Here is a JavaScript example using the `node-fetch` library to fetch the list of
 const fetch = require('node-fetch');
 
 async function fetchSDSamplers() {
-    const response = await fetch('https://visioncraft.top/sd/samplers');
+    const response = await fetch('https://visioncraft.top/image/samplers');
     const data = await response.json();
     console.log(data);
 }
@@ -61,5 +61,5 @@ fetchSDSamplers();
 Here is an example using cURL to fetch the list of available samplers:
 
 ```sh
-curl -X GET "https://visioncraft.top/sd/samplers"
+curl -X GET "https://visioncraft.top/image/samplers"
 ```
