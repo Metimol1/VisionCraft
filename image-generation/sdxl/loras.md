@@ -5,7 +5,7 @@ You can **retrieve** a **list of available loras** for image generation using th
 ## Request Method and URL
 
 ```
-GET https://visioncraft.top/sd/loras-sdxl
+GET https://visioncraft.top/image/loras/sdxl
 ```
 
 ## Response
@@ -29,7 +29,7 @@ import asyncio
 async def fetch_sd_loras():
     """Get all available loras for SDXL"""
     async with aiohttp.ClientSession() as session:
-        async with session.get('https://visioncraft.top/sd/loras-sdxl') as response:
+        async with session.get('https://visioncraft.top/image/loras/sdxl') as response:
             return await response.json()
 
 async def main():
@@ -48,7 +48,7 @@ Here is a JavaScript example using the `node-fetch` library to fetch the list of
 const fetch = require('node-fetch');
 
 async function fetchSDLoras() {
-    const response = await fetch('https://visioncraft.top/sd/loras-sdxl');
+    const response = await fetch('https://visioncraft.top/image/loras/sdxl');
     const data = await response.json();
     console.log(data);
 }
@@ -61,5 +61,5 @@ fetchSDLoras();
 Here is an example using cURL to fetch the list of available loras:
 
 ```sh
-curl -X GET "https://visioncraft.top/sd/loras-sdxl"
+curl -X GET "https://visioncraft.top/image/loras/sdxl"
 ```
