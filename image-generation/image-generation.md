@@ -5,7 +5,7 @@ After **selecting** a specific **model and sampler**, you can **generate images*
 ## Request Method and URL
 
 ```
-POST https://visioncraft.top/sd
+POST https://visioncraft.top/image/generation
 ```
 
 ## Parameters
@@ -13,10 +13,10 @@ POST https://visioncraft.top/sd
 | Parameter        | Type    | Description                                                                                                   |
 |------------------|---------|---------------------------------------------------------------------------------------------------------------|
 | `token`*         | string  | Your API key                                                                                                   |
-| `model`*         | string  | One of the available SD models                                                                                 |
+| `model`*         | string  | One of the available models                                                                                 |
 | `prompt`*        | string  | A text prompt for generation                                                                                   |
 | `negative_prompt`| string  | Text prompt that the model shouldn't be drawn on the picture                                                   |
-| `sampler`       | string  | One of the available SD samplers                                                                               |
+| `sampler`       | string  | One of the available samplers                                                                               |
 | `steps`         | integer | How many times to iteratively improve the image (min: `1`, max: `35`, default: `35`)                           |
 | `width`         | integer | Generated image width (min: `64`, max: `1024`, default: `1024`)                                                |
 | `height`        | integer | Generated image height (min: `64`, max: `1024`, default: `1024`)                                               |
@@ -67,7 +67,7 @@ import asyncio
 async def generate_image(api_url, data) -> bytes:
     timeout = aiohttp.ClientTimeout(total=None)  # Disable timeout
     async with aiohttp.ClientSession(timeout=timeout) as session:
-        async with session.post(f"{api_url}/sd", json=data) as response:
+        async with session.post(f"{api_url}/image/generation", json=data) as response:
             image = await response.read()
             return image
 
@@ -113,7 +113,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 
 async function generateImage(apiUrl, data) {
-    const response = await fetch(`${apiUrl}/sd`, {
+    const response = await fetch(`${apiUrl}/image/generation`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ main();
 Here is an example using cURL to generate an image:
 
 ```sh
-curl -X POST "https://visioncraft.top/sd" \
+curl -X POST "https://visioncraft.top/image/generation" \
      -H "Content-Type: application/json" \
      --max-time 0 \
      -d '{
