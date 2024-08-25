@@ -23,7 +23,7 @@ The VisionCraft API is a **free** API that provides access to over 3000 differen
 ## ❤️‍🔥 Interacting with the API
 
 ### Image Generation
-  * [Available models](image-generation/models.md)
+  * [Available Models](image-generation/models.md)
   * [Available Loras](image-generation/loras.md)
   * [Available Samplers](image-generation/samplers.md)
   * [Image Generation](image-generation/image-generation.md)
